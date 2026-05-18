@@ -2648,6 +2648,221 @@
       max-width: 100% !important;
     }
   }
+
+
+  /* FINAL STABILITY PATCH - PC / MOBILE LAYOUT REPAIR */
+  @media (min-width: 769px) {
+    html, body {
+      min-width: 1200px !important;
+      overflow-x: auto !important;
+    }
+
+    body {
+      padding-top: 74px !important;
+    }
+
+    header {
+      height: auto !important;
+      padding: 8px 22px 10px !important;
+      align-items: flex-start !important;
+    }
+
+    nav {
+      display: flex !important;
+      flex-direction: row !important;
+      align-items: center !important;
+      justify-content: flex-end !important;
+      gap: clamp(26px, 3vw, 50px) !important;
+      margin-top: 10px !important;
+      margin-left: 40px !important;
+      padding: 0 !important;
+      position: static !important;
+      width: auto !important;
+      height: auto !important;
+      background: transparent !important;
+      backdrop-filter: none !important;
+    }
+
+    nav::after {
+      content: none !important;
+      display: none !important;
+    }
+
+    nav > a,
+    nav .nav-dropdown {
+      display: block !important;
+    }
+
+    .hero {
+      width: 100vw !important;
+      min-width: 1200px !important;
+      height: 100vh !important;
+      min-height: 760px !important;
+    }
+
+    .hero-grid {
+      background-size: cover !important;
+      background-position: center center !important;
+    }
+
+    .section-inner {
+      width: min(1240px, 88%) !important;
+      max-width: none !important;
+    }
+
+    .about-grid {
+      display: grid !important;
+      grid-template-columns: 1fr 520px !important;
+      gap: 80px !important;
+      align-items: center !important;
+    }
+
+    .menu-grid {
+      display: grid !important;
+      grid-template-columns: repeat(3, 1fr) !important;
+      gap: 36px !important;
+    }
+
+    .staff-layout {
+      display: grid !important;
+      grid-template-columns: 300px 1fr !important;
+      gap: 90px !important;
+      align-items: center !important;
+    }
+
+    .staff-image {
+      display: block !important;
+      width: 300px !important;
+      height: 420px !important;
+      background:
+        linear-gradient(rgba(0,0,0,.18), rgba(0,0,0,.38)),
+        url('https://res.cloudinary.com/dvr7rww8q/image/upload/v1778986402/IMG_9882_fsx375.jpg') center 18%/cover no-repeat !important;
+      filter: saturate(.78) brightness(.96) contrast(1.03) !important;
+      border: 1px solid rgba(255,255,255,.08) !important;
+    }
+
+    .access-layout {
+      display: grid !important;
+      grid-template-columns: .92fr 1.08fr !important;
+      gap: 60px !important;
+    }
+
+    .contact-form {
+      display: grid !important;
+      grid-template-columns: repeat(2, 1fr) !important;
+      gap: 30px 34px !important;
+    }
+
+    .form-row.full {
+      grid-column: 1 / -1 !important;
+    }
+
+    .reserve,
+    .detail-reserve-link,
+    .confirm-btn,
+    .back-btn,
+    .send-btn,
+    .thanks-panel a,
+    .access-info a,
+    .coming-inner a {
+      display: inline-flex !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+    }
+  }
+
+  @media (max-width: 768px) {
+    html, body {
+      min-width: 0 !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      overflow-x: hidden !important;
+    }
+
+    body {
+      padding-top: 0 !important;
+    }
+
+    .hero {
+      width: 100% !important;
+      min-width: 0 !important;
+      height: 78svh !important;
+      min-height: 560px !important;
+    }
+
+    .hero-grid {
+      background-size: 230% auto !important;
+      background-position: left center !important;
+      background-repeat: no-repeat !important;
+    }
+
+    header {
+      width: 100% !important;
+      min-width: 0 !important;
+      height: 70px !important;
+      padding: 9px 14px !important;
+      align-items: center !important;
+    }
+
+    .section-inner,
+    .section-inner.narrow,
+    .form-shell,
+    .footer-inner {
+      width: min(92%, 680px) !important;
+      max-width: 680px !important;
+      min-width: 0 !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+
+    .about-grid,
+    .staff-layout,
+    .access-layout,
+    .contact-form,
+    .footer-inner {
+      display: grid !important;
+      grid-template-columns: 1fr !important;
+      gap: 30px !important;
+    }
+
+    .staff-image {
+      display: block !important;
+      width: 100% !important;
+      height: 360px !important;
+      background:
+        linear-gradient(rgba(0,0,0,.18), rgba(0,0,0,.36)),
+        url('https://res.cloudinary.com/dvr7rww8q/image/upload/v1778986402/IMG_9882_fsx375.jpg') center 18%/cover no-repeat !important;
+      filter: saturate(.82) brightness(1.02) contrast(1.02) !important;
+      border: 1px solid rgba(255,255,255,.08) !important;
+    }
+
+    .menu-grid {
+      display: grid !important;
+      grid-template-columns: 1fr !important;
+      gap: 16px !important;
+    }
+
+    .reserve,
+    .detail-reserve-link,
+    .confirm-btn,
+    .back-btn,
+    .send-btn,
+    .thanks-panel a,
+    .access-info a,
+    .coming-inner a {
+      display: inline-flex !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+    }
+
+    .detail-reserve-link,
+    .confirm-btn,
+    .back-btn,
+    .send-btn,
+    .thanks-panel a {
+      width: 100% !important;
+    }
+  }
 </style>
 <script>
     const RESERVATION_API_URL = 'https://script.google.com/macros/s/AKfycbzezvSzJYCeBDwWd8k9G83xjzVeandVQUBE68FB5ywdaTvfUPHjNXWsSjaOignDl42DfQ/exec';
