@@ -655,7 +655,7 @@
         <div class="flow-item">
           <span>04</span>
           <div>
-            <p>お帰り</p>
+            <p>治療後</p>
             <small>
               施術後はお身体の変化を感じながら、ゆっくりとお支度ください。<br>
               当日は飲酒や長湯を避け、ご帰宅後は無理をせずゆっくりお休みいただくことをおすすめしております。
@@ -2303,12 +2303,20 @@
 
       .flow-item {
         flex-direction: column;
-        gap: 12px;
+        gap: 4px !important;
         padding: 28px 0 !important;
       }
 
       .flow-item div {
         text-align: left;
+      }
+
+      .flow-item span {
+        flex: none !important;
+        font-size: 15px !important;
+        letter-spacing: .18em !important;
+        margin-bottom: -2px !important;
+        color: rgba(214,177,112,.78) !important;
       }
 
       .flow-item p {
