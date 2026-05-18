@@ -657,7 +657,7 @@
           <div>
             <p>治療後</p>
             <small>
-              施術後はお身体の変化を感じながら、ゆっくりとお支度ください。<br>
+              治療後はお身体の変化を感じながら、ゆっくりとお支度ください。<br>
               当日は飲酒や長湯を避け、ご帰宅後は無理をせずゆっくりお休みいただくことをおすすめしております。
             </small>
           </div>
@@ -3898,14 +3898,22 @@
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
+        const rect = entry.boundingClientRect;
+
+        // 画面に入ったら表示
         if (entry.isIntersecting) {
           entry.target.classList.add('is-visible');
-        } else {
+        }
+
+        // 要素が画面下へ完全に抜けたらリセット
+        // → 上に戻って再度下スクロールするとまた発火
+        if (rect.top > window.innerHeight) {
           entry.target.classList.remove('is-visible');
         }
       });
     }, {
-      threshold: 0.18
+      threshold: 0.18,
+      rootMargin: '0px 0px -8% 0px'
     });
 
     fadeSections.forEach(section => observer.observe(section));
