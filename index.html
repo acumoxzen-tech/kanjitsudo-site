@@ -1471,13 +1471,9 @@
     }
 
     .coming-section {
-      min-height: 100vh;
-      padding: 180px 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       position: relative;
       overflow: hidden;
+      padding: 160px 0;
       background: #050403;
       border-top: 1px solid rgba(255,255,255,.08);
     }
@@ -1499,22 +1495,18 @@
     .coming-inner {
       position: relative;
       z-index: 5;
-      width: min(520px, 74%);
-      aspect-ratio: 1 / 1;
-      min-height: 0;
+      width: min(980px, 88%);
+      margin: 0 auto;
+      min-height: 620px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 86px 70px;
+      padding: 100px 70px;
       text-align: center;
       border: 1px solid rgba(255,255,255,.16);
       background: rgba(7,5,4,.58);
       backdrop-filter: blur(12px);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
     }
 
     .coming-en {
@@ -2142,6 +2134,30 @@
     }
 
     @media (max-width: 768px) {
+      .coming-section {
+        padding: 110px 0 !important;
+        min-height: auto !important;
+      }
+
+      .coming-inner {
+        width: min(92%, 680px) !important;
+        min-height: 420px !important;
+        padding: 64px 28px !important;
+        aspect-ratio: auto !important;
+      }
+
+      .coming-inner h2 {
+        font-size: 28px !important;
+        margin-bottom: 28px !important;
+      }
+
+      .coming-inner p {
+        font-size: 16px !important;
+        line-height: 1.9 !important;
+        margin-bottom: 34px !important;
+        letter-spacing: .12em !important;
+      }
+
       .news-modal-content {
         width: min(92vw, 560px) !important;
         padding: 38px 24px !important;
@@ -2906,29 +2922,19 @@
       background: #050403 !important;
     }
 
-    #menu-page.menu-section::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      z-index: 0;
+    #menu-page.menu-section::before,
+    #menu-page.menu-section::after {
+      display: none !important;
+    }
+
+    #menu-page.menu-section {
       background:
         linear-gradient(90deg, rgba(0,0,0,.68) 0%, rgba(0,0,0,.34) 42%, rgba(0,0,0,.56) 100%),
         linear-gradient(180deg, rgba(5,4,3,1) 0%, rgba(5,4,3,.74) 14%, rgba(5,4,3,.24) 36%, rgba(5,4,3,.24) 72%, rgba(5,4,3,.92) 100%),
         url('https://res.cloudinary.com/dvr7rww8q/image/upload/v1779070234/ChatGPT_Image_2026%E5%B9%B45%E6%9C%8817%E6%97%A5_11_39_54_f3ikar.jpg') center center / cover no-repeat !important;
-      opacity: 1;
-      pointer-events: none;
     }
 
-    #menu-page.menu-section::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-      background:
-        radial-gradient(circle at 82% 18%, rgba(214,177,112,.18), transparent 34%),
-        linear-gradient(90deg, rgba(0,0,0,.40), transparent 58%);
-      pointer-events: none;
-    }
+    
 
     #menu-page .section-inner {
       position: relative !important;
