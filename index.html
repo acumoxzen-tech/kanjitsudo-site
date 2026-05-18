@@ -2863,6 +2863,62 @@
       width: 100% !important;
     }
   }
+
+
+  /* FINAL MENU RESERVE BUTTON REPAIR */
+  .menu-card .menu-reserve-link {
+    width: 100% !important;
+    margin-top: auto !important;
+    padding-top: 34px !important;
+    display: block !important;
+    grid-column: auto !important;
+  }
+
+  .menu-card .detail-reserve-link {
+    box-sizing: border-box !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    height: 58px !important;
+    margin: 18px 0 0 !important;
+    padding: 0 22px !important;
+    border: 1px solid rgba(255,255,255,.28) !important;
+    background: rgba(5,4,3,.24) !important;
+    color: rgba(255,255,255,.92) !important;
+    text-decoration: none !important;
+    font-family: "Noto Serif JP", serif !important;
+    font-size: 14px !important;
+    line-height: 1 !important;
+    letter-spacing: .18em !important;
+    white-space: nowrap !important;
+    text-align: center !important;
+  }
+
+  @media (max-width: 768px) {
+    #menu-page .menu-reserve-link {
+      grid-column: 2 !important;
+      width: 100% !important;
+      margin-top: 0 !important;
+      padding-top: 22px !important;
+      display: block !important;
+    }
+
+    #menu-page .detail-reserve-link {
+      width: 100% !important;
+      height: 48px !important;
+      margin: 0 !important;
+      padding: 0 12px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      font-size: 11px !important;
+      line-height: 1 !important;
+      letter-spacing: .12em !important;
+      white-space: nowrap !important;
+    }
+  }
 </style>
 <script>
     const RESERVATION_API_URL = 'https://script.google.com/macros/s/AKfycbzezvSzJYCeBDwWd8k9G83xjzVeandVQUBE68FB5ywdaTvfUPHjNXWsSjaOignDl42DfQ/exec';
