@@ -633,7 +633,7 @@
         <div class="flow-item">
           <span>02</span>
           <div>
-            <p>ご来店・お着替え</p>
+            <p>ご来院</p>
             <small>
               お着替えをご用意しておりますので、お仕事帰りでもそのままお越しいただけます。<br>
               施術前には、どうぞリラックスしてお過ごしください。
@@ -644,11 +644,10 @@
         <div class="flow-item">
           <span>03</span>
           <div>
-            <p>カウンセリング・診察</p>
+            <p>カウンセリング・施術</p>
             <small>
-              お身体のお悩みや生活習慣について丁寧にお伺いし、<br>
-              脈診・舌診・腹診など東洋医学古来の診察法を通して、
-              現在のお身体の状態を見立てていきます。<br>
+              お身体のお悩みや生活習慣について丁寧にお伺いし、脈診・舌診・腹診など東洋医学古来の診察法を通して現在のお身体の状態を見立てていきます。<br>
+              お一人おひとりの状態に合わせ、優しい鍼で氣の巡りを整えていきます。<br>
               ※初診は20〜30分ほどお時間をいただきます。
             </small>
           </div>
@@ -657,33 +656,10 @@
         <div class="flow-item">
           <span>04</span>
           <div>
-            <p>施術</p>
-            <small>
-              お一人おひとりの状態に合わせ、優しい鍼で氣の巡りを整えていきます。<br>
-              静かな空間の中で、心身ともに深く緩んでいただけるよう心がけています。
-            </small>
-          </div>
-        </div>
-
-        <div class="flow-item">
-          <span>05</span>
-          <div>
-            <p>お着替え・メイク直し</p>
+            <p>お帰り</p>
             <small>
               施術後はお身体の変化を感じながら、ゆっくりとお支度ください。<br>
-              気になることがございましたら、お気軽にご相談いただけます。
-            </small>
-          </div>
-        </div>
-
-        <div class="flow-item">
-          <span>06</span>
-          <div>
-            <p>治療後について</p>
-            <small>
-              施術後はリラックス状態となり、血流も良くなっておりますので、当日の飲酒はお控えください。<br>
-              また、お風呂は長湯を避け軽めにしていただくことをおすすめしております。<br>
-              一時的にだるさや眠気が出る場合もございますので、ご帰宅後は無理をせず、ゆっくりとお休みください。
+              当日は飲酒や長湯を避け、ご帰宅後は無理をせずゆっくりお休みいただくことをおすすめしております。
             </small>
           </div>
         </div>
@@ -820,8 +796,12 @@
           <label>ご希望日時</label>
           <div class="booking-panel">
             <div class="booking-head">
-              <span>空き枠を選択</span>
-              <small id="bookingMonth">日時を選択してください</small>
+              <button type="button" class="month-nav" id="prevMonthBtn" aria-label="前の月">‹</button>
+              <div class="booking-title">
+                <span>空き枠を選択</span>
+                <small id="bookingMonth">日時を選択してください</small>
+              </div>
+              <button type="button" class="month-nav" id="nextMonthBtn" aria-label="次の月">›</button>
             </div>
             <div class="date-strip" id="dateStrip"></div>
             <div class="slot-grid" id="slotGrid">
@@ -968,12 +948,45 @@
     }
 
     .booking-head {
-      display: flex;
-      justify-content: space-between;
+      display: grid;
+      grid-template-columns: 42px 1fr 42px;
       align-items: center;
+      gap: 14px;
       margin-bottom: 22px;
       color: rgba(255,255,255,.82);
       letter-spacing: .16em;
+    }
+
+    .booking-title {
+      text-align: center;
+    }
+
+    .booking-title span {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .month-nav {
+      width: 42px;
+      height: 42px;
+      border: 1px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.035);
+      color: rgba(255,255,255,.86);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 28px;
+      line-height: 1;
+      cursor: pointer;
+      transition: all .28s ease;
+    }
+
+    .month-nav:hover:not(:disabled) {
+      background: rgba(255,255,255,.12);
+      border-color: rgba(255,255,255,.48);
+    }
+
+    .month-nav:disabled {
+      opacity: .22;
+      cursor: not-allowed;
     }
 
     .booking-head small {
@@ -1030,6 +1043,22 @@
     .date-card.is-closed {
       opacity: .28;
       cursor: not-allowed;
+    }
+
+    .date-card.is-empty {
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .date-weekday {
+      min-height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Noto Serif JP", serif;
+      font-size: 11px;
+      letter-spacing: .12em;
+      color: rgba(255,255,255,.42);
     }
 
     .slot-grid {
@@ -2313,9 +2342,16 @@
       }
 
       .booking-head {
-        align-items: flex-start !important;
+        grid-template-columns: 34px 1fr 34px !important;
+        align-items: center !important;
         gap: 8px !important;
         margin-bottom: 16px !important;
+      }
+
+      .month-nav {
+        width: 34px !important;
+        height: 34px !important;
+        font-size: 23px !important;
       }
 
       .booking-head span {
@@ -2727,9 +2763,14 @@
     }
 
     .date-card {
-      min-width: 0 !important;
-      min-height: 50px !important;
-    }
+        min-width: 0 !important;
+        min-height: 50px !important;
+      }
+
+      .date-weekday {
+        min-height: 20px !important;
+        font-size: 9px !important;
+      }
 
     .date-card .day {
       font-size: 9px !important;
@@ -3460,36 +3501,91 @@
       });
     }
 
+    let calendarMonthOffset = 0;
+
     function buildDateStrip() {
       const days = ['日', '月', '火', '水', '木', '金', '土'];
       const today = new Date();
       today.setHours(0, 0, 0, 0);
-      dateStrip.innerHTML = '';
 
-      for (let i = 0; i < 21; i++) {
-        const date = new Date(today);
-        date.setDate(today.getDate() + i);
+      const baseMonth = new Date(today.getFullYear(), today.getMonth() + calendarMonthOffset, 1);
+      const year = baseMonth.getFullYear();
+      const month = baseMonth.getMonth();
+      const firstDay = new Date(year, month, 1);
+      const lastDay = new Date(year, month + 1, 0);
+      const startWeekday = firstDay.getDay();
+
+      dateStrip.innerHTML = '';
+      dateInput.value = '';
+      timeSelect.value = '';
+      slotGrid.innerHTML = '<p class="slot-empty">日付を選択してください。</p>';
+      bookingMonth.textContent = `${year}年${month + 1}月`;
+
+      const prevBtn = document.getElementById('prevMonthBtn');
+      const nextBtn = document.getElementById('nextMonthBtn');
+
+      if (prevBtn) prevBtn.disabled = calendarMonthOffset === 0;
+      if (nextBtn) nextBtn.disabled = calendarMonthOffset >= 1;
+
+      days.forEach(dayName => {
+        const weekday = document.createElement('div');
+        weekday.className = 'date-weekday';
+        weekday.textContent = dayName;
+        dateStrip.appendChild(weekday);
+      });
+
+      for (let i = 0; i < startWeekday; i++) {
+        const empty = document.createElement('div');
+        empty.className = 'date-card is-empty';
+        dateStrip.appendChild(empty);
+      }
+
+      for (let dayNum = 1; dayNum <= lastDay.getDate(); dayNum++) {
+        const date = new Date(year, month, dayNum);
+        date.setHours(0, 0, 0, 0);
         const day = date.getDay();
         const isClosed = day === 0 || day === 1;
+        const isPast = date < today;
         const button = document.createElement('button');
 
         button.type = 'button';
-        button.className = 'date-card' + (isClosed ? ' is-closed' : '');
+        button.className = 'date-card' + ((isClosed || isPast) ? ' is-closed' : '');
         button.innerHTML = `<span class="day">${days[day]}</span><span class="date-num">${date.getDate()}</span>`;
 
-        if (!isClosed) {
+        if (!isClosed && !isPast) {
           button.addEventListener('click', () => {
             document.querySelectorAll('.date-card').forEach(card => card.classList.remove('is-active'));
             button.classList.add('is-active');
             dateInput.value = formatDateValue(date);
             timeSelect.value = '';
-            bookingMonth.textContent = `${date.getMonth() + 1}月${date.getDate()}日（${days[day]}）`;
+            bookingMonth.textContent = `${year}年${month + 1}月${date.getDate()}日（${days[day]}）`;
             loadAvailableSlots();
           });
         }
 
         dateStrip.appendChild(button);
       }
+    }
+
+    const prevMonthBtn = document.getElementById('prevMonthBtn');
+    const nextMonthBtn = document.getElementById('nextMonthBtn');
+
+    if (prevMonthBtn) {
+      prevMonthBtn.addEventListener('click', () => {
+        if (calendarMonthOffset <= 0) return;
+        calendarMonthOffset -= 1;
+        buildDateStrip();
+        slotHelp.textContent = '日付を選ぶと、空き枠が表示されます。';
+      });
+    }
+
+    if (nextMonthBtn) {
+      nextMonthBtn.addEventListener('click', () => {
+        if (calendarMonthOffset >= 1) return;
+        calendarMonthOffset += 1;
+        buildDateStrip();
+        slotHelp.textContent = '日付を選ぶと、空き枠が表示されます。';
+      });
     }
 
     async function loadAvailableSlots() {
