@@ -1383,12 +1383,13 @@
     }
 
     .flow-item small {
-        font-size: 13px !important;
-        line-height: 2.1 !important;
-        letter-spacing: .05em !important;
-        color: rgba(210,210,210,.88) !important;
-      }
+      font-size: 13px !important;
+      line-height: 2.1 !important;
+      letter-spacing: .05em !important;
+      color: rgba(210,210,210,.88) !important;
+    }
 
+    @media (max-width: 768px) {
       .staff-content h3 {
         font-size: 32px !important;
         margin-bottom: 28px !important;
@@ -1522,7 +1523,8 @@
     }
   
 
-  dy {
+  @media (max-width: 768px) {
+    html, body {
       min-width: 0 !important;
       width: 100% !important;
       overflow-x: hidden !important;
@@ -2489,6 +2491,161 @@
       line-height: 2.05 !important;
       letter-spacing: .08em !important;
       text-align: center !important;
+    }
+  }
+
+
+  /* EMERGENCY MOBILE LAYOUT RESET - keeps desktop untouched */
+  @media (max-width: 768px) {
+    html, body {
+      min-width: 0 !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      overflow-x: hidden !important;
+    }
+
+    body {
+      padding-top: 0 !important;
+    }
+
+    .hero {
+      width: 100% !important;
+      min-width: 0 !important;
+      height: 78svh !important;
+      min-height: 560px !important;
+      overflow: hidden !important;
+    }
+
+    .hero-grid {
+      width: 100% !important;
+      min-width: 0 !important;
+      background-size: 230% auto !important;
+      background-position: left center !important;
+      background-repeat: no-repeat !important;
+    }
+
+    header {
+      left: 0 !important;
+      right: 0 !important;
+      width: 100% !important;
+      min-width: 0 !important;
+      height: 70px !important;
+      padding: 9px 14px !important;
+      align-items: center !important;
+    }
+
+    nav {
+      margin: 0 !important;
+      padding: 0 !important;
+      gap: 14px !important;
+      max-width: none !important;
+      overflow: visible !important;
+    }
+
+    .section-inner,
+    .section-inner.narrow,
+    .form-shell,
+    .footer-inner {
+      width: min(92%, 680px) !important;
+      max-width: 680px !important;
+      min-width: 0 !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+
+    .about-section,
+    .menu-section,
+    .staff-section,
+    .coming-section,
+    .flow-section,
+    .faq-section,
+    .news-section,
+    .form-section,
+    .access-section,
+    .instagram-section {
+      width: 100% !important;
+      min-width: 0 !important;
+      padding: 104px 0 !important;
+      overflow-x: hidden !important;
+    }
+
+    .about-grid,
+    .staff-layout,
+    .access-layout,
+    .voice-grid,
+    .contact-form,
+    .footer-inner {
+      display: grid !important;
+      grid-template-columns: 1fr !important;
+      gap: 30px !important;
+    }
+
+    .menu-grid {
+      display: grid !important;
+      grid-template-columns: 1fr !important;
+      gap: 16px !important;
+    }
+
+    .about-image,
+    .staff-image,
+    .access-map,
+    .instagram-link-card,
+    .coming-inner {
+      max-width: 100% !important;
+      min-width: 0 !important;
+    }
+
+    .about-image {
+      height: 340px !important;
+    }
+
+    .staff-image {
+      height: 360px !important;
+      background-size: contain !important;
+      background-repeat: no-repeat !important;
+      background-position: center center !important;
+    }
+
+    .coming-inner {
+      width: min(92%, 680px) !important;
+      min-height: 420px !important;
+      margin: -42px auto 0 !important;
+      padding: 64px 28px !important;
+      transform: none !important;
+      aspect-ratio: auto !important;
+    }
+
+    .copy {
+      left: 7% !important;
+      right: 7% !important;
+      top: 30% !important;
+    }
+
+    .copy-main {
+      font-size: clamp(24px, 7.2vw, 34px) !important;
+      white-space: nowrap !important;
+    }
+
+    .copy-sub {
+      font-size: clamp(17px, 5.4vw, 23px) !important;
+    }
+
+    .reserve {
+      left: 7% !important;
+      top: 66% !important;
+      width: 210px !important;
+      height: 56px !important;
+    }
+
+    .hero-news {
+      left: 7% !important;
+      right: 7% !important;
+      bottom: 12.5% !important;
+      width: auto !important;
+    }
+
+    img, iframe {
+      max-width: 100% !important;
     }
   }
 </style>
