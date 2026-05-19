@@ -453,6 +453,7 @@
             <a href="#faq-page">よくあるご質問</a>
             <a href="#news-page">お知らせ</a>
             <a href="#access-page">アクセス</a>
+            <a href="#contact-page">お問い合わせ</a>
           </div>
         </div>
         <a href="https://acumoxzen-tech.github.io/kanjitsudo-reserve/reserve.html">ご予約</a>
@@ -743,89 +744,49 @@
     </div>
   </section>
 
-  <section class="form-section form-step is-active" id="reserve-page" data-step="input">
+  <section class="form-section" id="contact-page">
     <div class="form-shell">
       <div class="section-head center">
-        <span class="section-en">RESERVE / CONTACT</span>
-        <h2 style="font-size:clamp(22px,3vw,42px);letter-spacing:.04em;white-space:nowrap;">ご予約・お問い合わせ</h2>
+        <span class="section-en">CONTACT</span>
+        <h2 style="font-size:clamp(22px,3vw,42px);letter-spacing:.04em;white-space:nowrap;">お問い合わせ</h2>
       </div>
 
-      <form class="contact-form" id="contactForm">
-        <div class="form-row full">
-          <label>ご用件</label>
-          <div class="purpose-tabs">
-            <label><input type="radio" name="purpose" value="ご予約" checked> <span>ご予約</span></label>
-            <label><input type="radio" name="purpose" value="お問い合わせ"> <span>お問い合わせ</span></label>
+      <div style="text-align:center;">
+        <button type="button" class="contact-open-btn" id="openContactBtn">CONTACT</button>
+      </div>
+
+      <div id="contactFormWrap" style="display:none; margin-top:48px;">
+        <form class="contact-form" id="contactForm">
+          <div class="form-row">
+            <label for="name">お名前</label>
+            <input id="name" name="name" type="text" placeholder="例：山田 太郎" required>
           </div>
-        </div>
 
-        <div class="form-row">
-          <label for="name">お名前</label>
-          <input id="name" name="name" type="text" placeholder="例：山田 太郎" required>
-        </div>
-
-        <div class="form-row">
-          <label for="kana">ふりがな</label>
-          <input id="kana" name="kana" type="text" placeholder="例：やまだ たろう">
-        </div>
-
-        <div class="form-row">
-          <label for="tel">電話番号</label>
-          <input id="tel" name="tel" type="tel" placeholder="例：090-0000-0000">
-        </div>
-
-        <div class="form-row">
-          <label for="email">メールアドレス</label>
-          <input id="email" name="email" type="email" placeholder="例：info@example.com">
-        </div>
-
-        <div class="form-row reserve-only">
-          <label for="menuSelect">ご希望メニュー</label>
-          <select id="menuSelect" name="menu">
-            <option value="未選択">選択してください</option>
-            <option value="全身調律鍼灸（初診）">全身調律鍼灸（初診）</option>
-            <option value="全身調律鍼灸（再診）">全身調律鍼灸（再診）</option>
-            <option value="美容養生鍼灸（初診）">美容養生鍼灸（初診）</option>
-            <option value="美容養生鍼灸（再診）">美容養生鍼灸（再診）</option>
-            <option value="相談して決めたい">相談して決めたい</option>
-          </select>
-        </div>
-
-        <div class="form-row full reserve-only">
-          <label>ご希望日時</label>
-          <div class="booking-panel">
-            <div class="booking-head">
-              <button type="button" class="month-nav" id="prevMonthBtn" aria-label="前の月">‹</button>
-              <div class="booking-title">
-                <small id="bookingMonth">日時を選択してください</small>
-                <span>空き枠を選択</span>
-              </div>
-              <button type="button" class="month-nav" id="nextMonthBtn" aria-label="次の月">›</button>
-            </div>
-            <div class="date-strip" id="dateStrip"></div>
-            <div class="slot-grid" id="slotGrid">
-              <p class="slot-empty">初診・再診を選択してください。</p>
-            </div>
+          <div class="form-row">
+            <label for="kana">ふりがな</label>
+            <input id="kana" name="kana" type="text" placeholder="例：やまだ たろう">
           </div>
-          <input id="date" name="date" type="hidden" required>
-          <input id="time" name="time" type="hidden" required>
-          <small class="slot-help" id="slotHelp">表示されている枠のみご予約いただけます。</small>
-        </div>
 
-        <div class="form-row reserve-only">
-          <label for="secondDate">第二希望日</label>
-          <input id="secondDate" name="secondDate" type="date">
-        </div>
+          <div class="form-row">
+            <label for="tel">電話番号</label>
+            <input id="tel" name="tel" type="tel" placeholder="例：090-0000-0000">
+          </div>
 
-        <div class="form-row full">
-          <label for="message">ご相談内容</label>
-          <textarea id="message" name="message" rows="7" placeholder="症状・ご相談内容・お問い合わせ内容をご記入ください。"></textarea>
-        </div>
+          <div class="form-row">
+            <label for="email">メールアドレス</label>
+            <input id="email" name="email" type="email" placeholder="例：info@example.com">
+          </div>
 
-        <div class="form-actions">
-          <button type="button" class="confirm-btn" id="confirmBtn">入力内容を確認する</button>
-        </div>
-      </form>
+          <div class="form-row full">
+            <label for="message">お問い合わせ内容</label>
+            <textarea id="message" name="message" rows="7" placeholder="お問い合わせ内容をご記入ください。"></textarea>
+          </div>
+
+          <div class="form-actions">
+            <button type="button" class="confirm-btn" id="confirmBtn">入力内容を確認する</button>
+          </div>
+        </form>
+      </div>
     </div>
   </section>
 
@@ -848,7 +809,7 @@
       <div class="thanks-panel" id="thanksPanel" aria-hidden="true">
         <span class="section-en">THANK YOU</span>
         <h3 id="thanksTitle">送信が完了しました</h3>
-        <p id="thanksMessage">ご予約・お問い合わせを受け付けました。<br>内容を確認のうえ、折り返しご連絡いたします。</p>
+        <p id="thanksMessage">お問い合わせを受け付けました。<br>内容を確認のうえ、折り返しご連絡いたします。</p>
         <a href="#top">トップへ戻る</a>
       </div>
     </div>
@@ -1502,6 +1463,41 @@
       transition: all .35s ease;
     }
 
+    .contact-open-btn {
+      min-width: 240px;
+      height: 58px;
+      border: 1px solid rgba(255,255,255,.18);
+      background: transparent;
+      color: rgba(255,255,255,.88);
+      font-family: "Cormorant Garamond", "Noto Serif JP", serif;
+      font-size: 16px;
+      letter-spacing: .24em;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-open-btn::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 1px;
+      background: rgba(255,255,255,.72);
+      transition: width .42s ease;
+    }
+
+    .contact-open-btn:hover {
+      border-color: rgba(255,255,255,.42);
+      color: rgba(255,255,255,1);
+      background: rgba(255,255,255,.03);
+    }
+
+    .contact-open-btn:hover::after {
+      width: 100%;
+    }
+
     .access-info a:hover {
       background: rgba(255,255,255,.08);
       border-color: rgba(255,255,255,.52);
@@ -1690,6 +1686,7 @@
       margin-top: 22px;
     }
 
+    .contact-open-btn,
     .confirm-btn,
     .back-btn,
     .send-btn,
@@ -1710,6 +1707,7 @@
       transition: all .35s ease;
     }
 
+    .contact-open-btn:hover,
     .confirm-btn:hover,
     .back-btn:hover,
     .send-btn:hover,
@@ -3459,29 +3457,19 @@
     const confirmPanel = document.getElementById('confirmPanel');
     const thanksPanel = document.getElementById('thanksPanel');
     const confirmList = document.getElementById('confirmList');
-    const purposeInputs = document.querySelectorAll('input[name="purpose"]');
-    const reserveOnlyFields = document.querySelectorAll('.reserve-only');
-    const menuSelect = document.getElementById('menuSelect');
-    const dateInput = document.getElementById('date');
-    const timeSelect = document.getElementById('time');
-    const slotHelp = document.getElementById('slotHelp');
-    const dateStrip = document.getElementById('dateStrip');
-    const slotGrid = document.getElementById('slotGrid');
-    const bookingMonth = document.getElementById('bookingMonth');
+    const openContactBtn = document.getElementById('openContactBtn');
+    const contactFormWrap = document.getElementById('contactFormWrap');
 
-    function getPurpose() {
-      return document.querySelector('input[name="purpose"]:checked').value;
-    }
+    if (openContactBtn && contactFormWrap) {
+      openContactBtn.addEventListener('click', () => {
+        contactFormWrap.style.display = 'block';
+        openContactBtn.style.display = 'none';
 
-    function updatePurposeView() {
-      const isReserve = getPurpose() === 'ご予約';
-      reserveOnlyFields.forEach(field => {
-        field.style.display = isReserve ? 'flex' : 'none';
+        setTimeout(() => {
+          contactFormWrap.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 80);
       });
     }
-
-    purposeInputs.forEach(input => input.addEventListener('change', updatePurposeView));
-    updatePurposeView();
 
     function formatDateValue(date) {
       const y = date.getFullYear();
@@ -3680,18 +3668,28 @@
       });
     }
 
-    if (dateStrip) buildDateStrip();
-    document.querySelectorAll('.menu-reserve-link').forEach(button => {
-      button.addEventListener('click', () => {
-        const menu = button.dataset.menu;
+    const dateStrip = document.getElementById('dateStrip');
+    const dateInput = document.getElementById('date');
+    const timeSelect = document.getElementById('time');
+    const menuSelect = document.getElementById('menu');
+    const slotGrid = document.getElementById('slotGrid');
+    const slotHelp = document.getElementById('slotHelp');
+    const bookingMonth = document.getElementById('bookingMonth');
 
-        if (menu) {
-          menuSelect.value = menu;
-          slotGrid.innerHTML = '<p class="slot-empty">日付を選択してください。</p>';
-          slotHelp.textContent = '日付を選ぶと、空き枠が表示されます。';
-        }
+    if (dateStrip && dateInput && timeSelect && menuSelect && slotGrid && slotHelp && bookingMonth) buildDateStrip();
+    if (dateStrip && dateInput && timeSelect && menuSelect && slotGrid && slotHelp && bookingMonth) {
+      document.querySelectorAll('.menu-reserve-link').forEach(button => {
+        button.addEventListener('click', () => {
+          const menu = button.dataset.menu;
+
+          if (menu) {
+            menuSelect.value = menu;
+            slotGrid.innerHTML = '<p class="slot-empty">日付を選択してください。</p>';
+            slotHelp.textContent = '日付を選ぶと、空き枠が表示されます。';
+          }
+        });
       });
-    });
+    }
 
     if (menuSelect) menuSelect.addEventListener('change', () => {
       slotGrid.innerHTML = '<p class="slot-empty">日付を選択してください。</p>';
@@ -3709,23 +3707,13 @@
 
       if (!form.reportValidity()) return;
 
-      const isReserve = getPurpose() === 'ご予約';
       const data = [
-        ['ご用件', getPurpose()],
         ['お名前', form.name.value],
         ['ふりがな', form.kana.value || '未入力'],
         ['電話番号', form.tel.value],
         ['メールアドレス', form.email.value],
+        ['お問い合わせ内容', form.message.value || '未入力']
       ];
-
-      if (isReserve) {
-        data.push(['ご希望メニュー', form.menu.value]);
-        data.push(['ご希望日', form.date.value || '未選択']);
-        data.push(['ご希望時間', form.time.value]);
-        data.push(['第二希望日', form.secondDate.value || '未選択']);
-      }
-
-      data.push(['ご相談内容', form.message.value || '未入力']);
 
       confirmList.innerHTML = data.map(([label, value]) => {
         const safeValue = String(value).replaceAll('\n', '<br>');
@@ -3741,8 +3729,7 @@
     if (backBtn) backBtn.addEventListener('click', () => {
       confirmPanel.setAttribute('aria-hidden', 'true');
       document.querySelectorAll('.form-step').forEach(step => step.classList.remove('is-active'));
-      document.getElementById('reserve-page').classList.add('is-active');
-      document.getElementById('reserve-page').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      document.getElementById('contact-page').scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
 
     if (sendBtn) sendBtn.addEventListener('click', async () => {
@@ -3750,15 +3737,11 @@
       sendBtn.textContent = '送信中...';
 
       const payload = {
-        purpose: getPurpose(),
+        purpose: 'お問い合わせ',
         name: form.name.value,
         kana: form.kana.value,
         tel: form.tel.value,
         email: form.email.value,
-        menu: form.menu.value,
-        date: form.date.value,
-        time: form.time.value,
-        secondDate: form.secondDate.value,
         message: form.message.value
       };
 
