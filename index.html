@@ -2589,15 +2589,30 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 24px;
-      height: 24px;
-      font-size: 28px;
-      line-height: 24px;
+      width: 36px;
+      height: 36px;
+      font-size: 30px;
+      line-height: 1;
       color: rgba(255,255,255,.92);
-      margin-left: 0;
       cursor: pointer;
       position: relative;
-      top: -11px;
+      top: -10px;
+      transition: opacity .3s ease;
+      pointer-events: none;
+    }
+
+    nav.is-open::after {
+      content: "×";
+      font-size: 36px;
+      position: fixed;
+      top: 18px;
+      right: 18px;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10000;
     }
 
     .mobile-reserve-btn {
@@ -3955,10 +3970,22 @@
               mobileNav.classList.add('is-open');
               e.preventDefault();
             }
-          } else if (clickedLink) {
-            setTimeout(() => {
+          } else {
+            const clickX = e.clientX;
+            const clickY = e.clientY;
+
+            const isCloseButton = clickX > (window.innerWidth - 70) && clickY < 70;
+
+            if (isCloseButton) {
               mobileNav.classList.remove('is-open');
-            }, 120);
+              return;
+            }
+
+            if (clickedLink) {
+              setTimeout(() => {
+                mobileNav.classList.remove('is-open');
+              }, 120);
+            }
           }
         });
 
