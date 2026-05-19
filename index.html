@@ -3961,6 +3961,19 @@
             }, 120);
           }
         });
+
+        document.addEventListener('click', (e) => {
+          if (!mobileNav.classList.contains('is-open')) return;
+          if (mobileNav.contains(e.target)) return;
+
+          mobileNav.classList.remove('is-open');
+        });
+
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape') {
+            mobileNav.classList.remove('is-open');
+          }
+        });
       }
     }
 
