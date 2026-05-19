@@ -197,6 +197,10 @@
       background: rgba(255,255,255,.68);
     }
 
+    .mobile-reserve-btn {
+      display: none;
+    }
+
     .instagram {
       display: inline-block;
       width: 30px;
@@ -457,6 +461,7 @@
           </div>
         </div>
         <a href="https://acumoxzen-tech.github.io/kanjitsudo-reserve/reserve.html">ご予約</a>
+        <a href="https://acumoxzen-tech.github.io/kanjitsudo-reserve/reserve.html" class="mobile-reserve-btn">ご予約</a>
         <a href="https://www.instagram.com/k__.z.__m/" aria-label="Instagram"><span class="instagram"></span></a>
       </nav>
     </header>
@@ -888,7 +893,7 @@
 
       <div class="footer-links">
         <a href="https://www.instagram.com/k__.z.__m/">Instagram</a>
-        <a href="#reserve-page">Reserve</a>
+        <a href="https://acumoxzen-tech.github.io/kanjitsudo-reserve/reserve.html">Reserve</a>
       </div>
     </div>
   </footer>
@@ -2517,7 +2522,7 @@
       align-items: center !important;
     }
 
-    nav > a:not([aria-label="Instagram"]),
+    nav > a:not([aria-label="Instagram"]):not(.mobile-reserve-btn),
     nav .nav-dropdown {
       display: none !important;
     }
@@ -2577,6 +2582,25 @@
       cursor: pointer;
       position: relative;
       top: -11px;
+    }
+
+    .mobile-reserve-btn {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      height: 31px !important;
+      padding: 0 13px !important;
+      border: 1px solid rgba(255,255,255,.26) !important;
+      color: rgba(255,255,255,.92) !important;
+      text-decoration: none !important;
+      font-family: "Noto Serif JP", serif !important;
+      font-size: 10px !important;
+      letter-spacing: .14em !important;
+      background: rgba(255,255,255,.04) !important;
+      backdrop-filter: blur(8px) !important;
+      white-space: nowrap !important;
+      transform: translateY(-1px) !important;
+      padding-bottom: 0 !important;
     }
 
     .instagram {
