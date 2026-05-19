@@ -197,7 +197,8 @@
       background: rgba(255,255,255,.68);
     }
 
-    .mobile-reserve-btn {
+    .mobile-reserve-btn,
+    .nav-reserve-menu {
       display: none;
     }
 
@@ -458,10 +459,10 @@
             <a href="#news-page">お知らせ</a>
             <a href="#access-page">アクセス</a>
             <a href="#contact-page">お問い合わせ</a>
+            <a href="https://acumoxzen-tech.github.io/kanjitsudo-reserve/reserve.html" class="nav-reserve-menu">ご予約</a>
           </div>
         </div>
-        <a href="https://acumoxzen-tech.github.io/kanjitsudo-reserve/reserve.html">ご予約</a>
-        <a href="https://acumoxzen-tech.github.io/kanjitsudo-reserve/reserve.html" class="mobile-reserve-btn">ご予約</a>
+        <a href="https://acumoxzen-tech.github.io/kanjitsudo-reserve/reserve.html" class="desktop-reserve-link">ご予約</a>
         <a href="https://www.instagram.com/k__.z.__m/" aria-label="Instagram"><span class="instagram"></span></a>
       </nav>
     </header>
@@ -2522,7 +2523,7 @@
       align-items: center !important;
     }
 
-    nav > a:not([aria-label="Instagram"]):not(.mobile-reserve-btn),
+    nav > a:not([aria-label="Instagram"]),
     nav .nav-dropdown {
       display: none !important;
     }
@@ -2568,6 +2569,22 @@
       font-size: 12px !important;
     }
 
+    nav.is-open .nav-dropdown-menu .nav-reserve-menu {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      width: 100% !important;
+      height: 44px !important;
+      margin-top: 14px !important;
+      padding: 0 18px !important;
+      border: 1px solid rgba(255,255,255,.28) !important;
+      color: rgba(255,255,255,.94) !important;
+      background: rgba(255,255,255,.055) !important;
+      font-size: 12px !important;
+      letter-spacing: .18em !important;
+      text-align: center !important;
+    }
+
     nav::after {
       content: "☰";
       display: inline-flex;
@@ -2585,22 +2602,11 @@
     }
 
     .mobile-reserve-btn {
-      display: inline-flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-      height: 31px !important;
-      padding: 0 13px !important;
-      border: 1px solid rgba(255,255,255,.26) !important;
-      color: rgba(255,255,255,.92) !important;
-      text-decoration: none !important;
-      font-family: "Noto Serif JP", serif !important;
-      font-size: 10px !important;
-      letter-spacing: .14em !important;
-      background: rgba(255,255,255,.04) !important;
-      backdrop-filter: blur(8px) !important;
-      white-space: nowrap !important;
-      transform: translateY(-1px) !important;
-      padding-bottom: 0 !important;
+      display: none !important;
+    }
+
+    .desktop-reserve-link {
+      display: none !important;
     }
 
     .instagram {
