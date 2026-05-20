@@ -3977,6 +3977,22 @@
         }
       });
     });
+
+    if (window.innerWidth <= 768) {
+      const mobileNavLinks = document.querySelectorAll('nav a');
+
+      mobileNavLinks.forEach(link => {
+        const text = link.textContent.trim();
+
+        if (text.includes('施術メニュー')) {
+          link.href = 'https://acumoxzen-tech.github.io/kanjitsudo-menu/menu.html';
+        }
+
+        if (text.includes('ご利用の流れ')) {
+          link.href = 'https://acumoxzen-tech.github.io/kanjitsudo-menu/menu.html#flow-section';
+        }
+      });
+    }
   </script>
 </body>
 </html>
