@@ -493,7 +493,7 @@
           <button type="button" class="nav-dropdown-trigger">ご案内 ▾</button>
           <div class="nav-dropdown-menu">
             <a href="#gallery-page">店内紹介</a>
-            <a href="#flow-page">ご利用の流れ</a>
+            <a href="https://acumoxzen-tech.github.io/kanjitsudo-menu/menu.html#flow-section">ご利用の流れ</a>
             <a href="#faq-page">よくあるご質問</a>
             <a href="#news-page">お知らせ</a>
             <a href="#contact-page">お問い合わせ</a>
@@ -579,7 +579,7 @@
             全身の氣の巡りを整え、不調の改善はもちろん、体質改善や未病予防にも。
           </p>
           <div class="menu-reserve-link">
-            <a href="https://acumoxzen-tech.github.io/kanjitsudo-reserve/reserve.html" class="detail-reserve-link" data-menu="$1">この施術を予約する</a>
+            <a href="https://acumoxzen-tech.github.io/kanjitsudo-reserve/reserve.html" class="detail-reserve-link" data-menu="">この施術を予約する</a>
           </div>
         </div>
 
@@ -592,7 +592,7 @@
             肌本来がもつ“自ら美しくなろうとするチカラ”を引き出し、内側から澄んだ美しさへ導きます。
           </p>
           <div class="menu-reserve-link">
-            <a href="https://acumoxzen-tech.github.io/kanjitsudo-reserve/reserve.html" class="detail-reserve-link" data-menu="$1">この施術を予約する</a>
+            <a href="https://acumoxzen-tech.github.io/kanjitsudo-reserve/reserve.html" class="detail-reserve-link" data-menu="">この施術を予約する</a>
           </div>
         </div>
 
@@ -607,8 +607,18 @@
           <p class="menu-note">※定期的に通われている方限定<br>※ネット予約不可。直接お問い合わせください。</p>
           
         </div>
+      </div>
 
-        
+      <div class="mobile-menu-teaser fade-section">
+        <span class="section-en">MENU</span>
+        <h2>施術メニュー</h2>
+        <p>
+          治療内容・料金・詳しいご案内は、専用ページにまとめております。<br>
+          お身体の状態に合わせて、ゆっくりご確認ください。
+        </p>
+        <a href="https://acumoxzen-tech.github.io/kanjitsudo-menu/menu.html" class="mobile-menu-teaser-btn">
+          施術メニューはこちら<span>›</span>
+        </a>
       </div>
     </div>
   </section>
@@ -2623,7 +2633,10 @@
       background: rgba(255,255,255,.055) !important;
       font-size: 12px !important;
       letter-spacing: .18em !important;
+      line-height: 1 !important;
       text-align: center !important;
+      box-sizing: border-box !important;
+      transform: none !important;
     }
 
     nav::after {
@@ -3281,9 +3294,7 @@
     }
 
     #flow-page {
-      background:
-        linear-gradient(135deg, #0d0a08 0%, #17110d 100%) !important;
-      border-top: 1px solid rgba(214,177,112,.18) !important;
+      display: none !important;
     }
 
     #flow-page::after {
@@ -3327,9 +3338,7 @@
     }
 
     #faq-page {
-      background:
-        linear-gradient(180deg, #050403 0%, #0a0705 100%) !important;
-      border-top: 1px solid rgba(255,255,255,.08) !important;
+      display: none !important;
     }
 
     #faq-page::before {
@@ -3525,6 +3534,331 @@
       line-height: 2.05 !important;
       letter-spacing: .08em !important;
       text-align: center !important;
+    }
+  }
+
+
+  /* MOBILE ONLY: MENU TEASER */
+  .mobile-menu-teaser {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    #menu-page .section-head,
+    #menu-page .menu-grid {
+      display: none !important;
+    }
+
+    #menu-page .mobile-menu-teaser {
+      position: relative;
+      z-index: 3;
+      display: flex !important;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 12px 0 18px;
+      opacity: 1 !important;
+      transform: none !important;
+      filter: none !important;
+    }
+
+    #menu-page .mobile-menu-teaser h2 {
+      margin-top: 14px;
+      font-family: "Noto Serif JP", serif;
+      font-size: 30px;
+      font-weight: 300;
+      letter-spacing: .14em;
+      color: rgba(255,255,255,.96);
+      text-shadow: 0 12px 34px rgba(0,0,0,.58);
+    }
+
+    #menu-page .mobile-menu-teaser p {
+      margin-top: 28px;
+      font-size: 15px;
+      line-height: 2.15;
+      letter-spacing: .08em;
+      color: rgba(255,255,255,.76);
+    }
+
+    #menu-page .mobile-menu-teaser-btn {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      min-width: 290px;
+      margin-top: 38px;
+      padding: 20px 28px;
+      border: 1px solid rgba(214,177,112,.34);
+      background: linear-gradient(135deg, rgba(214,177,112,.14), rgba(255,255,255,.03));
+      color: rgba(255,255,255,.96);
+      text-decoration: none;
+      font-family: "Noto Serif JP", serif;
+      font-size: 13px;
+      letter-spacing: .16em;
+      overflow: hidden;
+      box-shadow: 0 16px 40px rgba(0,0,0,.28);
+    }
+
+    #menu-page .mobile-menu-teaser-btn span {
+      font-size: 20px;
+      line-height: 1;
+      opacity: .86;
+    }
+  }
+
+
+
+  /* SAFE FINAL MOBILE NAV OVERRIDE - PC rules above are untouched */
+  @media (max-width: 768px) {
+    header {
+      height: 70px !important;
+      padding: 9px 14px !important;
+      align-items: center !important;
+      background: linear-gradient(to bottom, rgba(5,4,3,.72), rgba(5,4,3,.18), transparent) !important;
+      backdrop-filter: blur(6px) !important;
+      -webkit-backdrop-filter: blur(6px) !important;
+      z-index: 10000 !important;
+    }
+
+    .brand {
+      min-width: auto !important;
+      flex-shrink: 0 !important;
+      gap: 8px !important;
+    }
+
+    .crest {
+      width: 48px !important;
+      height: 48px !important;
+    }
+
+    .brand-ja {
+      font-size: 16px !important;
+      letter-spacing: .1em !important;
+    }
+
+    .brand-en {
+      font-size: 7px !important;
+      letter-spacing: .22em !important;
+    }
+
+    nav {
+      position: static !important;
+      width: auto !important;
+      height: auto !important;
+      max-width: none !important;
+      max-height: none !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      display: flex !important;
+      flex-direction: row !important;
+      align-items: center !important;
+      justify-content: flex-end !important;
+      gap: 14px !important;
+      overflow: visible !important;
+      background: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      transform: none !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      transition: none !important;
+    }
+
+    nav > a:not([aria-label="Instagram"]),
+    nav .nav-dropdown,
+    nav .desktop-reserve-link,
+    .nav-reserve-menu,
+    .mobile-reserve-btn {
+      display: none !important;
+    }
+
+    nav > a[aria-label="Instagram"] {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      padding: 0 !important;
+      line-height: 1 !important;
+    }
+
+    nav::after {
+      content: "☰" !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      width: 36px !important;
+      height: 36px !important;
+      font-size: 30px !important;
+      line-height: 1 !important;
+      color: rgba(255,255,255,.92) !important;
+      cursor: pointer !important;
+      position: relative !important;
+      top: -10px !important;
+      transform: none !important;
+      pointer-events: none !important;
+    }
+
+    nav.is-open {
+      position: fixed !important;
+      top: 0 !important;
+      right: 0 !important;
+      width: 78vw !important;
+      max-width: 360px !important;
+      height: 100vh !important;
+      max-height: none !important;
+      padding: 110px 32px 40px !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: flex-start !important;
+      justify-content: flex-start !important;
+      gap: 26px !important;
+      overflow-y: auto !important;
+      background: rgba(5,4,3,.96) !important;
+      border-left: 1px solid rgba(255,255,255,.08) !important;
+      backdrop-filter: blur(18px) !important;
+      -webkit-backdrop-filter: blur(18px) !important;
+      transform: none !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      z-index: 9999 !important;
+    }
+
+    nav.is-open::after {
+      content: "×" !important;
+      position: fixed !important;
+      top: 18px !important;
+      right: 18px !important;
+      width: 40px !important;
+      height: 40px !important;
+      font-size: 36px !important;
+      line-height: 1 !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      transform: none !important;
+      z-index: 10000 !important;
+    }
+
+    nav.is-open > a,
+    nav.is-open .nav-dropdown {
+      display: block !important;
+      color: rgba(255,255,255,.92) !important;
+      text-decoration: none !important;
+      position: relative !important;
+      padding: 0 0 10px !important;
+      font-family: "Noto Serif JP", serif !important;
+      font-size: 15px !important;
+      letter-spacing: .14em !important;
+      line-height: 1 !important;
+      font-weight: 300 !important;
+      border: none !important;
+      background: transparent !important;
+      min-width: 0 !important;
+      width: auto !important;
+      height: auto !important;
+      margin: 0 !important;
+      box-shadow: none !important;
+      transform: none !important;
+    }
+
+    nav.is-open > a.desktop-reserve-link {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      min-width: 168px !important;
+      height: 44px !important;
+      padding: 0 22px !important;
+      border: 1px solid rgba(255,255,255,.22) !important;
+      background: rgba(255,255,255,.035) !important;
+      color: rgba(255,255,255,.92) !important;
+      border-radius: 0 !important;
+      font-size: 13px !important;
+      letter-spacing: .14em !important;
+      line-height: 1 !important;
+      text-align: center !important;
+      box-sizing: border-box !important;
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      box-shadow: none !important;
+    }
+
+    nav.is-open > a.desktop-reserve-link::after {
+      display: none !important;
+      content: none !important;
+    }
+
+    nav.is-open > a[aria-label="Instagram"] {
+      display: block !important;
+      padding: 0 !important;
+      line-height: 1 !important;
+    }
+
+    nav.is-open .nav-dropdown-trigger {
+      display: block !important;
+      border: none !important;
+      background: transparent !important;
+      color: rgba(255,255,255,.92) !important;
+      font-family: "Noto Serif JP", serif !important;
+      font-size: 15px !important;
+      letter-spacing: .14em !important;
+      font-weight: 300 !important;
+      padding: 0 0 10px !important;
+      line-height: 1 !important;
+      cursor: default !important;
+    }
+
+    nav.is-open .nav-dropdown-menu {
+      position: static !important;
+      top: auto !important;
+      left: auto !important;
+      transform: none !important;
+      min-width: 0 !important;
+      padding: 10px 0 0 18px !important;
+      border: none !important;
+      background: transparent !important;
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      box-shadow: none !important;
+    }
+
+    nav.is-open .nav-dropdown-menu a {
+      display: block !important;
+      padding: 10px 0 !important;
+      font-size: 13px !important;
+      letter-spacing: .12em !important;
+      line-height: 1.4 !important;
+      color: rgba(255,255,255,.68) !important;
+      text-decoration: none !important;
+    }
+
+    .instagram {
+      width: 23px !important;
+      height: 23px !important;
+      border-width: 1.5px !important;
+      border-radius: 7px !important;
+      transform: translateY(0) !important;
+    }
+
+    nav.is-open .instagram {
+      transform: none !important;
+    }
+
+    .instagram::before {
+      width: 9px !important;
+      height: 9px !important;
+      border-width: 1.6px !important;
+      left: 5.5px !important;
+      top: 5.5px !important;
+    }
+
+    .instagram::after {
+      width: 3px !important;
+      height: 3px !important;
+      right: 4px !important;
+      top: 4px !important;
     }
   }
 </style>
