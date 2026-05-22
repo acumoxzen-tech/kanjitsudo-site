@@ -4358,6 +4358,17 @@
             }
 
             if (clickedLink) {
+              const isFaqLink = clickedLink.getAttribute('href') === '#faq-page';
+
+              if (isFaqLink) {
+                e.preventDefault();
+                mobileNav.classList.remove('is-open');
+                setTimeout(() => {
+                  window.location.href = 'https://acumoxzen-tech.github.io/kanjitsudo-faq/faq.html';
+                }, 120);
+                return;
+              }
+
               setTimeout(() => {
                 mobileNav.classList.remove('is-open');
               }, 120);
