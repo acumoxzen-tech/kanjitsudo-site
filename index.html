@@ -523,21 +523,54 @@
   
 
   <section class="menu-section" id="menu-page">
-    <div class="section-inner menu-simple-inner">
-      <div class="menu-simple-copy fade-section">
+    <div class="section-inner">
+      <div class="section-head center">
         <span class="section-en">MENU</span>
         <h2>施術メニュー</h2>
+      </div>
 
-        <p class="menu-simple-text">
-          還日堂では、お一人おひとりの体質や状態に合わせて、
-          東洋医学の観点から丁寧に施術を行っております。<br>
-          各施術内容・料金・詳細については、専用ページよりご覧ください。
-        </p>
+      <div class="menu-visual"></div>
 
-        <a href="https://acumoxzen-tech.github.io/kanjitsudo-menu/menu.html" class="menu-simple-btn">
-          施術メニューはこちら
-          <span>›</span>
-        </a>
+      <div class="menu-grid fade-section">
+        <div class="menu-card">
+          <span class="menu-number">01</span>
+          <h3>全身調律鍼灸</h3>
+          <div class="menu-price">¥8,800</div>
+          <p>
+            脈診・舌診・腹診を通して、お身体全体の状態を丁寧に診ながら治療を行います。
+            全身の氣の巡りを整え、不調の改善はもちろん、体質改善や未病予防にも。
+          </p>
+          <div class="menu-reserve-link">
+            <a href="https://acumoxzen-tech.github.io/kanjitsudo-reserve/reserve.html" class="detail-reserve-link" data-menu="$1">この施術を予約する</a>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <span class="menu-number">02</span>
+          <h3>美容養生鍼灸</h3>
+          <div class="menu-price">¥13,200</div>
+          <p>
+            お顔だけではなく、身体全体の巡りを整えながら内側から美しさを育てていく美容鍼灸です。
+            肌本来がもつ“自ら美しくなろうとするチカラ”を引き出し、内側から澄んだ美しさへ導きます。
+          </p>
+          <div class="menu-reserve-link">
+            <a href="https://acumoxzen-tech.github.io/kanjitsudo-reserve/reserve.html" class="detail-reserve-link" data-menu="$1">この施術を予約する</a>
+          </div>
+        </div>
+
+        <div class="menu-card special-menu">
+          <span class="menu-number">SPECIAL</span>
+          <h3>応急治療</h3>
+          <div class="menu-price">¥3,300</div>
+          <p>
+            寝違え・ぎっくり腰など、急な不調に対する短時間の応急治療です。
+            状態を確認しながら、負担の少ない鍼灸で痛みや動きづらさへ対応します。
+          </p>
+          <p class="menu-note">※定期的に通われている方限定<br>※ネット予約不可。直接お問い合わせください。</p>
+          
+        </div>
+
+        
       </div>
     </div>
   </section>
@@ -1099,79 +1132,6 @@
     .menu-section .section-inner {
       position: relative;
       z-index: 3;
-    }
-
-    .menu-simple-inner {
-      display: flex;
-      align-items: center;
-      min-height: 420px;
-    }
-
-    .menu-simple-copy {
-      max-width: 540px;
-      position: relative;
-      z-index: 3;
-    }
-
-    .menu-simple-text {
-      margin-top: 26px;
-      font-size: 16px;
-      line-height: 2.3;
-      letter-spacing: .1em;
-      color: rgba(255,255,255,.74);
-    }
-
-    .menu-simple-btn {
-      position: relative;
-      display: inline-flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-      min-width: 290px;
-      margin-top: 40px;
-      padding: 22px 30px;
-      border: 1px solid rgba(214,177,112,.34);
-      background: linear-gradient(135deg, rgba(214,177,112,.14), rgba(255,255,255,.03));
-      color: rgba(255,255,255,.96);
-      text-decoration: none;
-      font-family: "Noto Serif JP", serif;
-      font-size: 13px;
-      letter-spacing: .16em;
-      overflow: hidden;
-      transition: all .4s ease;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 16px 40px rgba(0,0,0,.28);
-    }
-
-    .menu-simple-btn::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,.12) 50%, transparent 100%);
-      transform: translateX(-120%);
-      transition: transform .7s ease;
-    }
-
-    .menu-simple-btn:hover::before {
-      transform: translateX(120%);
-    }
-
-    .menu-simple-btn:hover {
-      transform: translateY(-4px);
-      border-color: rgba(214,177,112,.62);
-      background: linear-gradient(135deg, rgba(214,177,112,.22), rgba(255,255,255,.05));
-      box-shadow: 0 24px 60px rgba(0,0,0,.42);
-    }
-
-    .menu-simple-btn span {
-      font-size: 20px;
-      line-height: 1;
-      opacity: .86;
-      transition: transform .35s ease;
-    }
-
-    .menu-simple-btn:hover span {
-      transform: translateX(4px);
     }
 
     .section-head {
@@ -4032,12 +3992,6 @@
           link.href = 'https://acumoxzen-tech.github.io/kanjitsudo-menu/menu.html#flow-section';
         }
       });
-
-      const mobileFlowSection = document.getElementById('flow-page');
-
-      if (mobileFlowSection) {
-        mobileFlowSection.remove();
-      }
     }
   </script>
 </body>
