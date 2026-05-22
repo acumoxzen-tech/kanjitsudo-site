@@ -21,7 +21,7 @@
     }
 
     body {
-      padding-top: 74px;
+      padding-top: 0;
     }
 
     .hero {
@@ -114,7 +114,7 @@
       display: flex;
       align-items: center;
       justify-content: flex-end;
-      gap: clamp(26px, 3vw, 50px);
+      gap: clamp(18px, 2vw, 32px);
       margin-top: 10px;
       margin-left: 40px;
       font-size: 15px;
@@ -131,6 +131,45 @@
       line-height: 1;
       font-weight: 300;
       transition: opacity .3s ease;
+    }
+
+    .desktop-reserve-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 42px;
+      padding: 0 28px;
+      margin-top: -10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.08);
+      backdrop-filter: blur(14px) saturate(140%);
+      -webkit-backdrop-filter: blur(14px) saturate(140%);
+      color: rgba(255,255,255,.96) !important;
+      font-size: 13px;
+      letter-spacing: .18em;
+      font-weight: 500;
+      border: 1px solid rgba(255,255,255,.22);
+      box-shadow:
+        0 10px 35px rgba(0,0,0,.28),
+        inset 0 1px 0 rgba(255,255,255,.12);
+      transition:
+        transform .35s ease,
+        background .35s ease,
+        border-color .35s ease,
+        box-shadow .35s ease;
+    }
+
+    .desktop-reserve-link:hover {
+      background: rgba(255,255,255,.14);
+      border-color: rgba(255,255,255,.38);
+      transform: translateY(-2px);
+      box-shadow:
+        0 18px 50px rgba(0,0,0,.34),
+        inset 0 1px 0 rgba(255,255,255,.18);
+    }
+
+    .desktop-reserve-link.active::after {
+      display: none;
     }
 
     .nav-dropdown {
@@ -457,12 +496,11 @@
             <a href="#flow-page">ご利用の流れ</a>
             <a href="#faq-page">よくあるご質問</a>
             <a href="#news-page">お知らせ</a>
-            <a href="#access-page">アクセス</a>
             <a href="#contact-page">お問い合わせ</a>
+            <a href="#access-page">アクセス</a>
           </div>
         </div>
-        
-            <a href="https://acumoxzen-tech.github.io/kanjitsudo-reserve/reserve.html" class="nav-reserve-menu">ご予約はこちら</a>
+        <a href="https://acumoxzen-tech.github.io/kanjitsudo-reserve/reserve.html" class="desktop-reserve-link">ご予約</a>
         <a href="https://www.instagram.com/k__.z.__m/" aria-label="Instagram"><span class="instagram"></span></a>
       </nav>
     </header>
@@ -1257,8 +1295,10 @@
 
     .menu-number {
       font-size: 14px;
-      opacity: .45;
+      opacity: 1;
       letter-spacing: .24em;
+      color: rgba(214,177,112,.88);
+      text-shadow: 0 2px 14px rgba(0,0,0,.28);
     }
 
     .menu-card h3 {
@@ -1274,7 +1314,8 @@
       font-family: "Cormorant Garamond", serif;
       font-size: 26px;
       letter-spacing: .12em;
-      color: rgba(255,255,255,.88);
+      color: rgba(214,177,112,.92);
+      text-shadow: 0 2px 14px rgba(0,0,0,.28);
     }
 
     .menu-card p {
@@ -1946,7 +1987,7 @@
     .news-item {
       width: 100%;
       display: flex;
-      gap: 42px;
+      gap: 34px;
       padding: 28px 0;
       border: none;
       border-bottom: 1px solid rgba(255,255,255,.08);
@@ -2481,6 +2522,7 @@
         align-items: flex-start;
       }
     }
+  
 
   @media (max-width: 768px) {
     header {
@@ -2527,28 +2569,6 @@
       display: none !important;
     }
 
-    .desktop-reserve-link,
-    .mobile-reserve-btn {
-      display: none !important;
-    }
-
-    nav::after {
-      content: "☰";
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 36px;
-      height: 36px;
-      font-size: 30px;
-      line-height: 1;
-      color: rgba(255,255,255,.92);
-      cursor: pointer;
-      position: relative;
-      top: -12.5px;
-      transition: opacity .3s ease;
-      pointer-events: none;
-    }
-
     nav.is-open {
       position: fixed !important;
       top: 0 !important;
@@ -2564,20 +2584,6 @@
       padding: 110px 32px 40px !important;
       gap: 26px !important;
       z-index: 9999 !important;
-    }
-
-    nav.is-open::after {
-      content: "×";
-      font-size: 36px;
-      position: fixed;
-      top: 18px;
-      right: 18px;
-      width: 40px;
-      height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 10000;
     }
 
     nav.is-open > a,
@@ -2604,21 +2610,59 @@
       font-size: 12px !important;
     }
 
-    nav.is-open .nav-reserve-menu {
+    nav.is-open .nav-dropdown-menu .nav-reserve-menu {
       display: inline-flex !important;
       align-items: center !important;
       justify-content: center !important;
-      padding: 10px 18px !important;
-      margin-top: -4px !important;
-      border: 1px solid rgba(214,177,112,.45) !important;
-      background: rgba(214,177,112,.10) !important;
-      color: rgba(255,255,255,.96) !important;
-      border-radius: 4px !important;
-      font-size: 13px !important;
-      letter-spacing: .12em !important;
-      width: auto !important;
-      height: auto !important;
-      box-shadow: none !important;
+      width: 100% !important;
+      height: 44px !important;
+      margin-top: 14px !important;
+      padding: 0 18px !important;
+      border: 1px solid rgba(255,255,255,.28) !important;
+      color: rgba(255,255,255,.94) !important;
+      background: rgba(255,255,255,.055) !important;
+      font-size: 12px !important;
+      letter-spacing: .18em !important;
+      text-align: center !important;
+    }
+
+    nav::after {
+      content: "☰";
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      font-size: 30px;
+      line-height: 1;
+      color: rgba(255,255,255,.92);
+      cursor: pointer;
+      position: relative;
+      top: -10px;
+      transition: opacity .3s ease;
+      pointer-events: none;
+    }
+
+    nav.is-open::after {
+      content: "×";
+      font-size: 36px;
+      position: fixed;
+      top: 18px;
+      right: 18px;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10000;
+    }
+
+    .mobile-reserve-btn {
+      display: none !important;
+    }
+
+    .desktop-reserve-link {
+      display: none !important;
     }
 
     .instagram {
@@ -2773,7 +2817,8 @@
     .form-section {
       min-height: auto !important;
       padding: 96px 0 !important;
-      background: linear-gradient(180deg, rgba(7,5,4,.96), rgba(12,9,7,.98)) !important;
+      background:
+        linear-gradient(180deg, rgba(7,5,4,.96), rgba(12,9,7,.98)) !important;
     }
 
     .form-shell {
@@ -2800,6 +2845,55 @@
       font-size: 11px !important;
       letter-spacing: .14em !important;
       color: rgba(255,255,255,.78) !important;
+    }
+
+    .purpose-tabs {
+      grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+      gap: 10px !important;
+    }
+
+    .purpose-tabs span {
+      height: 48px !important;
+      font-size: 12px !important;
+      letter-spacing: .12em !important;
+    }
+
+    .booking-panel {
+      padding: 16px 10px !important;
+      overflow: hidden !important;
+    }
+
+    .date-strip {
+      grid-template-columns: repeat(7, minmax(0, 1fr)) !important;
+      gap: 3px !important;
+    }
+
+    .date-card {
+        min-width: 0 !important;
+        min-height: 50px !important;
+      }
+
+      .date-weekday {
+        min-height: 20px !important;
+        font-size: 9px !important;
+      }
+
+    .date-card .day {
+      font-size: 9px !important;
+    }
+
+    .date-card .date-num {
+      font-size: 16px !important;
+    }
+
+    .slot-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+      gap: 8px !important;
+    }
+
+    .slot-btn {
+      height: 42px !important;
+      font-size: 13px !important;
     }
 
     .contact-form input,
@@ -3977,22 +4071,6 @@
         }
       });
     });
-
-    if (window.innerWidth <= 768) {
-      const mobileNavLinks = document.querySelectorAll('nav a');
-
-      mobileNavLinks.forEach(link => {
-        const text = link.textContent.trim();
-
-        if (text.includes('施術メニュー')) {
-          link.href = 'https://acumoxzen-tech.github.io/kanjitsudo-menu/menu.html';
-        }
-
-        if (text.includes('ご利用の流れ')) {
-          link.href = 'https://acumoxzen-tech.github.io/kanjitsudo-menu/menu.html#flow-section';
-        }
-      });
-    }
   </script>
 </body>
 </html>
