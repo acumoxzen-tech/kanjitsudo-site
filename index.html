@@ -4453,3 +4453,40 @@
     display: block;
   }
 }
+
+/* スマホ：ハンバーガー内「ご案内」配下だけ間隔を少し詰める */
+@media (max-width: 768px) {
+  .hamburger-menu .sub-menu a,
+  .drawer-menu .sub-menu a,
+  .sp-menu .sub-menu a {
+    padding: 6px 0 !important;
+    line-height: 1.2 !important;
+  }
+}
+
+
+@media (max-width: 768px) {
+
+  /* サブメニュー全体 */
+  .sub-menu {
+    margin-top: 6px !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  /* 各項目 */
+  .sub-menu li {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* リンク */
+  .sub-menu li a {
+    display: block !important;
+    padding: 6px 0 !important;
+    line-height: 1 !important;
+    font-size: 0.95rem !important;
+  }
+
+}
+
