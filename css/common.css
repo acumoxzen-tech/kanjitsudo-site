@@ -359,3 +359,70 @@
   gap: 10px;
   align-items: flex-start;
 }
+
+/* ===== FINAL NAV FIX: Instagram / hamburger / close button ===== */
+@media (max-width: 768px) {
+  /* Closed header: show Instagram + hamburger side by side */
+  header nav > a[aria-label="Instagram"],
+  .site-nav > a[aria-label="Instagram"],
+  nav.mobile-nav > a[aria-label="Instagram"] {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 30px !important;
+    height: 36px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    order: 1 !important;
+  }
+
+  header nav::after,
+  .site-nav::after,
+  nav.mobile-nav::after {
+    order: 2 !important;
+    content: "" !important;
+    display: inline-flex !important;
+    width: 36px !important;
+    height: 36px !important;
+    flex: 0 0 36px !important;
+    background:
+      linear-gradient(rgba(255,255,255,.92), rgba(255,255,255,.92)) 6px 10px / 24px 1.5px no-repeat,
+      linear-gradient(rgba(255,255,255,.92), rgba(255,255,255,.92)) 6px 17px / 24px 1.5px no-repeat,
+      linear-gradient(rgba(255,255,255,.92), rgba(255,255,255,.92)) 6px 24px / 24px 1.5px no-repeat !important;
+    transform: none !important;
+    pointer-events: none !important;
+  }
+
+  /* Open drawer: hide Instagram from the menu list */
+  header nav.is-open > a[aria-label="Instagram"],
+  .site-nav.is-open > a[aria-label="Instagram"],
+  nav.mobile-nav.is-open > a[aria-label="Instagram"] {
+    display: none !important;
+  }
+
+  /* Open drawer: draw one clean close X only */
+  header nav.is-open::after,
+  .site-nav.is-open::after,
+  nav.mobile-nav.is-open::after {
+    content: "" !important;
+    position: fixed !important;
+    top: 18px !important;
+    right: 18px !important;
+    width: 40px !important;
+    height: 40px !important;
+    z-index: 10000 !important;
+    display: block !important;
+    background:
+      linear-gradient(45deg, transparent calc(50% - .8px), rgba(255,255,255,.92) calc(50% - .8px), rgba(255,255,255,.92) calc(50% + .8px), transparent calc(50% + .8px)),
+      linear-gradient(-45deg, transparent calc(50% - .8px), rgba(255,255,255,.92) calc(50% - .8px), rgba(255,255,255,.92) calc(50% + .8px), transparent calc(50% + .8px)) !important;
+    transform: none !important;
+    pointer-events: none !important;
+  }
+
+  /* Prevent old text-based × or ☰ rules from showing */
+  .menu-toggle,
+  .header-actions {
+    display: none !important;
+  }
+}
+
