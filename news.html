@@ -875,6 +875,46 @@
 }
 </style>
 
+
+<style id="news-header-match-index-fix">
+@media (min-width:769px){
+  body header nav > a[aria-label="Instagram"],
+  body header .nav-instagram{
+    margin-top:-5px !important;
+  }
+
+  body header .desktop-reserve-link,
+  body header .nav-reserve-menu{
+    height:42px !important;
+    min-height:42px !important;
+    padding:0 28px !important;
+    margin-top:-10px !important;
+    line-height:1 !important;
+    display:inline-flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+  }
+}
+
+@media (max-width:768px){
+  body header .brand-ja{
+    display:block !important;
+    font-size:16px !important;
+    letter-spacing:.1em !important;
+  }
+
+  body header .brand-en{
+    display:block !important;
+    font-size:7px !important;
+    letter-spacing:.22em !important;
+  }
+
+  body header nav:not(.is-open) > a[aria-label="Instagram"]{
+    display:inline-flex !important;
+  }
+}
+</style>
+
 </head>
 <body>
   <header class="unified-header">
