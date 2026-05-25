@@ -1401,20 +1401,53 @@
 }
 
 
-/* ===== DRAWER FULL OVERLAY + CLOSE X FIX ===== */
+/* ===== MOBILE DRAWER SLIDE RESTORE FINAL ===== */
 @media (max-width:768px){
 
-  /* 開いたら画面全体を黒で覆う。左のロゴも見えない */
+  /* 通常時：右上にインスタ＋ハンバーガー */
+  .site-header .site-nav:not(.is-open){
+    position:static!important;
+    width:auto!important;
+    height:36px!important;
+    min-height:36px!important;
+    max-height:36px!important;
+    margin:0 0 0 auto!important;
+    padding:0!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:flex-end!important;
+    flex-direction:row!important;
+    gap:14px!important;
+    background:transparent!important;
+    overflow:visible!important;
+  }
+
+  .site-header .site-nav:not(.is-open)::after{
+    content:""!important;
+    display:inline-flex!important;
+    width:36px!important;
+    height:36px!important;
+    flex:0 0 36px!important;
+    order:2!important;
+    background:
+      linear-gradient(rgba(255,255,255,.92),rgba(255,255,255,.92)) 6px 10px/24px 1.5px no-repeat,
+      linear-gradient(rgba(255,255,255,.92),rgba(255,255,255,.92)) 6px 17px/24px 1.5px no-repeat,
+      linear-gradient(rgba(255,255,255,.92),rgba(255,255,255,.92)) 6px 24px/24px 1.5px no-repeat!important;
+    transform:none!important;
+    pointer-events:none!important;
+  }
+
+  /* 開いた時：前のスライド式に戻す */
   .site-header .site-nav.is-open{
     position:fixed!important;
     top:0!important;
-    left:0!important;
-    right:auto!important;
-    width:100vw!important;
+    right:0!important;
+    left:auto!important;
+    width:78vw!important;
     height:100dvh!important;
     max-height:100dvh!important;
     margin:0!important;
-    padding:108px 32px 72px 30vw!important;
+    padding:108px 32px 72px!important;
     background:rgba(3,3,3,.985)!important;
     backdrop-filter:blur(22px)!important;
     -webkit-backdrop-filter:blur(22px)!important;
@@ -1426,43 +1459,38 @@
     overflow-y:auto!important;
     overflow-x:hidden!important;
     z-index:10020!important;
+    transform:none!important;
   }
 
-  /* ロゴは確実に隠す */
-  .site-header.drawer-open .brand,
-  .site-header .site-nav.is-open ~ .brand{
+  /* ロゴは開いたら隠す */
+  .site-header.drawer-open .brand{
     opacity:0!important;
     visibility:hidden!important;
     pointer-events:none!important;
   }
 
-  /* 右上の閉じる×を確実に表示 */
+  /* ×は小さめ・右上・クリック判定は元のハンバーガー領域に任せる */
   .site-header .site-nav.is-open::before,
   .site-header .site-nav.is-open::after{
     content:""!important;
     position:fixed!important;
-    top:30px!important;
-    right:28px!important;
+    top:32px!important;
+    right:30px!important;
     left:auto!important;
-    width:40px!important;
-    height:40px!important;
+    width:34px!important;
+    height:34px!important;
     display:block!important;
     opacity:1!important;
     visibility:visible!important;
     background:
-      linear-gradient(rgba(255,255,255,.96),rgba(255,255,255,.96)) center/34px 1.7px no-repeat!important;
+      linear-gradient(rgba(255,255,255,.94),rgba(255,255,255,.94)) center/30px 1.5px no-repeat!important;
     border:0!important;
     z-index:10050!important;
     pointer-events:none!important;
   }
 
-  .site-header .site-nav.is-open::before{
-    transform:rotate(45deg)!important;
-  }
-
-  .site-header .site-nav.is-open::after{
-    transform:rotate(-45deg)!important;
-  }
+  .site-header .site-nav.is-open::before{ transform:rotate(45deg)!important; }
+  .site-header .site-nav.is-open::after{ transform:rotate(-45deg)!important; }
 
   .site-header .site-nav.is-open > a[aria-label="Instagram"]{
     display:none!important;
@@ -1480,6 +1508,41 @@
   .site-header .site-nav.is-open > a.nav-reserve-menu,
   .site-header .site-nav.is-open > a.desktop-reserve-link{
     margin-top:24px!important;
+  }
+}
+
+
+/* ===== HAMBURGER TO X SIZE MATCH ===== */
+@media (max-width:768px){
+
+  /* ハンバーガー */
+  .site-header .site-nav:not(.is-open)::after{
+    width:36px!important;
+    height:36px!important;
+    background:
+      linear-gradient(rgba(255,255,255,.92),rgba(255,255,255,.92)) 6px 10px/24px 1.5px no-repeat,
+      linear-gradient(rgba(255,255,255,.92),rgba(255,255,255,.92)) 6px 17px/24px 1.5px no-repeat,
+      linear-gradient(rgba(255,255,255,.92),rgba(255,255,255,.92)) 6px 24px/24px 1.5px no-repeat!important;
+  }
+
+  /* × */
+  .site-header .site-nav.is-open::before,
+  .site-header .site-nav.is-open::after{
+    top:32px!important;
+    right:30px!important;
+    width:36px!important;
+    height:36px!important;
+    background:
+      linear-gradient(rgba(255,255,255,.94),rgba(255,255,255,.94)) center/24px 1.5px no-repeat!important;
+    transition:transform .28s ease, opacity .2s ease!important;
+  }
+
+  .site-header .site-nav.is-open::before{
+    transform:rotate(45deg)!important;
+  }
+
+  .site-header .site-nav.is-open::after{
+    transform:rotate(-45deg)!important;
   }
 }
 
