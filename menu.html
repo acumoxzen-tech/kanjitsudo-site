@@ -2309,6 +2309,59 @@
 
 
   <link rel="stylesheet" href="css/header.css">
+
+<style id="menu-hero-restructure-fix">
+/* ===== MENU HERO RESTRUCTURE ===== */
+
+.hero-copy{
+  margin-top:18px!important;
+  font-family:"Noto Serif JP",serif!important;
+  font-size:clamp(20px,2.1vw,30px)!important;
+  letter-spacing:.12em!important;
+  line-height:1.8!important;
+  color:rgba(255,255,255,.92)!important;
+}
+
+.hero-description{
+  max-width:760px!important;
+  margin:20px auto 0!important;
+  font-size:15px!important;
+  line-height:2.15!important;
+  letter-spacing:.08em!important;
+  color:rgba(255,255,255,.74)!important;
+}
+
+@media (max-width:768px){
+  .hero-copy{
+    margin-top:14px!important;
+    font-size:20px!important;
+    line-height:1.7!important;
+  }
+
+  .hero-description{
+    margin-top:16px!important;
+    padding:0 8vw!important;
+    font-size:13px!important;
+    line-height:2!important;
+  }
+}
+
+/* menu cards breathing */
+.menu-grid,
+.menu-cards,
+.treatment-grid{
+  margin-top:56px!important;
+}
+
+@media (max-width:768px){
+  .menu-grid,
+  .menu-cards,
+  .treatment-grid{
+    margin-top:40px!important;
+  }
+}
+</style>
+
 </head>
 <body>
   <header class="site-header" id="siteHeader">
@@ -2351,8 +2404,10 @@
         <div class="breadcrumb fade-up"><a href="/kanjitsudo-site/">HOME</a><span>›</span><span>MENU</span></div>
         <span class="section-en fade-up delay-1">TREATMENT MENU</span>
         <h1 class="fade-up delay-1">施術メニュー</h1>
-        <p class="hero-lead fade-up delay-2">
-          環日堂では、お一人おひとりのお身体の状態に合わせたオーダーメイドの治療をご案内しております。
+              <p class="hero-copy">健美を整える、二つの治療</p>
+              <p class="hero-description">環日堂では”健やかさ”と“美しさ”の両面から、お一人おひとりの状態に合わせた施術をご提供しております。</p>
+
+              <div style="display:none">環日堂では、お一人おひとりのお身体の状態に合わせたオーダーメイドの治療をご案内しております。
         </p>
       </div>
     </section>
