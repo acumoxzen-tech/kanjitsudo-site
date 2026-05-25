@@ -1249,3 +1249,26 @@
   }
 }
 
+
+
+
+/* ===== MOBILE MENU SPACING RETUNE ===== */
+@media (max-width: 768px) {
+
+  /* ご案内の中を少し詰める */
+  .site-header .site-nav.is-open .nav-dropdown-menu {
+    padding: 12px 0 0 22px !important;
+  }
+
+  .site-header .site-nav.is-open .nav-dropdown-menu a {
+    padding: 8px 0 !important;
+    line-height: 1.4 !important;
+  }
+
+  /* 予約ボタンだけ下へ */
+  .site-header .site-nav.is-open > a.nav-reserve-menu,
+  .site-header .site-nav.is-open > a.desktop-reserve-link {
+    margin-top: 34px !important;
+  }
+}
+
