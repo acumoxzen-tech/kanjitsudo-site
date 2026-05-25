@@ -1643,30 +1643,3 @@
   }
 }
 
-
-
-
-/* ===== ISOLATED HERO NEWS SPACING FIX ===== */
-@media (max-width:768px){
-
-  /* Hero自体を少しだけ下方向へ余裕 */
-  .hero,
-  .fv,
-  .hero-section{
-    padding-bottom:48px!important;
-  }
-
-  /* 予約ボタン */
-  .hero .reserve,
-  .hero a.reserve{
-    margin-bottom:24px!important;
-  }
-
-  /* 最新お知らせ */
-  .hero-news,
-  .hero-news-wrap,
-  .fv-news{
-    margin-top:12px!important;
-  }
-}
-
