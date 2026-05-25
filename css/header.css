@@ -627,3 +627,70 @@
   }
 }
 
+
+/* ===== PC RESERVE BUTTON FINAL LOCK ===== */
+@media (min-width: 769px) {
+  .site-header .site-nav > a.desktop-reserve-link.nav-reserve-menu,
+  .site-header .site-nav > a.desktop-reserve-link,
+  .site-header .site-nav > a.nav-reserve-menu {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    width: auto !important;
+    min-width: 126px !important;
+    height: 42px !important;
+    min-height: 42px !important;
+
+    padding: 0 28px !important;
+    margin-top: -10px !important;
+    margin-bottom: 0 !important;
+
+    border: 1px solid rgba(255,255,255,.24) !important;
+    border-radius: 999px !important;
+    background: rgba(255,255,255,.08) !important;
+    backdrop-filter: blur(14px) saturate(140%) !important;
+    -webkit-backdrop-filter: blur(14px) saturate(140%) !important;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.08) !important;
+
+    color: rgba(255,255,255,.96) !important;
+    font-family: "Noto Serif JP", serif !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    letter-spacing: .18em !important;
+    line-height: 1 !important;
+    text-decoration: none !important;
+
+    transform: translateY(1px) !important;
+  }
+
+  .site-header .site-nav > a.desktop-reserve-link.nav-reserve-menu::before,
+  .site-header .site-nav > a.desktop-reserve-link.nav-reserve-menu::after,
+  .site-header .site-nav > a.desktop-reserve-link::before,
+  .site-header .site-nav > a.desktop-reserve-link::after,
+  .site-header .site-nav > a.nav-reserve-menu::before,
+  .site-header .site-nav > a.nav-reserve-menu::after {
+    content: none !important;
+    display: none !important;
+  }
+}
+
+
+/* ===== HEADER ACTIVE STATE FINAL ===== */
+@media (min-width: 769px) {
+  .site-header .nav-dropdown-trigger.active {
+    position: relative !important;
+  }
+
+  .site-header .nav-dropdown-trigger.active::after {
+    content: "" !important;
+    position: absolute !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    bottom: 0 !important;
+    width: 100% !important;
+    height: 1px !important;
+    background: rgba(214,177,112,.72) !important;
+  }
+}
+
