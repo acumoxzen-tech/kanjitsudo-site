@@ -1184,3 +1184,31 @@
   }
 }
 
+
+/* ===== PC reserve label / news header common final fix ===== */
+@media (min-width: 769px) {
+  header .desktop-reserve-link,
+  header .nav-reserve-menu {
+    line-height: 1 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+}
+
+@media (max-width: 768px) {
+  /* スマホのドロワー内だけ「ご予約はこちら」に見せる */
+  header nav.is-open > a.nav-reserve-menu,
+  header nav.is-open > a.desktop-reserve-link {
+    font-size: 0 !important;
+  }
+
+  header nav.is-open > a.nav-reserve-menu::before,
+  header nav.is-open > a.desktop-reserve-link::before {
+    content: "ご予約はこちら" !important;
+    font-size: 13px !important;
+    letter-spacing: .16em !important;
+    line-height: 1 !important;
+  }
+}
+
