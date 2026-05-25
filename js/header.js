@@ -124,3 +124,26 @@
   setActiveByLocation();
   setTimeout(setActiveByScroll, 120);
 })();
+
+
+// Drawer open state mirror for reliable logo layering
+(() => {
+  const header = document.querySelector('.site-header');
+  const nav = document.querySelector('.site-header .site-nav');
+  if (!header || !nav) return;
+
+  const syncDrawerState = () => {
+    header.classList.toggle('drawer-open', nav.classList.contains('is-open'));
+  };
+
+  const observer = new MutationObserver(syncDrawerState);
+  observer.observe(nav, { attributes: true, attributeFilter: ['class'] });
+
+  document.addEventListener('click', () => {
+    requestAnimationFrame(syncDrawerState);
+  }, true);
+
+  document.addEventListener('DOMContentLoaded', syncDrawerState);
+  syncDrawerState();
+})();
+
