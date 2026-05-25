@@ -1643,3 +1643,40 @@
   }
 }
 
+
+
+
+/* ===== HERO CTA / NEWS REAL SPACING FIX ===== */
+@media (max-width: 768px) {
+
+  /* Hero bottom layout breathing */
+  .hero-content,
+  .fv-content,
+  .hero-inner {
+    padding-bottom: 72px !important;
+  }
+
+  /* Reservation button wrapper */
+  .hero-cta,
+  .hero-reserve,
+  .fv-reserve,
+  .reserve-button-wrap,
+  .hero a.reserve,
+  .hero .reserve-button {
+    display: block !important;
+    position: relative !important;
+    margin-bottom: 34px !important;
+  }
+
+  /* Latest news block */
+  .hero-news,
+  .fv-news,
+  .hero-news-wrap,
+  .news-link-area,
+  .hero .news {
+    display: block !important;
+    position: relative !important;
+    margin-top: 20px !important;
+  }
+}
+

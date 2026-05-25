@@ -1252,23 +1252,37 @@
 
 
 
-/* ===== MOBILE MENU SPACING RETUNE ===== */
+/* ===== HERO CTA / NEWS REAL SPACING FIX ===== */
 @media (max-width: 768px) {
 
-  /* ご案内の中を少し詰める */
-  .site-header .site-nav.is-open .nav-dropdown-menu {
-    padding: 12px 0 0 22px !important;
+  /* Hero bottom layout breathing */
+  .hero-content,
+  .fv-content,
+  .hero-inner {
+    padding-bottom: 72px !important;
   }
 
-  .site-header .site-nav.is-open .nav-dropdown-menu a {
-    padding: 8px 0 !important;
-    line-height: 1.4 !important;
+  /* Reservation button wrapper */
+  .hero-cta,
+  .hero-reserve,
+  .fv-reserve,
+  .reserve-button-wrap,
+  .hero a.reserve,
+  .hero .reserve-button {
+    display: block !important;
+    position: relative !important;
+    margin-bottom: 34px !important;
   }
 
-  /* 予約ボタンだけ下へ */
-  .site-header .site-nav.is-open > a.nav-reserve-menu,
-  .site-header .site-nav.is-open > a.desktop-reserve-link {
-    margin-top: 34px !important;
+  /* Latest news block */
+  .hero-news,
+  .fv-news,
+  .hero-news-wrap,
+  .news-link-area,
+  .hero .news {
+    display: block !important;
+    position: relative !important;
+    margin-top: 20px !important;
   }
 }
 
