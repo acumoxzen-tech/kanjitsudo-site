@@ -797,3 +797,30 @@
   }
 }
 
+
+
+/* ===== SINGLE CLOSE X FIX ===== */
+@media (max-width:768px){
+
+  /* never generate pseudo close icons */
+  header nav.is-open::before,
+  header nav.is-open::after,
+  .site-nav.is-open::before,
+  .site-nav.is-open::after,
+  nav.mobile-nav.is-open::before,
+  nav.mobile-nav.is-open::after{
+    content:none !important;
+    display:none !important;
+    background:none !important;
+  }
+
+  /* keep only the original built-in close icon */
+  .menu-toggle,
+  .hamburger,
+  .drawer-toggle{
+    display:flex !important;
+    opacity:1 !important;
+    visibility:visible !important;
+    z-index:10020 !important;
+  }
+}
