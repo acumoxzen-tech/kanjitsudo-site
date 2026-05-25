@@ -824,3 +824,29 @@
     z-index:10020 !important;
   }
 }
+
+/* ===== Mobile drawer submenu spacing polish ===== */
+@media (max-width: 768px) {
+  header nav.is-open .nav-dropdown {
+    margin-top: 2px !important;
+  }
+
+  header nav.is-open .nav-dropdown-trigger {
+    margin-bottom: 10px !important;
+  }
+
+  header nav.is-open .nav-dropdown-menu {
+    padding: 8px 0 0 20px !important;
+  }
+
+  header nav.is-open .nav-dropdown-menu a {
+    padding: 10px 0 !important;
+    line-height: 1.45 !important;
+    letter-spacing: .12em !important;
+  }
+
+  header nav.is-open .nav-dropdown-menu a + a {
+    margin-top: 4px !important;
+  }
+}
+

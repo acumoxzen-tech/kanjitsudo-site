@@ -1127,6 +1127,54 @@ border-top:1px solid rgba(255,255,255,.06);
 </style>
 
   <link rel="stylesheet" href="css/common.css">
+
+<style id="faq-category-scroll-hint-style">
+@media (max-width: 768px) {
+  .category-scroll {
+    position: relative;
+    padding-bottom: 22px !important;
+    margin-bottom: 6px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .category-scroll::before {
+    content: "";
+    position: fixed;
+    right: 0;
+    left: auto;
+    width: 54px;
+    height: 64px;
+    margin-top: -8px;
+    pointer-events: none;
+    background: linear-gradient(90deg, rgba(5,4,3,0), rgba(5,4,3,.92));
+    z-index: 6;
+  }
+
+  .category-scroll::after {
+    content: "";
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    bottom: 8px;
+    height: 1px;
+    border-radius: 999px;
+    background:
+      linear-gradient(90deg,
+        rgba(214,177,112,.52) 0%,
+        rgba(214,177,112,.52) 38%,
+        rgba(255,255,255,.14) 38%,
+        rgba(255,255,255,.14) 100%);
+    opacity: .78;
+    pointer-events: none;
+  }
+
+  .category-btn {
+    position: relative;
+    z-index: 2;
+  }
+}
+</style>
+
 </head>
 <body>
 
