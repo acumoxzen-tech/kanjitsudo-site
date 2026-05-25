@@ -784,3 +784,69 @@
   }
 }
 
+
+/* ===== INSTAGRAM SVG FINAL LOCK ===== */
+/* 疑似要素描画をやめて、PC/SP共通でSVG背景に固定 */
+.site-header .nav-instagram .instagram,
+.site-header a[aria-label="Instagram"] .instagram {
+  display: block !important;
+  width: 28px !important;
+  height: 28px !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2028%2028%22%3E%0A%20%20%3Crect%20x%3D%223.5%22%20y%3D%223.5%22%20width%3D%2221%22%20height%3D%2221%22%20rx%3D%226%22%20ry%3D%226%22%20fill%3D%22none%22%20stroke%3D%22rgba%28255%2C255%2C255%2C.96%29%22%20stroke-width%3D%221.8%22/%3E%0A%20%20%3Ccircle%20cx%3D%2214%22%20cy%3D%2214%22%20r%3D%225%22%20fill%3D%22none%22%20stroke%3D%22rgba%28255%2C255%2C255%2C.96%29%22%20stroke-width%3D%221.8%22/%3E%0A%20%20%3Ccircle%20cx%3D%2220.3%22%20cy%3D%227.7%22%20r%3D%221.45%22%20fill%3D%22rgba%28255%2C255%2C255%2C.96%29%22/%3E%0A%3C/svg%3E") center center / 28px 28px no-repeat !important;
+  position: relative !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.site-header .nav-instagram .instagram::before,
+.site-header .nav-instagram .instagram::after,
+.site-header a[aria-label="Instagram"] .instagram::before,
+.site-header a[aria-label="Instagram"] .instagram::after {
+  content: none !important;
+  display: none !important;
+  border: 0 !important;
+  background: none !important;
+}
+
+@media (min-width: 769px) {
+  .site-header .nav-instagram,
+  .site-header a[aria-label="Instagram"] {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 32px !important;
+    height: 32px !important;
+    padding: 0 !important;
+    margin-top: -6px !important;
+  }
+
+  .site-header .nav-instagram .instagram,
+  .site-header a[aria-label="Instagram"] .instagram {
+    width: 28px !important;
+    height: 28px !important;
+    background-size: 28px 28px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .site-header .nav-instagram,
+  .site-header a[aria-label="Instagram"] {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 34px !important;
+    height: 36px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .site-header .nav-instagram .instagram,
+  .site-header a[aria-label="Instagram"] .instagram {
+    width: 28px !important;
+    height: 28px !important;
+    background-size: 28px 28px !important;
+  }
+}
+
