@@ -1400,3 +1400,86 @@
   }
 }
 
+
+/* ===== DRAWER FULL OVERLAY + CLOSE X FIX ===== */
+@media (max-width:768px){
+
+  /* 開いたら画面全体を黒で覆う。左のロゴも見えない */
+  .site-header .site-nav.is-open{
+    position:fixed!important;
+    top:0!important;
+    left:0!important;
+    right:auto!important;
+    width:100vw!important;
+    height:100dvh!important;
+    max-height:100dvh!important;
+    margin:0!important;
+    padding:108px 32px 72px 30vw!important;
+    background:rgba(3,3,3,.985)!important;
+    backdrop-filter:blur(22px)!important;
+    -webkit-backdrop-filter:blur(22px)!important;
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:flex-start!important;
+    justify-content:flex-start!important;
+    gap:24px!important;
+    overflow-y:auto!important;
+    overflow-x:hidden!important;
+    z-index:10020!important;
+  }
+
+  /* ロゴは確実に隠す */
+  .site-header.drawer-open .brand,
+  .site-header .site-nav.is-open ~ .brand{
+    opacity:0!important;
+    visibility:hidden!important;
+    pointer-events:none!important;
+  }
+
+  /* 右上の閉じる×を確実に表示 */
+  .site-header .site-nav.is-open::before,
+  .site-header .site-nav.is-open::after{
+    content:""!important;
+    position:fixed!important;
+    top:30px!important;
+    right:28px!important;
+    left:auto!important;
+    width:40px!important;
+    height:40px!important;
+    display:block!important;
+    opacity:1!important;
+    visibility:visible!important;
+    background:
+      linear-gradient(rgba(255,255,255,.96),rgba(255,255,255,.96)) center/34px 1.7px no-repeat!important;
+    border:0!important;
+    z-index:10050!important;
+    pointer-events:none!important;
+  }
+
+  .site-header .site-nav.is-open::before{
+    transform:rotate(45deg)!important;
+  }
+
+  .site-header .site-nav.is-open::after{
+    transform:rotate(-45deg)!important;
+  }
+
+  .site-header .site-nav.is-open > a[aria-label="Instagram"]{
+    display:none!important;
+  }
+
+  .site-header .site-nav.is-open .nav-dropdown-menu{
+    padding:12px 0 0 22px!important;
+  }
+
+  .site-header .site-nav.is-open .nav-dropdown-menu a{
+    padding:8px 0!important;
+    line-height:1.4!important;
+  }
+
+  .site-header .site-nav.is-open > a.nav-reserve-menu,
+  .site-header .site-nav.is-open > a.desktop-reserve-link{
+    margin-top:24px!important;
+  }
+}
+
