@@ -1,4 +1,4 @@
-// 還日堂 Header Active State
+// 還日堂 Header Active / PC Scrollspy
 (() => {
   const nav = document.querySelector('.site-header .site-nav');
   if (!nav) return;
@@ -8,67 +8,119 @@
     nav.querySelectorAll('.nav-dropdown-trigger').forEach(el => el.classList.remove('active'));
   };
 
-  const setActive = () => {
+  const activate = (navName, guide = false) => {
     clearActive();
+    const link = nav.querySelector(`[data-nav="${navName}"]`);
+    if (link) link.classList.add('active');
+    if (guide) {
+      const trigger = nav.querySelector('.nav-dropdown-trigger');
+      if (trigger) trigger.classList.add('active');
+    }
+  };
 
+  const setActiveByLocation = () => {
     const path = location.pathname;
     const hash = location.hash || '#top';
 
-    const activate = (selector) => {
-      const el = nav.querySelector(selector);
-      if (el) el.classList.add('active');
-    };
-
-    const activateGuide = (selector) => {
-      const trigger = nav.querySelector('.nav-dropdown-trigger');
-      if (trigger) trigger.classList.add('active');
-      activate(selector);
-    };
-
     if (path.endsWith('/menu.html')) {
-      if (hash === '#flow-section') {
-        activateGuide('[data-nav="flow"]');
-      } else {
-        activate('[data-nav="menu"]');
-      }
+      activate(hash === '#flow-section' ? 'flow' : 'menu', hash === '#flow-section');
       return;
     }
-
     if (path.endsWith('/faq.html')) {
-      activateGuide('[data-nav="faq"]');
+      activate('faq', true);
       return;
     }
-
     if (path.endsWith('/news.html')) {
-      activateGuide('[data-nav="news"]');
+      activate('news', true);
       return;
     }
 
     switch (hash) {
       case '#about-page':
-        activate('[data-nav="about"]');
+        activate('about');
         break;
       case '#staff-page':
-        activate('[data-nav="staff"]');
+        activate('staff');
         break;
       case '#gallery-page':
-        activateGuide('[data-nav="gallery"]');
+        activate('gallery', true);
         break;
       case '#contact-page':
-        activateGuide('[data-nav="contact"]');
+        activate('contact', true);
         break;
       case '#access-page':
-        activateGuide('[data-nav="access"]');
+        activate('access', true);
         break;
       case '#top':
       default:
-        activate('[data-nav="home"]');
+        activate('home');
         break;
     }
   };
 
-  window.addEventListener('hashchange', setActive);
-  window.addEventListener('popstate', setActive);
-  document.addEventListener('DOMContentLoaded', setActive);
-  setActive();
+  const scrollSections = [
+    { id: 'top', nav: 'home', guide: false },
+    { id: 'about-page', nav: 'about', guide: false },
+    { id: 'menu-page', nav: 'menu', guide: false },
+    { id: 'staff-page', nav: 'staff', guide: false },
+    { id: 'gallery-page', nav: 'gallery', guide: true },
+    { id: 'contact-page', nav: 'contact', guide: true },
+    { id: 'access-page', nav: 'access', guide: true }
+  ];
+
+  let ticking = false;
+
+  const setActiveByScroll = () => {
+    if (window.innerWidth <= 768) return;
+    const path = location.pathname;
+    if (path.endsWith('/menu.html') || path.endsWith('/faq.html') || path.endsWith('/news.html')) {
+      return;
+    }
+
+    const headerOffset = 110;
+    const probeY = window.scrollY + headerOffset;
+    let current = scrollSections[0];
+
+    for (const item of scrollSections) {
+      const el = document.getElementById(item.id);
+      if (!el) continue;
+      if (el.offsetTop <= probeY) current = item;
+    }
+
+    activate(current.nav, current.guide);
+  };
+
+  const onScroll = () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      setActiveByScroll();
+      ticking = false;
+    });
+  };
+
+  window.addEventListener('hashchange', () => {
+    setTimeout(() => {
+      if (window.innerWidth > 768 && !location.pathname.endsWith('/menu.html') && !location.pathname.endsWith('/faq.html') && !location.pathname.endsWith('/news.html')) {
+        setActiveByScroll();
+      } else {
+        setActiveByLocation();
+      }
+    }, 80);
+  });
+
+  window.addEventListener('popstate', setActiveByLocation);
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) setActiveByScroll();
+    else setActiveByLocation();
+  });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    setActiveByLocation();
+    setTimeout(setActiveByScroll, 120);
+  });
+
+  setActiveByLocation();
+  setTimeout(setActiveByScroll, 120);
 })();

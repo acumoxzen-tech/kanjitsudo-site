@@ -1615,3 +1615,31 @@
   }
 }
 
+
+
+
+/* ===== MOBILE HERO NEWS SPACING FIX ===== */
+@media (max-width: 768px) {
+
+  /* Hero予約ボタン */
+  .hero-reserve,
+  .hero-cta,
+  .reserve-button,
+  .fv-reserve,
+  .hero .reserve,
+  .hero a.reserve {
+    margin-bottom: 26px !important;
+  }
+
+  /* 最新お知らせ */
+  .hero-news,
+  .hero-news-link,
+  .hero-news-wrap,
+  .fv-news,
+  .news-link-area,
+  .hero .news,
+  .hero-news-area {
+    margin-top: 18px !important;
+  }
+}
+
