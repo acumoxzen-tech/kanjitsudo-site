@@ -850,3 +850,31 @@
   }
 }
 
+
+
+/* ===== Mobile drawer breathing space tuning ===== */
+@media (max-width: 768px) {
+
+  /* ご案内配下の余白をさらに広げる */
+  header nav.is-open .nav-dropdown-menu {
+    padding: 14px 0 0 22px !important;
+  }
+
+  header nav.is-open .nav-dropdown-menu a {
+    padding: 13px 0 !important;
+    line-height: 1.55 !important;
+  }
+
+  header nav.is-open .nav-dropdown-menu a + a {
+    margin-top: 8px !important;
+  }
+
+  /* ご予約はこちらボタンだけさらに下へ */
+  header nav.is-open > a.nav-reserve-menu,
+  header nav.is-open > a.desktop-reserve-link {
+    margin-top: 26px !important;
+    min-width: 188px !important;
+    height: 48px !important;
+    letter-spacing: .16em !important;
+  }
+}
