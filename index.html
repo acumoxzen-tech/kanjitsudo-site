@@ -1196,6 +1196,64 @@
 }
 </style>
 
+
+<style id="hero-news-list-link-style">
+.hero-news-block {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.hero-news-main {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  color: inherit;
+  text-decoration: none;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(255,255,255,.16);
+  transition: opacity .35s ease, border-color .35s ease;
+}
+
+.hero-news-main:hover {
+  opacity: .9;
+  border-color: rgba(255,255,255,.48);
+}
+
+.hero-news-list-link {
+  display: inline-block;
+  margin-left: 0;
+  color: rgba(214,177,112,.82);
+  text-decoration: none;
+  font-family: "Noto Serif JP", serif;
+  font-size: 11px;
+  letter-spacing: .18em;
+  padding-top: 2px;
+  transition: opacity .3s ease;
+}
+
+.hero-news-list-link:hover {
+  opacity: .72;
+}
+
+@media (max-width:768px) {
+  .hero-news-block {
+    gap: 9px;
+  }
+
+  .hero-news-main {
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .hero-news-list-link {
+    font-size: 11px;
+  }
+}
+</style>
+
 </head>
 <body>
   <main class="hero" id="top">
@@ -1254,11 +1312,14 @@
 
     <a href="https://acumoxzen-tech.github.io/kanjitsudo-reserve/reserve.html" class="reserve"><span>ご予約はこちら</span><span>›</span></a>
 
-    <a href="/kanjitsudo-site/news.html" class="hero-news">
-      <span class="hero-news-date">2026.05.17</span>
-      <span class="hero-news-text">還日堂 公式サイトを公開いたしました</span>
-      <span class="hero-news-arrow">›</span>
-    </a>
+    <div class="hero-news hero-news-block">
+      <a href="/kanjitsudo-site/news.html#news-20260517-site-open" class="hero-news-main">
+        <span class="hero-news-date">2026.05.17</span>
+        <span class="hero-news-text">還日堂 公式サイトを公開いたしました</span>
+        <span class="hero-news-arrow">›</span>
+      </a>
+      <a href="/kanjitsudo-site/news.html" class="hero-news-list-link">お知らせ一覧へ</a>
+    </div>
 
     <div class="scroll">
       <span class="arrow">↓</span>

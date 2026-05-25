@@ -376,6 +376,36 @@
       }
     }
   </style>
+
+<style id="news-accordion-style">
+.news-entry {
+  cursor: pointer;
+}
+
+.news-entry .news-body p {
+  display: none;
+}
+
+.news-entry.is-open .news-body p {
+  display: block;
+  margin-top: 18px;
+}
+
+.news-entry.is-open {
+  opacity: 1;
+}
+
+.news-entry.is-open .news-arrow {
+  transform: translateY(6px) rotate(90deg);
+}
+
+@media (max-width:768px) {
+  .news-entry .news-body p {
+    margin-top: 14px;
+  }
+}
+</style>
+
 </head>
 <body>
   <header class="unified-header">
@@ -430,7 +460,7 @@
     <section class="news-main">
       <div class="news-inner">
         <div class="news-list-page">
-          <a href="#" class="news-entry">
+          <a href="#news-20260517-site-open" class="news-entry" id="news-20260517-site-open">
             <span class="news-date">2026.05.17</span>
             <div class="news-body">
               <h2>還日堂 公式サイトを公開いたしました。</h2>
@@ -441,7 +471,7 @@
             <span class="news-arrow">›</span>
           </a>
 
-          <a href="#" class="news-entry">
+          <a href="#news-20260517-reserve-start" class="news-entry" id="news-20260517-reserve-start">
             <span class="news-date">2026.05.17</span>
             <div class="news-body">
               <h2>ご予約・お問い合わせフォームの受付を開始いたしました。</h2>
@@ -474,6 +504,51 @@
       </div>
     </div>
   </footer>
+  
+<script id="news-accordion-script">
+(() => {
+  const entries = document.querySelectorAll('.news-entry');
+
+  const closeAll = () => {
+    entries.forEach(entry => entry.classList.remove('is-open'));
+  };
+
+  const openEntry = (entry, scroll = true) => {
+    if (!entry) return;
+    closeAll();
+    entry.classList.add('is-open');
+    if (scroll) {
+      setTimeout(() => {
+        entry.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 80);
+    }
+  };
+
+  entries.forEach(entry => {
+    entry.addEventListener('click', (e) => {
+      e.preventDefault();
+      const alreadyOpen = entry.classList.contains('is-open');
+      closeAll();
+      if (!alreadyOpen) {
+        entry.classList.add('is-open');
+        history.replaceState(null, '', '#' + entry.id);
+      }
+    });
+  });
+
+  const openFromHash = () => {
+    if (!location.hash) return;
+    const target = document.querySelector(location.hash);
+    if (target && target.classList.contains('news-entry')) {
+      openEntry(target, true);
+    }
+  };
+
+  window.addEventListener('hashchange', openFromHash);
+  openFromHash();
+})();
+</script>
+
   <script src="js/common.js"></script>
 </body>
 </html>
