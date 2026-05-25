@@ -1569,6 +1569,31 @@ border-top:1px solid rgba(255,255,255,.06);
 }
 </style>
 
+
+<style id="reserve-label-final-guard">
+@media (min-width:769px){
+  body header .desktop-reserve-link,
+  body header .nav-reserve-menu{font-size:13px!important;}
+  body header .desktop-reserve-link::before,
+  body header .desktop-reserve-link::after,
+  body header .nav-reserve-menu::before,
+  body header .nav-reserve-menu::after{content:none!important;display:none!important;}
+}
+@media (max-width:768px){
+  body header nav.is-open > a.nav-reserve-menu,
+  body header nav.is-open > a.desktop-reserve-link{font-size:0!important;}
+  body header nav.is-open > a.nav-reserve-menu::before,
+  body header nav.is-open > a.desktop-reserve-link::before{
+    content:"ご予約はこちら"!important;
+    display:inline!important;
+    font-size:13px!important;
+    letter-spacing:.16em!important;
+  }
+  body header nav.is-open > a.nav-reserve-menu::after,
+  body header nav.is-open > a.desktop-reserve-link::after{content:none!important;display:none!important;}
+}
+</style>
+
 </head>
 <body>
 

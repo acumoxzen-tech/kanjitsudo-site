@@ -421,13 +421,63 @@
 
 
 
-<style id="news-header-final-true-fix">
-/* news.html header: force exact index-style header */
 
-/* PC */
+<style id="news-header-rebuild-final">
+/* news.htmlだけ：indexヘッダー基準で強制固定 */
+body.news-page > header.unified-header,
+body.news-page > header {
+  box-sizing: border-box !important;
+  color: #fff !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+}
+
+body.news-page > header::before,
+body.news-page > header::after,
+body.news-page > header nav::before,
+body.news-page > header nav::after {
+  content: none !important;
+  display: none !important;
+}
+
+body.news-page > header .brand {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+body.news-page > header .brand-ja,
+body.news-page > header .brand-en {
+  display: block !important;
+  color: #fff !important;
+}
+
+body.news-page > header nav,
+body.news-page > header .site-nav {
+  box-sizing: border-box !important;
+}
+
+body.news-page > header nav > a,
+body.news-page > header .site-nav > a {
+  box-sizing: border-box !important;
+}
+
+body.news-page > header .desktop-reserve-link,
+body.news-page > header .nav-reserve-menu {
+  font-size: 13px !important;
+}
+
+body.news-page > header .desktop-reserve-link::before,
+body.news-page > header .desktop-reserve-link::after,
+body.news-page > header .nav-reserve-menu::before,
+body.news-page > header .nav-reserve-menu::after {
+  content: none !important;
+  display: none !important;
+}
+
 @media (min-width: 769px) {
-  body > header,
-  body > header.unified-header {
+  body.news-page > header.unified-header,
+  body.news-page > header {
     position: fixed !important;
     top: 0 !important;
     left: 0 !important;
@@ -439,35 +489,21 @@
     display: flex !important;
     align-items: flex-start !important;
     justify-content: space-between !important;
-    color: #fff !important;
     background: linear-gradient(to bottom, rgba(5,4,3,.88), rgba(5,4,3,.22), transparent) !important;
     backdrop-filter: blur(10px) !important;
     -webkit-backdrop-filter: blur(10px) !important;
-    border: 0 !important;
-    box-shadow: none !important;
-    overflow: visible !important;
   }
 
-  body > header::before,
-  body > header::after,
-  body > header nav::before,
-  body > header nav::after {
-    content: none !important;
-    display: none !important;
-  }
-
-  body > header .brand {
+  body.news-page > header .brand {
     display: flex !important;
     align-items: center !important;
     gap: 10px !important;
     flex: 0 0 auto !important;
     min-width: auto !important;
-    text-decoration: none !important;
-    color: inherit !important;
   }
 
-  body > header .crest,
-  body > header .brand img {
+  body.news-page > header .crest,
+  body.news-page > header .brand img {
     width: 50px !important;
     height: 50px !important;
     object-fit: contain !important;
@@ -475,30 +511,26 @@
     filter: drop-shadow(0 2px 12px rgba(0,0,0,.35)) !important;
   }
 
-  body > header .brand-ja {
-    display: block !important;
+  body.news-page > header .brand-ja {
     font-family: "Noto Serif JP", serif !important;
     font-size: 18px !important;
     line-height: 1 !important;
     letter-spacing: .12em !important;
     font-weight: 300 !important;
-    color: #fff !important;
     text-shadow: 0 2px 12px rgba(0,0,0,.35) !important;
   }
 
-  body > header .brand-en {
-    display: block !important;
+  body.news-page > header .brand-en {
     margin-top: 2px !important;
     font-family: "Cormorant Garamond", serif !important;
     font-size: 8px !important;
     letter-spacing: .34em !important;
     font-weight: 400 !important;
-    color: #fff !important;
     opacity: .92 !important;
   }
 
-  body > header nav,
-  body > header .site-nav {
+  body.news-page > header nav,
+  body.news-page > header .site-nav {
     position: static !important;
     display: flex !important;
     flex-direction: row !important;
@@ -524,30 +556,42 @@
     white-space: nowrap !important;
   }
 
-  body > header nav > a,
-  body > header nav .nav-dropdown {
+  body.news-page > header nav > a,
+  body.news-page > header nav .nav-dropdown {
     display: block !important;
   }
 
-  body > header nav > a {
+  body.news-page > header nav > a {
     color: rgba(255,255,255,.92) !important;
     text-decoration: none !important;
     position: relative !important;
     padding: 0 0 10px !important;
     line-height: 1 !important;
     font-weight: 300 !important;
+    background: transparent !important;
+    border: 0 !important;
     width: auto !important;
     height: auto !important;
     min-height: 0 !important;
-    background: transparent !important;
-    border: 0 !important;
   }
 
-  body > header .nav-dropdown {
+  body.news-page > header nav > a.active::after,
+  body.news-page > header .nav-dropdown-menu a.active::after {
+    content: "" !important;
+    position: absolute !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    bottom: 0 !important;
+    width: 100% !important;
+    height: 1px !important;
+    background: rgba(214,177,112,.72) !important;
+  }
+
+  body.news-page > header .nav-dropdown {
     position: relative !important;
   }
 
-  body > header .nav-dropdown-trigger {
+  body.news-page > header .nav-dropdown-trigger {
     display: block !important;
     border: none !important;
     background: transparent !important;
@@ -561,7 +605,7 @@
     font-weight: 300 !important;
   }
 
-  body > header .nav-dropdown-menu {
+  body.news-page > header .nav-dropdown-menu {
     position: absolute !important;
     top: calc(100% + 18px) !important;
     left: 50% !important;
@@ -579,26 +623,25 @@
     z-index: 10001 !important;
   }
 
-  body > header .nav-dropdown:hover .nav-dropdown-menu,
-  body > header .nav-dropdown:focus-within .nav-dropdown-menu {
+  body.news-page > header .nav-dropdown:hover .nav-dropdown-menu,
+  body.news-page > header .nav-dropdown:focus-within .nav-dropdown-menu {
     opacity: 1 !important;
     visibility: visible !important;
     transform: translateX(-50%) translateY(0) !important;
   }
 
-  body > header .nav-dropdown-menu a {
+  body.news-page > header .nav-dropdown-menu a {
     display: block !important;
     padding: 16px 28px !important;
     font-size: 13px !important;
     letter-spacing: .16em !important;
     color: rgba(255,255,255,.82) !important;
     text-decoration: none !important;
-    position: relative !important;
     line-height: 1 !important;
   }
 
-  body > header .desktop-reserve-link,
-  body > header .nav-reserve-menu {
+  body.news-page > header .desktop-reserve-link,
+  body.news-page > header .nav-reserve-menu {
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -610,24 +653,14 @@
     border: 1px solid rgba(255,255,255,.22) !important;
     background: rgba(255,255,255,.08) !important;
     color: rgba(255,255,255,.96) !important;
-    font-size: 13px !important;
     letter-spacing: .18em !important;
     line-height: 1 !important;
     font-weight: 500 !important;
     transform: none !important;
   }
 
-  body > header .desktop-reserve-link::before,
-  body > header .desktop-reserve-link::after,
-  body > header .nav-reserve-menu::before,
-  body > header .nav-reserve-menu::after {
-    content: none !important;
-    display: none !important;
-  }
-
-  body > header nav > a[aria-label="Instagram"],
-  body > header .nav-instagram,
-  body > header .insta-link {
+  body.news-page > header nav > a[aria-label="Instagram"],
+  body.news-page > header .nav-instagram {
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -639,7 +672,7 @@
     visibility: visible !important;
   }
 
-  body > header .instagram {
+  body.news-page > header .instagram {
     display: inline-block !important;
     width: 28px !important;
     height: 28px !important;
@@ -649,7 +682,7 @@
     transform: none !important;
   }
 
-  body > header .instagram::before {
+  body.news-page > header .instagram::before {
     content: "" !important;
     position: absolute !important;
     width: 10px !important;
@@ -660,7 +693,7 @@
     top: 7px !important;
   }
 
-  body > header .instagram::after {
+  body.news-page > header .instagram::after {
     content: "" !important;
     position: absolute !important;
     width: 3px !important;
@@ -672,10 +705,9 @@
   }
 }
 
-/* SP */
 @media (max-width: 768px) {
-  body > header,
-  body > header.unified-header {
+  body.news-page > header.unified-header,
+  body.news-page > header {
     position: fixed !important;
     top: 0 !important;
     left: 0 !important;
@@ -687,48 +719,124 @@
     display: flex !important;
     align-items: center !important;
     justify-content: space-between !important;
-    color: #fff !important;
     background: linear-gradient(to bottom, rgba(5,4,3,.72), rgba(5,4,3,.18), transparent) !important;
-    border: 0 !important;
-    box-shadow: none !important;
-    overflow: visible !important;
+    backdrop-filter: blur(6px) !important;
+    -webkit-backdrop-filter: blur(6px) !important;
   }
 
-  body > header .brand {
+  body.news-page > header .brand {
     display: flex !important;
     align-items: center !important;
     gap: 8px !important;
     flex: 0 0 auto !important;
     min-width: auto !important;
-    text-decoration: none !important;
-    color: inherit !important;
   }
 
-  body > header .crest,
-  body > header .brand img {
+  body.news-page > header .crest,
+  body.news-page > header .brand img {
     width: 48px !important;
     height: 48px !important;
-    object-fit: contain !important;
   }
 
-  body > header .brand-ja {
-    display: block !important;
+  body.news-page > header .brand-ja {
     font-size: 16px !important;
     line-height: 1 !important;
     letter-spacing: .1em !important;
   }
 
-  body > header .brand-en {
-    display: block !important;
+  body.news-page > header .brand-en {
     margin-top: 2px !important;
     font-size: 7px !important;
     letter-spacing: .22em !important;
+  }
+
+  body.news-page > header nav,
+  body.news-page > header .site-nav {
+    position: static !important;
+    width: auto !important;
+    height: 36px !important;
+    min-height: 36px !important;
+    max-height: 36px !important;
+    margin: 0 0 0 auto !important;
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    flex-direction: row !important;
+    gap: 12px !important;
+    background: transparent !important;
+    border: 0 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    overflow: visible !important;
+  }
+
+  body.news-page > header nav:not(.is-open) > a:not([aria-label="Instagram"]),
+  body.news-page > header nav:not(.is-open) .nav-dropdown,
+  body.news-page > header nav:not(.is-open) .desktop-reserve-link,
+  body.news-page > header nav:not(.is-open) .nav-reserve-menu {
+    display: none !important;
+  }
+
+  body.news-page > header nav:not(.is-open) > a[aria-label="Instagram"] {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 30px !important;
+    height: 36px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    order: 1 !important;
+  }
+
+  body.news-page > header nav:not(.is-open)::before {
+    content: none !important;
+    display: none !important;
+  }
+
+  body.news-page > header nav:not(.is-open)::after {
+    content: "" !important;
+    display: inline-flex !important;
+    order: 2 !important;
+    width: 36px !important;
+    height: 36px !important;
+    flex: 0 0 36px !important;
+    background:
+      linear-gradient(rgba(255,255,255,.92),rgba(255,255,255,.92)) 6px 10px/24px 1.5px no-repeat,
+      linear-gradient(rgba(255,255,255,.92),rgba(255,255,255,.92)) 6px 17px/24px 1.5px no-repeat,
+      linear-gradient(rgba(255,255,255,.92),rgba(255,255,255,.92)) 6px 24px/24px 1.5px no-repeat !important;
+    pointer-events: none !important;
+  }
+
+  body.news-page > header nav.is-open {
+    position: fixed !important;
+    top: 0 !important;
+    right: 0 !important;
+    width: 78vw !important;
+    height: 100vh !important;
+    max-height: 100vh !important;
+    padding: 110px 32px 40px !important;
+    background: rgba(5,4,3,.96) !important;
+    backdrop-filter: blur(18px) !important;
+    -webkit-backdrop-filter: blur(18px) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    gap: 26px !important;
+    overflow-y: auto !important;
+    z-index: 9999 !important;
+  }
+
+  body.news-page > header nav.is-open > a[aria-label="Instagram"] {
+    display: none !important;
   }
 }
 </style>
 
 </head>
-<body>
+<body class="news-page">
   <header class="unified-header">
   <a href="/kanjitsudo-site/#top" class="brand" aria-label="還日堂トップへ">
     <img class="crest" src="https://res.cloudinary.com/dvr7rww8q/image/upload/v1779030104/ChatGPT_Image_2026%E5%B9%B45%E6%9C%8818%E6%97%A5_00_00_07_xy3xk1.png" alt="還日堂ロゴ">

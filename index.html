@@ -1656,6 +1656,31 @@
 }
 </style>
 
+
+<style id="reserve-label-final-guard">
+@media (min-width:769px){
+  body header .desktop-reserve-link,
+  body header .nav-reserve-menu{font-size:13px!important;}
+  body header .desktop-reserve-link::before,
+  body header .desktop-reserve-link::after,
+  body header .nav-reserve-menu::before,
+  body header .nav-reserve-menu::after{content:none!important;display:none!important;}
+}
+@media (max-width:768px){
+  body header nav.is-open > a.nav-reserve-menu,
+  body header nav.is-open > a.desktop-reserve-link{font-size:0!important;}
+  body header nav.is-open > a.nav-reserve-menu::before,
+  body header nav.is-open > a.desktop-reserve-link::before{
+    content:"ご予約はこちら"!important;
+    display:inline!important;
+    font-size:13px!important;
+    letter-spacing:.16em!important;
+  }
+  body header nav.is-open > a.nav-reserve-menu::after,
+  body header nav.is-open > a.desktop-reserve-link::after{content:none!important;display:none!important;}
+}
+</style>
+
 </head>
 <body>
   <main class="hero" id="top">
@@ -1691,7 +1716,7 @@
         <a href="/kanjitsudo-site/#access-page">アクセス</a>
       </div>
     </div>
-    <a href="https://acumoxzen-tech.github.io/kanjitsudo-reserve/reserve.html" class="desktop-reserve-link nav-reserve-menu">ご予約はこちら</a>
+    <a href="https://acumoxzen-tech.github.io/kanjitsudo-reserve/reserve.html" class="desktop-reserve-link nav-reserve-menu">ご予約</a>
     <a class="nav-instagram" href="https://www.instagram.com/k__.z.__m/" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><span class="instagram" aria-hidden="true"></span></a>
   </nav>
 
@@ -1712,7 +1737,7 @@
       </span>
     </h1>
 
-    <a href="https://acumoxzen-tech.github.io/kanjitsudo-reserve/reserve.html" class="reserve"><span>ご予約</span><span>›</span></a>
+    <a href="https://acumoxzen-tech.github.io/kanjitsudo-reserve/reserve.html" class="reserve"><span>ご予約はこちら</span><span>›</span></a>
 
     <div class="hero-news hero-news-block">
       <a href="/kanjitsudo-site/news.html#news-20260517-site-open" class="hero-news-main">
