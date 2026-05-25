@@ -541,3 +541,259 @@
   }
 }
 
+/* ===== PC visibility safety ===== */
+@media (min-width: 769px) {
+  .fade-section {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+}
+
+/* ===== FINAL MOBILE HEADER NORMALIZATION ===== */
+@media (max-width: 768px) {
+  header,
+  .unified-header {
+    height: 70px !important;
+    padding: 9px 14px !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    border-bottom: 0 !important;
+    box-shadow: none !important;
+    overflow: visible !important;
+  }
+
+  header .brand {
+    flex: 0 0 auto !important;
+    z-index: 10002 !important;
+  }
+
+  header nav,
+  header .site-nav,
+  nav.site-nav,
+  nav.mobile-nav {
+    position: static !important;
+    width: auto !important;
+    height: 36px !important;
+    min-height: 36px !important;
+    max-height: 36px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    gap: 12px !important;
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    overflow: visible !important;
+    z-index: 10001 !important;
+  }
+
+  /* Closed state: hide every menu text item. Keep only Instagram link. */
+  header nav:not(.is-open) > a:not([aria-label="Instagram"]),
+  header nav:not(.is-open) .nav-dropdown,
+  header nav:not(.is-open) .desktop-reserve-link,
+  header nav:not(.is-open) .nav-reserve-menu {
+    display: none !important;
+  }
+
+  header nav:not(.is-open) > a[aria-label="Instagram"] {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 30px !important;
+    height: 36px !important;
+    min-width: 30px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    order: 1 !important;
+    position: relative !important;
+    transform: none !important;
+  }
+
+  header nav:not(.is-open) > a[aria-label="Instagram"]::before,
+  header nav:not(.is-open) > a[aria-label="Instagram"]::after {
+    content: none !important;
+    display: none !important;
+  }
+
+  header nav:not(.is-open) .instagram {
+    display: inline-block !important;
+    width: 24px !important;
+    height: 24px !important;
+    border: 1.6px solid #fff !important;
+    border-radius: 7px !important;
+    position: relative !important;
+    transform: translateY(-1px) !important;
+  }
+
+  header nav:not(.is-open)::before {
+    content: none !important;
+    display: none !important;
+    background: none !important;
+  }
+
+  header nav:not(.is-open)::after {
+    content: "" !important;
+    display: inline-flex !important;
+    order: 2 !important;
+    width: 36px !important;
+    height: 36px !important;
+    min-width: 36px !important;
+    flex: 0 0 36px !important;
+    position: relative !important;
+    top: auto !important;
+    right: auto !important;
+    background:
+      linear-gradient(rgba(255,255,255,.92), rgba(255,255,255,.92)) 6px 10px / 24px 1.5px no-repeat,
+      linear-gradient(rgba(255,255,255,.92), rgba(255,255,255,.92)) 6px 17px / 24px 1.5px no-repeat,
+      linear-gradient(rgba(255,255,255,.92), rgba(255,255,255,.92)) 6px 24px / 24px 1.5px no-repeat !important;
+    transform: none !important;
+    pointer-events: none !important;
+    box-shadow: none !important;
+    border: 0 !important;
+  }
+
+  /* Open drawer layout */
+  header nav.is-open {
+    position: fixed !important;
+    top: 0 !important;
+    right: 0 !important;
+    width: 78vw !important;
+    height: 100vh !important;
+    max-height: 100vh !important;
+    min-height: 100vh !important;
+    background: rgba(5,4,3,.96) !important;
+    backdrop-filter: blur(18px) !important;
+    -webkit-backdrop-filter: blur(18px) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    padding: 110px 32px 40px !important;
+    gap: 26px !important;
+    z-index: 9999 !important;
+    overflow-y: auto !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+  }
+
+  /* Open state: no Instagram in drawer. */
+  header nav.is-open > a[aria-label="Instagram"],
+  header nav.is-open .nav-instagram,
+  header nav.is-open .insta-link {
+    display: none !important;
+  }
+
+  /* Open state: remove every old close mark from ::after */
+  header nav.is-open::after {
+    content: none !important;
+    display: none !important;
+    background: none !important;
+    border: 0 !important;
+    box-shadow: none !important;
+  }
+
+  /* Open state: exactly one close X */
+  header nav.is-open::before {
+    content: "" !important;
+    position: fixed !important;
+    top: 18px !important;
+    right: 18px !important;
+    width: 40px !important;
+    height: 40px !important;
+    z-index: 10001 !important;
+    display: block !important;
+    background:
+      linear-gradient(45deg, transparent calc(50% - .8px), rgba(255,255,255,.92) calc(50% - .8px), rgba(255,255,255,.92) calc(50% + .8px), transparent calc(50% + .8px)),
+      linear-gradient(-45deg, transparent calc(50% - .8px), rgba(255,255,255,.92) calc(50% - .8px), rgba(255,255,255,.92) calc(50% + .8px), transparent calc(50% + .8px)) !important;
+    transform: none !important;
+    pointer-events: none !important;
+    border: 0 !important;
+    box-shadow: none !important;
+  }
+
+  header nav.is-open > a,
+  header nav.is-open .nav-dropdown {
+    display: block !important;
+    font-size: 15px !important;
+    letter-spacing: .14em !important;
+  }
+
+  header nav.is-open > a {
+    color: rgba(255,255,255,.92) !important;
+    text-decoration: none !important;
+    position: relative !important;
+    padding: 0 0 10px !important;
+    line-height: 1 !important;
+    font-weight: 300 !important;
+    border: none !important;
+    background: transparent !important;
+    min-height: 0 !important;
+    width: auto !important;
+  }
+
+  header nav.is-open .nav-dropdown-menu {
+    position: static !important;
+    transform: none !important;
+    min-width: 0 !important;
+    padding: 10px 0 0 18px !important;
+    border: none !important;
+    background: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    box-shadow: none !important;
+  }
+
+  header nav.is-open .nav-dropdown-menu a {
+    display: block !important;
+    position: relative !important;
+    width: fit-content !important;
+    padding: 6px 0 !important;
+    font-size: 13px !important;
+    letter-spacing: .12em !important;
+    color: rgba(255,255,255,.68) !important;
+    text-decoration: none !important;
+    line-height: 1.2 !important;
+  }
+
+  header nav.is-open a.active,
+  header nav.is-open .nav-dropdown-menu a.active {
+    color: rgba(255,255,255,.98) !important;
+  }
+
+  header nav.is-open a.active::after,
+  header nav.is-open .nav-dropdown-menu a.active::after {
+    content: "" !important;
+    position: absolute !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    height: 1px !important;
+    background: rgba(214,177,112,.72) !important;
+  }
+
+  header nav.is-open > a.nav-reserve-menu,
+  header nav.is-open > a.desktop-reserve-link {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-width: 168px !important;
+    height: 44px !important;
+    padding: 0 22px !important;
+    border: 1px solid rgba(255,255,255,.22) !important;
+    background: rgba(255,255,255,.035) !important;
+    color: rgba(255,255,255,.92) !important;
+    font-size: 13px !important;
+    letter-spacing: .14em !important;
+  }
+}
+
