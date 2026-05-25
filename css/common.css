@@ -878,3 +878,309 @@
     letter-spacing: .16em !important;
   }
 }
+
+/* ===== PC header reserve vertical alignment + shared header base ===== */
+@media (min-width: 769px) {
+  header .desktop-reserve-link,
+  header .nav-reserve-menu {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: 42px !important;
+    min-height: 42px !important;
+    padding: 0 30px !important;
+    line-height: 1 !important;
+    transform: translateY(-1px) !important;
+    box-sizing: border-box !important;
+  }
+
+  header .desktop-reserve-link::after,
+  header .nav-reserve-menu::after {
+    display: none !important;
+    content: none !important;
+  }
+
+  header .desktop-reserve-link span,
+  header .nav-reserve-menu span {
+    line-height: 1 !important;
+  }
+}
+
+
+/* ===== PC HEADER COMMON: index base ===== */
+@media (min-width: 769px) {
+  header,
+  .unified-header {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    height: 70px !important;
+    padding: 8px 22px 10px !important;
+    z-index: 10000 !important;
+    display: flex !important;
+    align-items: flex-start !important;
+    justify-content: space-between !important;
+    color: #fff !important;
+    background: linear-gradient(to bottom, rgba(5,4,3,.88), rgba(5,4,3,.22), transparent) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border-bottom: 0 !important;
+    box-shadow: none !important;
+    overflow: visible !important;
+  }
+
+  header::before,
+  header::after,
+  .unified-header::before,
+  .unified-header::after {
+    content: none !important;
+    display: none !important;
+  }
+
+  header .brand,
+  .unified-header .brand {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    flex: 0 0 auto !important;
+    letter-spacing: .08em !important;
+    text-decoration: none !important;
+    color: inherit !important;
+    min-width: auto !important;
+  }
+
+  header .crest,
+  header .brand img,
+  .unified-header .crest,
+  .unified-header .brand img {
+    width: 50px !important;
+    height: 50px !important;
+    object-fit: contain !important;
+    opacity: .96 !important;
+    filter: drop-shadow(0 2px 12px rgba(0,0,0,.35)) !important;
+  }
+
+  header .brand-ja,
+  .unified-header .brand-ja {
+    font-family: "Noto Serif JP", serif !important;
+    font-size: 18px !important;
+    line-height: 1 !important;
+    letter-spacing: .12em !important;
+    font-weight: 300 !important;
+    text-shadow: 0 2px 12px rgba(0,0,0,.35) !important;
+  }
+
+  header .brand-en,
+  .unified-header .brand-en {
+    margin-top: 2px !important;
+    font-family: "Cormorant Garamond", serif !important;
+    font-size: 8px !important;
+    letter-spacing: .34em !important;
+    font-weight: 400 !important;
+    opacity: .92 !important;
+  }
+
+  header nav,
+  header .site-nav,
+  .unified-header nav,
+  .unified-header .site-nav {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    flex-direction: row !important;
+    gap: clamp(18px, 2vw, 32px) !important;
+    margin: 10px 0 0 40px !important;
+    padding: 0 !important;
+    width: auto !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    position: static !important;
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    overflow: visible !important;
+    font-family: "Noto Serif JP", serif !important;
+    font-size: 15px !important;
+    letter-spacing: .18em !important;
+    white-space: nowrap !important;
+  }
+
+  header nav::before,
+  header nav::after,
+  header .site-nav::before,
+  header .site-nav::after {
+    content: none !important;
+    display: none !important;
+    background: none !important;
+  }
+
+  header nav > a,
+  header .site-nav > a,
+  header nav .nav-dropdown,
+  header .site-nav .nav-dropdown {
+    display: block !important;
+  }
+
+  header nav > a,
+  header .site-nav > a {
+    color: rgba(255,255,255,.92) !important;
+    text-decoration: none !important;
+    position: relative !important;
+    padding: 0 0 10px !important;
+    line-height: 1 !important;
+    font-weight: 300 !important;
+    width: auto !important;
+    min-height: 0 !important;
+    background: transparent !important;
+    border: 0 !important;
+  }
+
+  header nav > a.active::after,
+  header .site-nav > a.active::after,
+  header .nav-dropdown-menu a.active::after {
+    content: "" !important;
+    position: absolute !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    bottom: 0 !important;
+    width: 100% !important;
+    height: 1px !important;
+    background: rgba(214,177,112,.72) !important;
+  }
+
+  header .nav-dropdown {
+    position: relative !important;
+  }
+
+  header .nav-dropdown-trigger {
+    display: block !important;
+    border: none !important;
+    background: transparent !important;
+    color: rgba(255,255,255,.92) !important;
+    font-family: "Noto Serif JP", serif !important;
+    font-size: 15px !important;
+    letter-spacing: .18em !important;
+    cursor: pointer !important;
+    padding: 0 0 10px !important;
+    font-weight: 300 !important;
+    line-height: 1 !important;
+  }
+
+  header .nav-dropdown-menu {
+    position: absolute !important;
+    top: calc(100% + 18px) !important;
+    left: 50% !important;
+    transform: translateX(-50%) translateY(10px) !important;
+    min-width: 240px !important;
+    padding: 18px 0 !important;
+    border: 1px solid rgba(255,255,255,.12) !important;
+    background: rgba(8,6,5,.92) !important;
+    backdrop-filter: blur(14px) !important;
+    -webkit-backdrop-filter: blur(14px) !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transition: all .32s ease !important;
+    box-shadow: 0 24px 60px rgba(0,0,0,.32) !important;
+    z-index: 10001 !important;
+  }
+
+  header .nav-dropdown:hover .nav-dropdown-menu,
+  header .nav-dropdown:focus-within .nav-dropdown-menu {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateX(-50%) translateY(0) !important;
+  }
+
+  header .nav-dropdown-menu a {
+    display: block !important;
+    padding: 16px 28px !important;
+    font-size: 13px !important;
+    letter-spacing: .16em !important;
+    color: rgba(255,255,255,.82) !important;
+    text-decoration: none !important;
+    position: relative !important;
+    width: auto !important;
+    line-height: 1 !important;
+  }
+
+  header .desktop-reserve-link,
+  header .nav-reserve-menu {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: 42px !important;
+    min-height: 42px !important;
+    padding: 0 28px !important;
+    margin-top: -10px !important;
+    border-radius: 999px !important;
+    background: rgba(255,255,255,.08) !important;
+    backdrop-filter: blur(14px) saturate(140%) !important;
+    -webkit-backdrop-filter: blur(14px) saturate(140%) !important;
+    color: rgba(255,255,255,.96) !important;
+    font-size: 13px !important;
+    letter-spacing: .18em !important;
+    font-weight: 500 !important;
+    border: 1px solid rgba(255,255,255,.22) !important;
+    line-height: 1 !important;
+    transform: translateY(0) !important;
+    box-sizing: border-box !important;
+  }
+
+  header .desktop-reserve-link::after,
+  header .nav-reserve-menu::after {
+    content: none !important;
+    display: none !important;
+  }
+
+  header nav > a[aria-label="Instagram"],
+  header .site-nav > a[aria-label="Instagram"],
+  header .nav-instagram,
+  header .insta-link {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important;
+    width: 30px !important;
+    height: 30px !important;
+    margin-top: -5px !important;
+  }
+
+  header .instagram {
+    display: inline-block !important;
+    width: 28px !important;
+    height: 28px !important;
+    border: 1.7px solid #fff !important;
+    border-radius: 8px !important;
+    position: relative !important;
+    transform: none !important;
+  }
+
+  header .instagram::before {
+    content: "" !important;
+    position: absolute !important;
+    width: 10px !important;
+    height: 10px !important;
+    border: 1.7px solid #fff !important;
+    border-radius: 50% !important;
+    left: 7px !important;
+    top: 7px !important;
+  }
+
+  header .instagram::after {
+    content: "" !important;
+    position: absolute !important;
+    width: 3px !important;
+    height: 3px !important;
+    background: #fff !important;
+    border-radius: 50% !important;
+    right: 4px !important;
+    top: 4px !important;
+  }
+}
+
