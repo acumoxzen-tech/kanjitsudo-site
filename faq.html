@@ -1128,49 +1128,52 @@ border-top:1px solid rgba(255,255,255,.06);
 
   <link rel="stylesheet" href="css/common.css">
 
+
 <style id="faq-category-scroll-hint-style">
 @media (max-width: 768px) {
   .category-scroll {
     position: relative;
-    padding-bottom: 22px !important;
+    padding-bottom: 24px !important;
     margin-bottom: 6px;
     -webkit-overflow-scrolling: touch;
   }
 
-  .category-scroll::before {
+  .category-scroll-wrap {
+    position: relative;
+  }
+
+  .category-scroll-wrap::after {
     content: "";
-    position: fixed;
+    position: absolute;
     right: 0;
-    left: auto;
+    top: 0;
     width: 54px;
     height: 64px;
-    margin-top: -8px;
     pointer-events: none;
     background: linear-gradient(90deg, rgba(5,4,3,0), rgba(5,4,3,.92));
     z-index: 6;
   }
 
-  .category-scroll::after {
-    content: "";
+  .faq-scroll-track {
     position: absolute;
     left: 20px;
     right: 20px;
     bottom: 8px;
     height: 1px;
     border-radius: 999px;
-    background:
-      linear-gradient(90deg,
-        rgba(214,177,112,.52) 0%,
-        rgba(214,177,112,.52) 38%,
-        rgba(255,255,255,.14) 38%,
-        rgba(255,255,255,.14) 100%);
-    opacity: .78;
+    background: rgba(255,255,255,.14);
+    overflow: hidden;
     pointer-events: none;
   }
 
-  .category-btn {
-    position: relative;
-    z-index: 2;
+  .faq-scroll-thumb {
+    display: block;
+    width: 38%;
+    height: 100%;
+    border-radius: 999px;
+    background: rgba(214,177,112,.58);
+    transform: translateX(0);
+    transition: transform .18s ease;
   }
 }
 </style>
@@ -1227,11 +1230,14 @@ border-top:1px solid rgba(255,255,255,.06);
 </p>
 </section>
 
+<div class="category-scroll-wrap">
 <div class="category-scroll">
 <button class="category-btn active" data-target="beginner">初めての方</button>
 <button class="category-btn" data-target="reserve">予約・来院</button>
 <button class="category-btn" data-target="treatment">施術について</button>
 <button class="category-btn" data-target="aftercare">施術後</button>
+</div>
+<div class="faq-scroll-track" aria-hidden="true"><span class="faq-scroll-thumb"></span></div>
 </div>
 
 <section class="faq-wrap">
@@ -1684,6 +1690,40 @@ openFirstFaq(target);
     });
   })();
 </script>
+  
+<script id="faq-scrollbar-sync-script">
+(() => {
+  const scroller = document.querySelector('.category-scroll');
+  const thumb = document.querySelector('.faq-scroll-thumb');
+
+  if (!scroller || !thumb) return;
+
+  const updateThumb = () => {
+    const maxScroll = scroller.scrollWidth - scroller.clientWidth;
+    const track = thumb.parentElement;
+    const trackWidth = track ? track.clientWidth : 0;
+
+    if (maxScroll <= 0 || !trackWidth) {
+      thumb.style.width = '100%';
+      thumb.style.transform = 'translateX(0)';
+      return;
+    }
+
+    const ratio = scroller.clientWidth / scroller.scrollWidth;
+    const thumbWidth = Math.max(trackWidth * ratio, trackWidth * 0.32);
+    const maxMove = trackWidth - thumbWidth;
+    const move = (scroller.scrollLeft / maxScroll) * maxMove;
+
+    thumb.style.width = thumbWidth + 'px';
+    thumb.style.transform = `translateX(${move}px)`;
+  };
+
+  scroller.addEventListener('scroll', updateThumb, { passive: true });
+  window.addEventListener('resize', updateThumb);
+  updateThumb();
+})();
+</script>
+
   <script src="js/common.js"></script>
 </body>
 </html>

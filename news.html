@@ -406,6 +406,84 @@
 }
 </style>
 
+
+<style id="news-header-force-fix">
+/* ===== NEWS HEADER FORCE FIX ===== */
+
+/* PC */
+@media (min-width:769px){
+  header nav.site-nav,
+  header .site-nav{
+    display:flex !important;
+    align-items:center !important;
+    gap:48px !important;
+    width:auto !important;
+    height:auto !important;
+    background:transparent !important;
+    position:static !important;
+    opacity:1 !important;
+    visibility:visible !important;
+    transform:none !important;
+  }
+
+  header nav.site-nav::before,
+  header nav.site-nav::after,
+  header .site-nav::before,
+  header .site-nav::after{
+    content:none !important;
+    display:none !important;
+  }
+
+  header nav.site-nav > a[aria-label="Instagram"],
+  header .site-nav > a[aria-label="Instagram"]{
+    display:flex !important;
+    opacity:1 !important;
+    visibility:visible !important;
+  }
+}
+
+/* Mobile */
+@media (max-width:768px){
+
+  /* keep exactly one instagram icon */
+  header nav:not(.is-open) > a[aria-label="Instagram"]:not(:first-of-type){
+    display:none !important;
+  }
+
+  header nav.is-open > a[aria-label="Instagram"]{
+    display:none !important;
+  }
+
+  /* remove ghost icons / dots */
+  header nav::before,
+  header nav::after,
+  header .site-nav::before,
+  header .site-nav::after{
+    background-image:none !important;
+  }
+
+  /* only show original hamburger */
+  .menu-toggle,
+  .hamburger{
+    opacity:1 !important;
+    visibility:visible !important;
+  }
+}
+</style>
+
+
+<style id="remove-target-outline-style">
+.news-entry:target,
+.news-entry:focus,
+.news-entry:focus-visible,
+.news-entry:active{
+  outline:none !important;
+  box-shadow:none !important;
+  border-color:rgba(255,255,255,.09) !important;
+  -webkit-tap-highlight-color: transparent !important;
+}
+</style>
+
 </head>
 <body>
   <header class="unified-header">
