@@ -44,7 +44,7 @@
   }
 
   // Mobile hamburger nav only
-  const navs = document.querySelectorAll('.site-nav, nav.mobile-nav, header nav');
+  const navs = document.querySelectorAll('.site-nav');
 
   navs.forEach((mobileNav) => {
     if (mobileNav.dataset.commonNavReady === "true") return;

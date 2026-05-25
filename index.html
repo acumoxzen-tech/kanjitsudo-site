@@ -1029,33 +1029,7 @@
 </style>
 
 
-<style id="kanjitsudo-remove-header-line-final">
-  header,
-  .unified-header {
-    border-bottom: 0 !important;
-    box-shadow: none !important;
-    outline: 0 !important;
-  }
-
-  header::before,
-  header::after,
-  .unified-header::before,
-  .unified-header::after {
-    border: 0 !important;
-    box-shadow: none !important;
-  }
-
-  @media (max-width: 768px) {
-    header,
-    .unified-header {
-      border-bottom: 0 !important;
-      box-shadow: none !important;
-      outline: 0 !important;
-    }
-  }
-</style>
-
-  <link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/common.css">
 
 <style id="news-teaser-style">
   .top-news-card {
@@ -1255,396 +1229,17 @@
 </style>
 
 
-<style id="kanjitsudo-header-hard-final">
-/* ===== HARD FINAL HEADER FIX ===== */
 
-/* PC: index基準 */
+<style id="index-hero-news-spacing">
 @media (min-width:769px){
-  body header.unified-header,
-  body header{
-    position:fixed!important;
-    top:0!important;
-    left:0!important;
-    right:0!important;
-    width:100%!important;
-    height:70px!important;
-    padding:8px 22px 10px!important;
-    z-index:10000!important;
-    display:flex!important;
-    align-items:flex-start!important;
-    justify-content:space-between!important;
-    overflow:visible!important;
-    background:linear-gradient(to bottom,rgba(5,4,3,.88),rgba(5,4,3,.22),transparent)!important;
-    border:0!important;
-    box-shadow:none!important;
-  }
-
-  body header:before,
-  body header:after,
-  body header nav:before,
-  body header nav:after{
-    content:none!important;
-    display:none!important;
-  }
-
-  body header .brand{
-    display:flex!important;
-    align-items:center!important;
-    gap:10px!important;
-    flex:0 0 auto!important;
-    color:inherit!important;
-    text-decoration:none!important;
-    min-width:auto!important;
-  }
-
-  body header .crest,
-  body header .brand img{
-    width:50px!important;
-    height:50px!important;
-    object-fit:contain!important;
-    opacity:.96!important;
-  }
-
-  body header .brand-ja{
-    display:block!important;
-    font-family:"Noto Serif JP",serif!important;
-    font-size:18px!important;
-    line-height:1!important;
-    letter-spacing:.12em!important;
-    font-weight:300!important;
-    color:#fff!important;
-  }
-
-  body header .brand-en{
-    display:block!important;
-    margin-top:2px!important;
-    font-family:"Cormorant Garamond",serif!important;
-    font-size:8px!important;
-    letter-spacing:.34em!important;
-    font-weight:400!important;
-    color:#fff!important;
-    opacity:.92!important;
-  }
-
-  body header nav,
-  body header .site-nav{
-    position:static!important;
-    display:flex!important;
-    flex-direction:row!important;
-    align-items:center!important;
-    justify-content:flex-end!important;
-    gap:clamp(18px,2vw,32px)!important;
-    width:auto!important;
-    height:auto!important;
-    min-height:0!important;
-    max-height:none!important;
-    margin:10px 0 0 40px!important;
-    padding:0!important;
-    background:transparent!important;
-    border:0!important;
-    box-shadow:none!important;
-    opacity:1!important;
-    visibility:visible!important;
-    transform:none!important;
-    overflow:visible!important;
-    font-family:"Noto Serif JP",serif!important;
-    font-size:15px!important;
-    letter-spacing:.18em!important;
-    white-space:nowrap!important;
-  }
-
-  body header nav > a,
-  body header nav .nav-dropdown{
-    display:block!important;
-  }
-
-  body header nav > a{
-    color:rgba(255,255,255,.92)!important;
-    text-decoration:none!important;
-    position:relative!important;
-    padding:0 0 10px!important;
-    line-height:1!important;
-    font-weight:300!important;
-    background:transparent!important;
-    border:0!important;
-    width:auto!important;
-    height:auto!important;
-  }
-
-  body header .desktop-reserve-link,
-  body header .nav-reserve-menu{
-    display:inline-flex!important;
-    align-items:center!important;
-    justify-content:center!important;
-    height:42px!important;
-    min-height:42px!important;
-    padding:0 28px!important;
-    margin-top:-10px!important;
-    border-radius:999px!important;
-    border:1px solid rgba(255,255,255,.22)!important;
-    background:rgba(255,255,255,.08)!important;
-    color:rgba(255,255,255,.96)!important;
-    font-size:13px!important;
-    letter-spacing:.18em!important;
-    line-height:1!important;
-    font-weight:500!important;
-    transform:none!important;
-  }
-
-  body header .desktop-reserve-link:before,
-  body header .desktop-reserve-link:after,
-  body header .nav-reserve-menu:before,
-  body header .nav-reserve-menu:after{
-    content:none!important;
-    display:none!important;
-  }
-
-  body header .nav-dropdown{
-    position:relative!important;
-  }
-
-  body header .nav-dropdown-trigger{
-    display:block!important;
-    border:none!important;
-    background:transparent!important;
-    color:rgba(255,255,255,.92)!important;
-    font-family:"Noto Serif JP",serif!important;
-    font-size:15px!important;
-    letter-spacing:.18em!important;
-    cursor:pointer!important;
-    padding:0 0 10px!important;
-    line-height:1!important;
-    font-weight:300!important;
-  }
-
-  body header .nav-dropdown-menu{
-    position:absolute!important;
-    top:calc(100% + 18px)!important;
-    left:50%!important;
-    transform:translateX(-50%) translateY(10px)!important;
-    min-width:240px!important;
-    padding:18px 0!important;
-    border:1px solid rgba(255,255,255,.12)!important;
-    background:rgba(8,6,5,.92)!important;
-    backdrop-filter:blur(14px)!important;
-    -webkit-backdrop-filter:blur(14px)!important;
-    opacity:0!important;
-    visibility:hidden!important;
-    transition:all .32s ease!important;
-    box-shadow:0 24px 60px rgba(0,0,0,.32)!important;
-    z-index:10001!important;
-  }
-
-  body header .nav-dropdown:hover .nav-dropdown-menu,
-  body header .nav-dropdown:focus-within .nav-dropdown-menu{
-    opacity:1!important;
-    visibility:visible!important;
-    transform:translateX(-50%) translateY(0)!important;
-  }
-
-  body header .nav-dropdown-menu a{
-    display:block!important;
-    padding:16px 28px!important;
-    font-size:13px!important;
-    letter-spacing:.16em!important;
-    color:rgba(255,255,255,.82)!important;
-    text-decoration:none!important;
-    position:relative!important;
-    line-height:1!important;
-  }
-
-  body header nav > a[aria-label="Instagram"],
-  body header .nav-instagram,
-  body header .insta-link{
-    display:inline-flex!important;
-    align-items:center!important;
-    justify-content:center!important;
-    width:30px!important;
-    height:30px!important;
-    padding:0!important;
-    margin-top:-5px!important;
-    opacity:1!important;
-    visibility:visible!important;
-  }
-
-  body header .instagram{
-    display:inline-block!important;
-    width:28px!important;
-    height:28px!important;
-    border:1.7px solid #fff!important;
-    border-radius:8px!important;
-    position:relative!important;
-    transform:none!important;
-  }
-
-  body header .instagram:before{
-    content:""!important;
-    position:absolute!important;
-    width:10px!important;
-    height:10px!important;
-    border:1.7px solid #fff!important;
-    border-radius:50%!important;
-    left:7px!important;
-    top:7px!important;
-  }
-
-  body header .instagram:after{
-    content:""!important;
-    position:absolute!important;
-    width:3px!important;
-    height:3px!important;
-    background:#fff!important;
-    border-radius:50%!important;
-    right:4px!important;
-    top:4px!important;
-  }
-}
-
-/* SP: index基準 */
-@media (max-width:768px){
-  body header.unified-header,
-  body header{
-    position:fixed!important;
-    top:0!important;
-    left:0!important;
-    right:0!important;
-    width:100%!important;
-    height:70px!important;
-    padding:9px 14px!important;
-    z-index:10000!important;
-    display:flex!important;
-    align-items:center!important;
-    justify-content:space-between!important;
-    overflow:visible!important;
-    background:linear-gradient(to bottom,rgba(5,4,3,.72),rgba(5,4,3,.18),transparent)!important;
-    border:0!important;
-    box-shadow:none!important;
-  }
-
-  body header .brand{
-    display:flex!important;
-    align-items:center!important;
-    gap:8px!important;
-    flex:0 0 auto!important;
-    min-width:auto!important;
-    color:inherit!important;
-    text-decoration:none!important;
-    z-index:10002!important;
-  }
-
-  body header .crest,
-  body header .brand img{
-    width:48px!important;
-    height:48px!important;
-    object-fit:contain!important;
-  }
-
-  body header .brand-ja{
-    display:block!important;
-    font-family:"Noto Serif JP",serif!important;
-    font-size:16px!important;
-    line-height:1!important;
-    letter-spacing:.1em!important;
-    font-weight:300!important;
-    color:#fff!important;
-  }
-
-  body header .brand-en{
-    display:block!important;
-    margin-top:2px!important;
-    font-family:"Cormorant Garamond",serif!important;
-    font-size:7px!important;
-    letter-spacing:.22em!important;
-    font-weight:400!important;
-    color:#fff!important;
-    opacity:.92!important;
-  }
-
-  body header nav,
-  body header .site-nav{
-    position:static!important;
-    width:auto!important;
-    height:36px!important;
-    min-height:36px!important;
-    max-height:36px!important;
-    margin:0 0 0 auto!important;
-    padding:0!important;
-    display:flex!important;
-    align-items:center!important;
-    justify-content:flex-end!important;
-    flex-direction:row!important;
-    gap:12px!important;
-    background:transparent!important;
-    border:0!important;
-    opacity:1!important;
-    visibility:visible!important;
-    transform:none!important;
-    overflow:visible!important;
-  }
-
-  body header nav:not(.is-open) > a:not([aria-label="Instagram"]),
-  body header nav:not(.is-open) .nav-dropdown,
-  body header nav:not(.is-open) .desktop-reserve-link,
-  body header nav:not(.is-open) .nav-reserve-menu{
-    display:none!important;
-  }
-
-  body header nav:not(.is-open) > a[aria-label="Instagram"]{
-    display:inline-flex!important;
-    align-items:center!important;
-    justify-content:center!important;
-    width:30px!important;
-    height:36px!important;
-    padding:0!important;
-    margin:0!important;
-    order:1!important;
-  }
-
-  body header nav:not(.is-open):before{
-    content:none!important;
-    display:none!important;
-  }
-
-  body header nav:not(.is-open):after{
-    content:""!important;
-    display:inline-flex!important;
-    order:2!important;
-    width:36px!important;
-    height:36px!important;
-    flex:0 0 36px!important;
-    background:
-      linear-gradient(rgba(255,255,255,.92),rgba(255,255,255,.92)) 6px 10px/24px 1.5px no-repeat,
-      linear-gradient(rgba(255,255,255,.92),rgba(255,255,255,.92)) 6px 17px/24px 1.5px no-repeat,
-      linear-gradient(rgba(255,255,255,.92),rgba(255,255,255,.92)) 6px 24px/24px 1.5px no-repeat!important;
-    pointer-events:none!important;
-  }
-
-  body header nav.is-open{
-    position:fixed!important;
-    top:0!important;
-    right:0!important;
-    width:78vw!important;
-    height:100vh!important;
-    max-height:100vh!important;
-    padding:110px 32px 40px!important;
-    background:rgba(5,4,3,.96)!important;
-    backdrop-filter:blur(18px)!important;
-    -webkit-backdrop-filter:blur(18px)!important;
-    display:flex!important;
-    flex-direction:column!important;
-    align-items:flex-start!important;
-    justify-content:flex-start!important;
-    gap:26px!important;
-    overflow-y:auto!important;
-    z-index:9999!important;
-  }
-
-  body header nav.is-open > a[aria-label="Instagram"]{
-    display:none!important;
+  .hero-news{
+    margin-top:32px !important;
+    transform:translateY(32px) !important;
   }
 }
 </style>
 
+  <link rel="stylesheet" href="css/header.css">
 </head>
 <body>
   <main class="hero" id="top">
@@ -1655,41 +1250,38 @@
     </div>
     <div class="overlay"></div>
 
-    <header class="unified-header">
+    <header class="site-header" id="siteHeader">
   <a href="/kanjitsudo-site/#top" class="brand" aria-label="還日堂トップへ">
     <img class="crest" src="https://res.cloudinary.com/dvr7rww8q/image/upload/v1779030104/ChatGPT_Image_2026%E5%B9%B45%E6%9C%8818%E6%97%A5_00_00_07_xy3xk1.png" alt="還日堂ロゴ">
-    <div>
+    <div class="brand-text">
       <div class="brand-ja">還日堂</div>
       <div class="brand-en">KANJITSUDŌ</div>
     </div>
   </a>
 
-  <nav class="site-nav" id="mobileNav" aria-label="主要ナビゲーション">
-    <a href="/kanjitsudo-site/#top" class="active">ホーム</a>
-    <a href="/kanjitsudo-site/#about-page">当店について</a>
-    <a href="/kanjitsudo-site/menu.html">施術メニュー</a>
-    <a href="/kanjitsudo-site/#staff-page">スタッフ紹介</a>
+  <nav class="site-nav" id="siteNav" aria-label="主要ナビゲーション">
+    <a href="/kanjitsudo-site/#top" data-nav="home" class="active">ホーム</a>
+    <a href="/kanjitsudo-site/#about-page" data-nav="about">当店について</a>
+    <a href="/kanjitsudo-site/menu.html" data-nav="menu">施術メニュー</a>
+    <a href="/kanjitsudo-site/#staff-page" data-nav="staff">スタッフ紹介</a>
+
     <div class="nav-dropdown">
       <button type="button" class="nav-dropdown-trigger">ご案内 ▾</button>
       <div class="nav-dropdown-menu">
-        <a href="/kanjitsudo-site/#gallery-page">店内紹介</a>
-        <a href="/kanjitsudo-site/menu.html#flow-section">ご利用の流れ</a>
-        <a href="/kanjitsudo-site/faq.html">よくあるご質問</a>
-        <a href="/kanjitsudo-site/news.html">お知らせ</a>
-        <a href="/kanjitsudo-site/#contact-page">お問い合わせ</a>
-        <a href="/kanjitsudo-site/#access-page">アクセス</a>
+        <a href="/kanjitsudo-site/#gallery-page" data-nav="gallery">店内紹介</a>
+        <a href="/kanjitsudo-site/menu.html#flow-section" data-nav="flow">ご利用の流れ</a>
+        <a href="/kanjitsudo-site/faq.html" data-nav="faq">よくあるご質問</a>
+        <a href="/kanjitsudo-site/news.html" data-nav="news">お知らせ</a>
+        <a href="/kanjitsudo-site/#contact-page" data-nav="contact">お問い合わせ</a>
+        <a href="/kanjitsudo-site/#access-page" data-nav="access">アクセス</a>
       </div>
     </div>
-    <a href="https://acumoxzen-tech.github.io/kanjitsudo-reserve/reserve.html" class="desktop-reserve-link nav-reserve-menu">ご予約</a>
-    <a class="nav-instagram" href="https://www.instagram.com/k__.z.__m/" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><span class="instagram" aria-hidden="true"></span></a>
-  </nav>
 
-  <div class="unified-header-actions" aria-hidden="false">
-    <a class="header-instagram" href="https://www.instagram.com/k__.z.__m/" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><span class="instagram" aria-hidden="true"></span></a>
-    <button class="unified-menu-button" id="unifiedMenuButton" type="button" aria-label="メニューを開閉" aria-controls="mobileNav" aria-expanded="false">
-      <span class="unified-menu-lines" aria-hidden="true"></span>
-    </button>
-  </div>
+    <a href="https://acumoxzen-tech.github.io/kanjitsudo-reserve/reserve.html" class="desktop-reserve-link nav-reserve-menu">ご予約</a>
+    <a class="nav-instagram" href="https://www.instagram.com/k__.z.__m/" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+      <span class="instagram" aria-hidden="true"></span>
+    </a>
+  </nav>
 </header>
 
     <h1 class="copy">
@@ -1701,7 +1293,7 @@
       </span>
     </h1>
 
-    <a href="https://acumoxzen-tech.github.io/kanjitsudo-reserve/reserve.html" class="reserve"><span>ご予約はこちら</span><span>›</span></a>
+    <a href="https://acumoxzen-tech.github.io/kanjitsudo-reserve/reserve.html" class="reserve"><span>ご予約はこちらはこちら</span><span>›</span></a>
 
     <div class="hero-news hero-news-block">
       <a href="/kanjitsudo-site/news.html#news-20260517-site-open" class="hero-news-main">
