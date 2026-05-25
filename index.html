@@ -1056,6 +1056,61 @@
 </style>
 
   <link rel="stylesheet" href="css/common.css">
+
+<style id="news-teaser-style">
+  .top-news-card {
+    display: grid;
+    grid-template-columns: 140px 1fr auto;
+    gap: 28px;
+    align-items: center;
+    width: 100%;
+    padding: 28px 0;
+    border-top: 1px solid rgba(255,255,255,.12);
+    border-bottom: 1px solid rgba(255,255,255,.08);
+    color: inherit;
+    text-decoration: none;
+    font-family: "Noto Serif JP", serif;
+    transition: opacity .32s ease, padding-left .32s ease;
+  }
+
+  .top-news-card:hover {
+    opacity: .78;
+    padding-left: 12px;
+  }
+
+  .top-news-card span {
+    color: rgba(255,255,255,.48);
+    font-size: 13px;
+    letter-spacing: .16em;
+  }
+
+  .top-news-card p {
+    color: rgba(255,255,255,.78);
+    font-size: 15px;
+    letter-spacing: .1em;
+    line-height: 1.9;
+  }
+
+  .top-news-card small {
+    color: rgba(214,177,112,.82);
+    font-size: 12px;
+    letter-spacing: .18em;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 768px) {
+    .top-news-card {
+      grid-template-columns: 1fr;
+      gap: 10px;
+      padding: 26px 0;
+    }
+
+    .top-news-card small {
+      margin-top: 6px;
+    }
+  }
+</style>
+
 </head>
 <body>
   <main class="hero" id="top">
@@ -1086,7 +1141,7 @@
         <a href="/kanjitsudo-site/#gallery-page">店内紹介</a>
         <a href="/kanjitsudo-site/menu.html#flow-section">ご利用の流れ</a>
         <a href="/kanjitsudo-site/faq.html">よくあるご質問</a>
-        <a href="/kanjitsudo-site/#news-page">お知らせ</a>
+        <a href="/kanjitsudo-site/news.html">お知らせ</a>
         <a href="/kanjitsudo-site/#contact-page">お問い合わせ</a>
         <a href="/kanjitsudo-site/#access-page">アクセス</a>
       </div>
@@ -1114,7 +1169,7 @@
 
     <a href="https://acumoxzen-tech.github.io/kanjitsudo-reserve/reserve.html" class="reserve"><span>ご予約はこちら</span><span>›</span></a>
 
-    <a href="#news-page" class="hero-news">
+    <a href="/kanjitsudo-site/news.html" class="hero-news">
       <span class="hero-news-date">2026.05.17</span>
       <span class="hero-news-text">還日堂 公式サイトを公開いたしました</span>
       <span class="hero-news-arrow">›</span>
@@ -1361,38 +1416,18 @@
     </div>
   </section>
 
-  <section class="news-section" id="news-page">
+  <section class="news-section news-teaser-section" id="news-page">
     <div class="section-inner narrow">
       <div class="section-head center">
         <span class="section-en">NEWS</span>
         <h2>お知らせ</h2>
       </div>
 
-      <div class="news-list">
-        <button class="news-item" type="button" data-news-title="還日堂 公式サイトを公開いたしました。" data-news-date="2026.05.17" data-news-body="還日堂の公式サイトを公開いたしました。施術内容やご予約・お問い合わせについて、こちらのサイトよりご確認いただけます。今後もお知らせや営業情報を随時更新してまいります。">
-          <span>2026.05.17</span>
-          <p>還日堂 公式サイトを公開いたしました。</p>
-        </button>
-
-        <button class="news-item" type="button" data-news-title="ご予約・お問い合わせフォームの受付を開始いたしました。" data-news-date="2026.05.17" data-news-body="公式サイトより、ご予約・お問い合わせを受け付けております。必要事項をご入力のうえ送信してください。内容を確認後、折り返しご連絡いたします。">
-          <span>2026.05.17</span>
-          <p>ご予約・お問い合わせフォームの受付を開始いたしました。</p>
-        </button>
-      </div>
-
-      <div class="news-more-wrap">
-        <button type="button" class="news-more-btn" id="newsMoreBtn">VIEW MORE</button>
-      </div>
-    </div>
-
-    <div class="news-modal" id="newsModal" aria-hidden="true">
-      <div class="news-modal-bg" id="newsModalBg"></div>
-      <div class="news-modal-content">
-        <button type="button" class="news-close" id="newsClose">×</button>
-        <span class="news-modal-date" id="newsModalDate"></span>
-        <h3 id="newsModalTitle"></h3>
-        <p id="newsModalBody"></p>
-      </div>
+      <a href="/kanjitsudo-site/news.html" class="top-news-card">
+        <span>2026.05.17</span>
+        <p>還日堂 公式サイトを公開いたしました。</p>
+        <small>お知らせ一覧へ</small>
+      </a>
     </div>
   </section>
 
