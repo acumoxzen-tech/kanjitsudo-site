@@ -454,3 +454,90 @@
   }
 }
 
+/* ===== Small mobile menu spacing polish ===== */
+@media (max-width: 768px) {
+  .site-nav.is-open .nav-dropdown-menu a,
+  nav.mobile-nav.is-open .nav-dropdown-menu a,
+  header nav.is-open .nav-dropdown-menu a {
+    padding: 6px 0 !important;
+    line-height: 1.2 !important;
+  }
+
+  .site-nav.is-open .nav-dropdown-menu,
+  nav.mobile-nav.is-open .nav-dropdown-menu,
+  header nav.is-open .nav-dropdown-menu {
+    margin-top: 6px !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+}
+
+/* ===== FINAL CLOSE X OVERLAP FIX ===== */
+@media (max-width: 768px) {
+  /* Closed state: hamburger only */
+  header nav:not(.is-open)::before,
+  .site-nav:not(.is-open)::before,
+  nav.mobile-nav:not(.is-open)::before {
+    content: none !important;
+    display: none !important;
+  }
+
+  header nav:not(.is-open)::after,
+  .site-nav:not(.is-open)::after,
+  nav.mobile-nav:not(.is-open)::after {
+    content: "" !important;
+    display: inline-flex !important;
+    width: 36px !important;
+    height: 36px !important;
+    flex: 0 0 36px !important;
+    background:
+      linear-gradient(rgba(255,255,255,.92), rgba(255,255,255,.92)) 6px 10px / 24px 1.5px no-repeat,
+      linear-gradient(rgba(255,255,255,.92), rgba(255,255,255,.92)) 6px 17px / 24px 1.5px no-repeat,
+      linear-gradient(rgba(255,255,255,.92), rgba(255,255,255,.92)) 6px 24px / 24px 1.5px no-repeat !important;
+    transform: none !important;
+    pointer-events: none !important;
+  }
+
+  /* Open state: kill all old after-based close marks */
+  header nav.is-open::after,
+  .site-nav.is-open::after,
+  nav.mobile-nav.is-open::after {
+    content: none !important;
+    display: none !important;
+    background: none !important;
+  }
+
+  /* Open state: draw exactly one close X */
+  header nav.is-open::before,
+  .site-nav.is-open::before,
+  nav.mobile-nav.is-open::before {
+    content: "" !important;
+    position: fixed !important;
+    top: 18px !important;
+    right: 18px !important;
+    width: 40px !important;
+    height: 40px !important;
+    z-index: 10001 !important;
+    display: block !important;
+    background:
+      linear-gradient(45deg, transparent calc(50% - .8px), rgba(255,255,255,.92) calc(50% - .8px), rgba(255,255,255,.92) calc(50% + .8px), transparent calc(50% + .8px)),
+      linear-gradient(-45deg, transparent calc(50% - .8px), rgba(255,255,255,.92) calc(50% - .8px), rgba(255,255,255,.92) calc(50% + .8px), transparent calc(50% + .8px)) !important;
+    transform: none !important;
+    pointer-events: none !important;
+  }
+
+  /* Hide any legacy button/text close elements */
+  .menu-toggle,
+  .header-actions,
+  .hamburger {
+    display: none !important;
+  }
+
+  body.menu-open .menu-toggle::before,
+  .menu-toggle::before,
+  .menu-toggle::after {
+    content: none !important;
+    display: none !important;
+  }
+}
+
