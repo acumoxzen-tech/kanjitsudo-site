@@ -1,8 +1,7 @@
 /* =========================================================
    還日堂 Header System
-   Single source of truth for all page headers.
-   PC: full navigation
-   SP: logo + Instagram + hamburger / drawer
+   This is the only file that controls the site header.
+   Do not duplicate header/nav styles inside individual pages.
 ========================================================= */
 
 .site-header {
@@ -36,26 +35,12 @@
   color: #fff;
 }
 
-/* Instagram: fixed SVG icon, no pseudo-drawing conflicts */
-.site-header .nav-instagram .instagram,
-.site-header a[aria-label="Instagram"] .instagram {
-  display: block !important;
-  width: 28px !important;
-  height: 28px !important;
-  border: 0 !important;
-  border-radius: 0 !important;
-  background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2028%2028%22%3E%3Crect%20x%3D%223.5%22%20y%3D%223.5%22%20width%3D%2221%22%20height%3D%2221%22%20rx%3D%226%22%20ry%3D%226%22%20fill%3D%22none%22%20stroke%3D%22rgba%28255%2C255%2C255%2C.96%29%22%20stroke-width%3D%221.8%22/%3E%3Ccircle%20cx%3D%2214%22%20cy%3D%2214%22%20r%3D%225%22%20fill%3D%22none%22%20stroke%3D%22rgba%28255%2C255%2C255%2C.96%29%22%20stroke-width%3D%221.8%22/%3E%3Ccircle%20cx%3D%2220.3%22%20cy%3D%227.7%22%20r%3D%221.45%22%20fill%3D%22rgba%28255%2C255%2C255%2C.96%29%22/%3E%3C/svg%3E") center center / 28px 28px no-repeat !important;
-  position: relative !important;
-  transform: none !important;
-  box-shadow: none !important;
-}
-
-.site-header .nav-instagram .instagram::before,
-.site-header .nav-instagram .instagram::after,
-.site-header a[aria-label="Instagram"] .instagram::before,
-.site-header a[aria-label="Instagram"] .instagram::after {
-  content: none !important;
-  display: none !important;
+.site-header .desktop-reserve-link::before,
+.site-header .desktop-reserve-link::after,
+.site-header .nav-reserve-menu::before,
+.site-header .nav-reserve-menu::after {
+  content: none;
+  display: none;
 }
 
 /* ---------- PC HEADER ---------- */
@@ -163,7 +148,6 @@
   }
 
   .site-header .site-nav > a.active::after,
-  .site-header .nav-dropdown-trigger.active::after,
   .site-header .nav-dropdown-menu a.active::after {
     content: "" !important;
     position: absolute !important;
@@ -181,7 +165,6 @@
 
   .site-header .nav-dropdown-trigger {
     display: block !important;
-    position: relative !important;
     border: none !important;
     background: transparent !important;
     color: rgba(255,255,255,.92) !important;
@@ -230,33 +213,24 @@
     position: relative !important;
   }
 
-  .site-header .site-nav > a.desktop-reserve-link.nav-reserve-menu,
-  .site-header .site-nav > a.desktop-reserve-link,
-  .site-header .site-nav > a.nav-reserve-menu {
+  .site-header .desktop-reserve-link,
+  .site-header .nav-reserve-menu {
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
-    width: auto !important;
-    min-width: 126px !important;
     height: 42px !important;
     min-height: 42px !important;
     padding: 0 28px !important;
     margin-top: -10px !important;
-    margin-bottom: 0 !important;
-    border: 1px solid rgba(255,255,255,.24) !important;
     border-radius: 999px !important;
+    border: 1px solid rgba(255,255,255,.22) !important;
     background: rgba(255,255,255,.08) !important;
-    backdrop-filter: blur(14px) saturate(140%) !important;
-    -webkit-backdrop-filter: blur(14px) saturate(140%) !important;
-    box-shadow: inset 0 1px 0 rgba(255,255,255,.08) !important;
     color: rgba(255,255,255,.96) !important;
-    font-family: "Noto Serif JP", serif !important;
     font-size: 13px !important;
-    font-weight: 500 !important;
     letter-spacing: .18em !important;
     line-height: 1 !important;
-    text-decoration: none !important;
-    transform: translateY(1px) !important;
+    font-weight: 500 !important;
+    transform: none !important;
   }
 
   .site-header .desktop-reserve-link::before,
@@ -267,15 +241,48 @@
     display: none !important;
   }
 
-  .site-header .nav-instagram,
-  .site-header a[aria-label="Instagram"] {
+  .site-header .nav-instagram {
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
-    width: 32px !important;
-    height: 32px !important;
+    width: 30px !important;
+    height: 30px !important;
     padding: 0 !important;
-    margin-top: -6px !important;
+    margin-top: -5px !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  .site-header .instagram {
+    display: inline-block !important;
+    width: 28px !important;
+    height: 28px !important;
+    border: 1.7px solid #fff !important;
+    border-radius: 8px !important;
+    position: relative !important;
+    transform: none !important;
+  }
+
+  .site-header .instagram::before {
+    content: "" !important;
+    position: absolute !important;
+    width: 10px !important;
+    height: 10px !important;
+    border: 1.7px solid #fff !important;
+    border-radius: 50% !important;
+    left: 7px !important;
+    top: 7px !important;
+  }
+
+  .site-header .instagram::after {
+    content: "" !important;
+    position: absolute !important;
+    width: 3px !important;
+    height: 3px !important;
+    background: #fff !important;
+    border-radius: 50% !important;
+    right: 4px !important;
+    top: 4px !important;
   }
 }
 
@@ -362,7 +369,7 @@
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
-    width: 34px !important;
+    width: 30px !important;
     height: 36px !important;
     padding: 0 !important;
     margin: 0 !important;
@@ -488,7 +495,342 @@
     content: none !important;
     display: none !important;
   }
+}
 
+
+/* ===== COMPONENT FIX FINAL ===== */
+
+/* Instagram component, same shape on every page */
+.site-header .instagram {
+  display: inline-block !important;
+  border: 1.7px solid #fff !important;
+  border-radius: 8px !important;
+  position: relative !important;
+  background: transparent !important;
+  transform: none !important;
+}
+.site-header .instagram::before {
+  content: "" !important;
+  position: absolute !important;
+  border: 1.7px solid #fff !important;
+  border-radius: 50% !important;
+  background: transparent !important;
+}
+.site-header .instagram::after {
+  content: "" !important;
+  position: absolute !important;
+  background: #fff !important;
+  border-radius: 50% !important;
+}
+
+@media (min-width: 769px) {
+  .site-header .desktop-reserve-link,
+  .site-header .nav-reserve-menu {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: 42px !important;
+    min-height: 42px !important;
+    padding: 0 28px !important;
+    margin-top: -10px !important;
+    border-radius: 999px !important;
+    border: 1px solid rgba(255,255,255,.22) !important;
+    background: rgba(255,255,255,.08) !important;
+    backdrop-filter: blur(14px) saturate(140%) !important;
+    -webkit-backdrop-filter: blur(14px) saturate(140%) !important;
+    color: rgba(255,255,255,.96) !important;
+    font-size: 13px !important;
+    letter-spacing: .18em !important;
+    line-height: 1 !important;
+    font-weight: 500 !important;
+    text-decoration: none !important;
+  }
+  .site-header .desktop-reserve-link::before,
+  .site-header .desktop-reserve-link::after,
+  .site-header .nav-reserve-menu::before,
+  .site-header .nav-reserve-menu::after {
+    content: none !important;
+    display: none !important;
+  }
+
+  .site-header .nav-instagram {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 30px !important;
+    height: 30px !important;
+    padding: 0 !important;
+    margin-top: -5px !important;
+  }
+  .site-header .instagram {
+    width: 28px !important;
+    height: 28px !important;
+  }
+  .site-header .instagram::before {
+    width: 10px !important;
+    height: 10px !important;
+    left: 7px !important;
+    top: 7px !important;
+  }
+  .site-header .instagram::after {
+    width: 3px !important;
+    height: 3px !important;
+    right: 4px !important;
+    top: 4px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .site-header .site-nav.is-open > a.nav-reserve-menu,
+  .site-header .site-nav.is-open > a.desktop-reserve-link {
+    font-size: 0 !important;
+  }
+  .site-header .site-nav.is-open > a.nav-reserve-menu::before,
+  .site-header .site-nav.is-open > a.desktop-reserve-link::before {
+    content: "ご予約はこちら" !important;
+    display: inline !important;
+    font-size: 13px !important;
+    letter-spacing: .16em !important;
+    line-height: 1 !important;
+  }
+  .site-header .site-nav.is-open > a.nav-reserve-menu::after,
+  .site-header .site-nav.is-open > a.desktop-reserve-link::after {
+    content: none !important;
+    display: none !important;
+  }
+
+  .site-header .nav-instagram {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 30px !important;
+    height: 36px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  .site-header .instagram {
+    width: 24px !important;
+    height: 24px !important;
+    border-radius: 7px !important;
+  }
+  .site-header .instagram::before {
+    width: 8px !important;
+    height: 8px !important;
+    left: 6px !important;
+    top: 6px !important;
+  }
+  .site-header .instagram::after {
+    width: 3px !important;
+    height: 3px !important;
+    right: 4px !important;
+    top: 4px !important;
+  }
+}
+
+
+/* ===== PC RESERVE BUTTON FINAL LOCK ===== */
+@media (min-width: 769px) {
+  .site-header .site-nav > a.desktop-reserve-link.nav-reserve-menu,
+  .site-header .site-nav > a.desktop-reserve-link,
+  .site-header .site-nav > a.nav-reserve-menu {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    width: auto !important;
+    min-width: 126px !important;
+    height: 42px !important;
+    min-height: 42px !important;
+
+    padding: 0 28px !important;
+    margin-top: -10px !important;
+    margin-bottom: 0 !important;
+
+    border: 1px solid rgba(255,255,255,.24) !important;
+    border-radius: 999px !important;
+    background: rgba(255,255,255,.08) !important;
+    backdrop-filter: blur(14px) saturate(140%) !important;
+    -webkit-backdrop-filter: blur(14px) saturate(140%) !important;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.08) !important;
+
+    color: rgba(255,255,255,.96) !important;
+    font-family: "Noto Serif JP", serif !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    letter-spacing: .18em !important;
+    line-height: 1 !important;
+    text-decoration: none !important;
+
+    transform: translateY(1px) !important;
+  }
+
+  .site-header .site-nav > a.desktop-reserve-link.nav-reserve-menu::before,
+  .site-header .site-nav > a.desktop-reserve-link.nav-reserve-menu::after,
+  .site-header .site-nav > a.desktop-reserve-link::before,
+  .site-header .site-nav > a.desktop-reserve-link::after,
+  .site-header .site-nav > a.nav-reserve-menu::before,
+  .site-header .site-nav > a.nav-reserve-menu::after {
+    content: none !important;
+    display: none !important;
+  }
+}
+
+
+/* ===== HEADER ACTIVE STATE FINAL ===== */
+@media (min-width: 769px) {
+  .site-header .nav-dropdown-trigger.active {
+    position: relative !important;
+  }
+
+  .site-header .nav-dropdown-trigger.active::after {
+    content: "" !important;
+    position: absolute !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    bottom: 0 !important;
+    width: 100% !important;
+    height: 1px !important;
+    background: rgba(214,177,112,.72) !important;
+  }
+}
+
+
+/* ===== INSTAGRAM ICON TUNE FINAL ===== */
+
+/* PC */
+@media (min-width: 769px) {
+  .site-header .nav-instagram {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 30px !important;
+    height: 30px !important;
+    margin-top: -5px !important;
+  }
+
+  .site-header .instagram {
+    width: 26px !important;
+    height: 26px !important;
+    border: 1.55px solid rgba(255,255,255,.96) !important;
+    border-radius: 7px !important;
+    position: relative !important;
+    background: transparent !important;
+  }
+
+  .site-header .instagram::before {
+    content: "" !important;
+    position: absolute !important;
+    width: 9px !important;
+    height: 9px !important;
+    border: 1.55px solid rgba(255,255,255,.96) !important;
+    border-radius: 50% !important;
+    left: 6px !important;
+    top: 6px !important;
+    background: transparent !important;
+  }
+
+  .site-header .instagram::after {
+    content: "" !important;
+    position: absolute !important;
+    width: 2.5px !important;
+    height: 2.5px !important;
+    right: 4px !important;
+    top: 4px !important;
+    border-radius: 50% !important;
+    background: rgba(255,255,255,.96) !important;
+  }
+}
+
+/* SP */
+@media (max-width: 768px) {
+  .site-header .nav-instagram {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 28px !important;
+    height: 28px !important;
+  }
+
+  .site-header .instagram {
+    width: 23px !important;
+    height: 23px !important;
+    border: 1.45px solid rgba(255,255,255,.96) !important;
+    border-radius: 6px !important;
+    position: relative !important;
+    background: transparent !important;
+  }
+
+  .site-header .instagram::before {
+    content: "" !important;
+    position: absolute !important;
+    width: 7.5px !important;
+    height: 7.5px !important;
+    border: 1.45px solid rgba(255,255,255,.96) !important;
+    border-radius: 50% !important;
+    left: 5.5px !important;
+    top: 5.5px !important;
+    background: transparent !important;
+  }
+
+  .site-header .instagram::after {
+    content: "" !important;
+    position: absolute !important;
+    width: 2.3px !important;
+    height: 2.3px !important;
+    right: 3.5px !important;
+    top: 3.5px !important;
+    border-radius: 50% !important;
+    background: rgba(255,255,255,.96) !important;
+  }
+}
+
+
+/* ===== INSTAGRAM SVG FINAL LOCK ===== */
+/* 疑似要素描画をやめて、PC/SP共通でSVG背景に固定 */
+.site-header .nav-instagram .instagram,
+.site-header a[aria-label="Instagram"] .instagram {
+  display: block !important;
+  width: 28px !important;
+  height: 28px !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2028%2028%22%3E%0A%20%20%3Crect%20x%3D%223.5%22%20y%3D%223.5%22%20width%3D%2221%22%20height%3D%2221%22%20rx%3D%226%22%20ry%3D%226%22%20fill%3D%22none%22%20stroke%3D%22rgba%28255%2C255%2C255%2C.96%29%22%20stroke-width%3D%221.8%22/%3E%0A%20%20%3Ccircle%20cx%3D%2214%22%20cy%3D%2214%22%20r%3D%225%22%20fill%3D%22none%22%20stroke%3D%22rgba%28255%2C255%2C255%2C.96%29%22%20stroke-width%3D%221.8%22/%3E%0A%20%20%3Ccircle%20cx%3D%2220.3%22%20cy%3D%227.7%22%20r%3D%221.45%22%20fill%3D%22rgba%28255%2C255%2C255%2C.96%29%22/%3E%0A%3C/svg%3E") center center / 28px 28px no-repeat !important;
+  position: relative !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.site-header .nav-instagram .instagram::before,
+.site-header .nav-instagram .instagram::after,
+.site-header a[aria-label="Instagram"] .instagram::before,
+.site-header a[aria-label="Instagram"] .instagram::after {
+  content: none !important;
+  display: none !important;
+  border: 0 !important;
+  background: none !important;
+}
+
+@media (min-width: 769px) {
+  .site-header .nav-instagram,
+  .site-header a[aria-label="Instagram"] {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 32px !important;
+    height: 32px !important;
+    padding: 0 !important;
+    margin-top: -6px !important;
+  }
+
+  .site-header .nav-instagram .instagram,
+  .site-header a[aria-label="Instagram"] .instagram {
+    width: 28px !important;
+    height: 28px !important;
+    background-size: 28px 28px !important;
+  }
+}
+
+@media (max-width: 768px) {
   .site-header .nav-instagram,
   .site-header a[aria-label="Instagram"] {
     display: inline-flex !important;
@@ -499,4 +841,210 @@
     padding: 0 !important;
     margin: 0 !important;
   }
+
+  .site-header .nav-instagram .instagram,
+  .site-header a[aria-label="Instagram"] .instagram {
+    width: 28px !important;
+    height: 28px !important;
+    background-size: 28px 28px !important;
+  }
 }
+
+
+/* ===== MOBILE DRAWER FINAL FIX ===== */
+@media (max-width: 768px) {
+  .site-header {
+    height: 70px !important;
+    padding: 9px 14px !important;
+    align-items: center !important;
+  }
+
+  .site-header .site-nav:not(.is-open) {
+    position: static !important;
+    width: auto !important;
+    height: 36px !important;
+    min-height: 36px !important;
+    max-height: 36px !important;
+    margin: 0 0 0 auto !important;
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    flex-direction: row !important;
+    gap: 14px !important;
+    background: transparent !important;
+    overflow: visible !important;
+  }
+
+  .site-header .site-nav:not(.is-open) > a:not([aria-label="Instagram"]),
+  .site-header .site-nav:not(.is-open) .nav-dropdown,
+  .site-header .site-nav:not(.is-open) .desktop-reserve-link,
+  .site-header .site-nav:not(.is-open) .nav-reserve-menu {
+    display: none !important;
+  }
+
+  .site-header .site-nav:not(.is-open)::after {
+    content: "" !important;
+    display: inline-flex !important;
+    width: 36px !important;
+    height: 36px !important;
+    flex: 0 0 36px !important;
+    order: 2 !important;
+    background:
+      linear-gradient(rgba(255,255,255,.92),rgba(255,255,255,.92)) 6px 10px/24px 1.5px no-repeat,
+      linear-gradient(rgba(255,255,255,.92),rgba(255,255,255,.92)) 6px 17px/24px 1.5px no-repeat,
+      linear-gradient(rgba(255,255,255,.92),rgba(255,255,255,.92)) 6px 24px/24px 1.5px no-repeat !important;
+    pointer-events: none !important;
+  }
+
+  .site-header .site-nav.is-open {
+    position: fixed !important;
+    top: 0 !important;
+    right: 0 !important;
+    width: min(78vw, 650px) !important;
+    height: 100vh !important;
+    max-height: 100vh !important;
+    margin: 0 !important;
+    padding: 118px 34px 42px !important;
+    background: rgba(5,4,3,.965) !important;
+    backdrop-filter: blur(18px) !important;
+    -webkit-backdrop-filter: blur(18px) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    gap: 24px !important;
+    overflow-y: auto !important;
+    z-index: 9999 !important;
+  }
+
+  /* 開いた時の閉じる×を1個だけ出す */
+  .site-header .site-nav.is-open::after {
+    content: "" !important;
+    position: fixed !important;
+    top: 24px !important;
+    right: 28px !important;
+    width: 40px !important;
+    height: 40px !important;
+    background:
+      linear-gradient(rgba(255,255,255,.92), rgba(255,255,255,.92)) center/34px 1.6px no-repeat !important;
+    transform: rotate(45deg) !important;
+    z-index: 10003 !important;
+    pointer-events: none !important;
+  }
+
+  .site-header .site-nav.is-open::before {
+    content: "" !important;
+    position: fixed !important;
+    top: 24px !important;
+    right: 28px !important;
+    width: 40px !important;
+    height: 40px !important;
+    background:
+      linear-gradient(rgba(255,255,255,.92), rgba(255,255,255,.92)) center/34px 1.6px no-repeat !important;
+    transform: rotate(-45deg) !important;
+    z-index: 10003 !important;
+    pointer-events: none !important;
+  }
+
+  .site-header .site-nav.is-open > a[aria-label="Instagram"] {
+    display: none !important;
+  }
+
+  .site-header .site-nav.is-open > a,
+  .site-header .site-nav.is-open .nav-dropdown {
+    display: block !important;
+    width: auto !important;
+    min-height: 0 !important;
+    color: rgba(255,255,255,.92) !important;
+    text-decoration: none !important;
+    background: transparent !important;
+    border: 0 !important;
+    padding: 0 !important;
+    font-size: 15px !important;
+    letter-spacing: .14em !important;
+    line-height: 1.45 !important;
+  }
+
+  .site-header .site-nav.is-open > a.active::after {
+    content: "" !important;
+    position: absolute !important;
+    left: 0 !important;
+    bottom: -8px !important;
+    width: 100% !important;
+    height: 1px !important;
+    background: rgba(214,177,112,.72) !important;
+    transform: none !important;
+  }
+
+  .site-header .site-nav.is-open .nav-dropdown-trigger {
+    display: block !important;
+    border: none !important;
+    background: transparent !important;
+    color: rgba(255,255,255,.92) !important;
+    font-family: "Noto Serif JP", serif !important;
+    font-size: 15px !important;
+    letter-spacing: .14em !important;
+    line-height: 1.45 !important;
+    padding: 0 !important;
+  }
+
+  .site-header .site-nav.is-open .nav-dropdown-menu {
+    position: static !important;
+    transform: none !important;
+    min-width: 0 !important;
+    padding: 18px 0 0 24px !important;
+    border: none !important;
+    background: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    box-shadow: none !important;
+  }
+
+  .site-header .site-nav.is-open .nav-dropdown-menu a {
+    display: block !important;
+    position: relative !important;
+    width: fit-content !important;
+    padding: 12px 0 !important;
+    margin: 0 !important;
+    font-size: 13px !important;
+    letter-spacing: .12em !important;
+    color: rgba(255,255,255,.68) !important;
+    text-decoration: none !important;
+    line-height: 1.55 !important;
+  }
+
+  .site-header .site-nav.is-open > a.nav-reserve-menu,
+  .site-header .site-nav.is-open > a.desktop-reserve-link {
+    margin-top: 18px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-width: 190px !important;
+    height: 48px !important;
+    padding: 0 24px !important;
+    border: 1px solid rgba(255,255,255,.28) !important;
+    background: rgba(255,255,255,.035) !important;
+    color: rgba(255,255,255,.92) !important;
+    font-size: 0 !important;
+    letter-spacing: .16em !important;
+  }
+
+  .site-header .site-nav.is-open > a.nav-reserve-menu::before,
+  .site-header .site-nav.is-open > a.desktop-reserve-link::before {
+    content: "ご予約はこちら" !important;
+    display: inline !important;
+    font-size: 13px !important;
+    letter-spacing: .16em !important;
+    line-height: 1 !important;
+  }
+
+  .site-header .site-nav.is-open > a.nav-reserve-menu::after,
+  .site-header .site-nav.is-open > a.desktop-reserve-link::after {
+    content: none !important;
+    display: none !important;
+  }
+}
+
