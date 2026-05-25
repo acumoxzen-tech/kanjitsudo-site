@@ -1111,6 +1111,91 @@
   }
 </style>
 
+
+<style id="top-news-cleanup-style">
+.top-news-card{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:40px;
+  width:100%;
+  padding:34px 0;
+  border-top:1px solid rgba(255,255,255,.10);
+  border-bottom:1px solid rgba(255,255,255,.08);
+  text-decoration:none;
+  color:inherit;
+  transition:opacity .3s ease, padding-left .3s ease;
+}
+
+.top-news-card:hover{
+  opacity:.78;
+  padding-left:12px;
+}
+
+.top-news-meta{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  min-width:140px;
+}
+
+.top-news-meta span{
+  color:rgba(255,255,255,.52);
+  font-size:13px;
+  letter-spacing:.18em;
+}
+
+.top-news-meta small{
+  color:rgba(214,177,112,.82);
+  font-size:11px;
+  letter-spacing:.28em;
+}
+
+.top-news-content{
+  flex:1;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:28px;
+}
+
+.top-news-content p{
+  color:rgba(255,255,255,.84);
+  font-size:15px;
+  letter-spacing:.12em;
+  line-height:1.9;
+}
+
+.top-news-content em{
+  color:rgba(214,177,112,.82);
+  font-style:normal;
+  font-size:12px;
+  letter-spacing:.22em;
+  white-space:nowrap;
+}
+
+@media (max-width:768px){
+  .top-news-card{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:18px;
+    padding:28px 0;
+  }
+
+  .top-news-content{
+    width:100%;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:14px;
+  }
+
+  .top-news-content p{
+    font-size:14px;
+    line-height:2;
+  }
+}
+</style>
+
 </head>
 <body>
   <main class="hero" id="top">
@@ -1416,20 +1501,28 @@
     </div>
   </section>
 
-  <section class="news-section news-teaser-section" id="news-page">
-    <div class="section-inner narrow">
-      <div class="section-head center">
-        <span class="section-en">NEWS</span>
-        <h2>お知らせ</h2>
+  
+<section class="news-section news-teaser-section" id="news-page">
+  <div class="section-inner narrow">
+    <div class="section-head center">
+      <span class="section-en">LATEST NEWS</span>
+      <h2>最新のお知らせ</h2>
+    </div>
+
+    <a href="/kanjitsudo-site/news.html" class="top-news-card">
+      <div class="top-news-meta">
+        <span>2026.05.17</span>
+        <small>NEWS</small>
       </div>
 
-      <a href="/kanjitsudo-site/news.html" class="top-news-card">
-        <span>2026.05.17</span>
+      <div class="top-news-content">
         <p>還日堂 公式サイトを公開いたしました。</p>
-        <small>お知らせ一覧へ</small>
-      </a>
-    </div>
-  </section>
+        <em>お知らせ一覧へ</em>
+      </div>
+    </a>
+  </div>
+</section>
+
 
   <section class="form-section" id="contact-page">
     <div class="form-shell">
