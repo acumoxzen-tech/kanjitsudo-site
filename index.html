@@ -1240,6 +1240,40 @@
 </style>
 
   <link rel="stylesheet" href="css/header.css">
+
+<style id="sp-hero-news-absolute-spacing-final">
+@media (max-width:768px){
+
+  /* 原因: .hero-news が absolute 配置なので margin が効かなかった */
+  .hero .reserve,
+  main.hero a.reserve{
+    display:inline-flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    line-height:1!important;
+  }
+
+  .hero .reserve span:first-child,
+  main.hero a.reserve span:first-child{
+    display:inline-flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    line-height:1!important;
+    transform:none!important;
+  }
+
+  .hero-news.hero-news-block,
+  main.hero .hero-news.hero-news-block{
+    position:absolute!important;
+    left:7vw!important;
+    right:7vw!important;
+    bottom:10.2%!important;
+    margin-top:0!important;
+    transform:none!important;
+  }
+}
+</style>
+
 </head>
 <body>
   <main class="hero" id="top">
