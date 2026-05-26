@@ -1689,3 +1689,20 @@
     margin-top:8px!important;
   }
 }
+
+
+
+/* ===== SP MENU BUTTON BALANCE ===== */
+@media (max-width:768px){
+
+  .menu-section .button,
+  .menu-section .cta-button,
+  .menu-section a.button,
+  .menu-section .menu-link{
+    width:auto!important;
+    min-width:0!important;
+    padding:16px 26px!important;
+    letter-spacing:.14em!important;
+  }
+}
+

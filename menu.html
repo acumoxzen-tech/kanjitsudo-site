@@ -282,7 +282,7 @@
           rgba(5,4,3,.28) 0%,
           rgba(5,4,3,.08) 38%,
           rgba(5,4,3,.46) 100%),
-        url('https://res.cloudinary.com/dvr7rww8q/image/upload/v1779258651/ChatGPT_Image_2026%E5%B9%B45%E6%9C%8817%E6%97%A5_11_39_54_1_txjqod.jpg') 72% center / cover no-repeat;
+        url('https://res.cloudinary.com/dvr7rww8q/image/upload/f_auto,q_auto/v1779348838/ChatGPT_Image_2026%E5%B9%B45%E6%9C%8821%E6%97%A5_16_31_37_ipynxw.png') 72% center / cover no-repeat;
       filter: saturate(.98) brightness(1.01) contrast(1.02);
     }
 
@@ -2309,6 +2309,62 @@
 
 
   <link rel="stylesheet" href="css/header.css">
+
+<style id="sp-menu-restructure-style">
+@media (max-width:768px){
+
+  /* 元Hero文言を非表示 */
+  .menu-hero small,
+  .menu-hero h1:not(.sp-menu-title),
+  .menu-hero p:not(.sp-menu-description){
+    display:none!important;
+  }
+
+  /* SP Hero文言 */
+  .sp-menu-hero-copy{
+    position:relative;
+    z-index:3;
+    display:block;
+    width:100%;
+    padding-top:26px;
+  }
+
+  .sp-menu-title{
+    margin:0;
+    font-family:"Noto Serif JP",serif;
+    font-size:28px;
+    line-height:1.7;
+    letter-spacing:.12em;
+    font-weight:300;
+    color:rgba(255,255,255,.96);
+  }
+
+  .sp-menu-description{
+    margin-top:22px;
+    font-size:13px;
+    line-height:2.1;
+    letter-spacing:.08em;
+    color:rgba(255,255,255,.76);
+  }
+
+  /* カード前説明を全部カット */
+  .menu-intro,
+  .menu-copy,
+  .menu-lead,
+  .treatment-copy,
+  .menu-description-section{
+    display:none!important;
+  }
+
+  /* Hero直下からカード */
+  .menu-grid,
+  .menu-cards,
+  .treatment-grid{
+    margin-top:8px!important;
+  }
+}
+</style>
+
 </head>
 <body>
   <header class="site-header" id="siteHeader">
@@ -2347,6 +2403,15 @@
 
   <main>
     <section class="menu-hero" id="menu-top">
+
+<div class="sp-menu-hero-copy">
+  <h1 class="sp-menu-title">健美を整える、<br>二つの治療</h1>
+  <p class="sp-menu-description">
+    環日堂では、”健やかさ”と”美しさ”を整える二つの治療を軸に、
+    お身体全体の巡りを診ながらご案内しています。
+  </p>
+</div>
+
       <div class="page-inner">
         <div class="breadcrumb fade-up"><a href="/kanjitsudo-site/">HOME</a><span>›</span><span>MENU</span></div>
         <span class="section-en fade-up delay-1">TREATMENT MENU</span>
