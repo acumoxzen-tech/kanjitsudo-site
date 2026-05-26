@@ -1383,12 +1383,7 @@
 /* ===== DRAWER LOGO REAL FIX ===== */
 @media (max-width:768px){
 
-  .site-header.drawer-open .brand{
-    opacity:0!important;
-    visibility:hidden!important;
-    pointer-events:none!important;
-    z-index:0!important;
-  }
+  
 
   .site-header.drawer-open .site-nav.is-open{
     z-index:10020!important;
@@ -1463,11 +1458,7 @@
   }
 
   /* ロゴは開いたら隠す */
-  .site-header.drawer-open .brand{
-    opacity:0!important;
-    visibility:hidden!important;
-    pointer-events:none!important;
-  }
+  
 
   /* ×は小さめ・右上・クリック判定は元のハンバーガー領域に任せる */
   .site-header .site-nav.is-open::before,
@@ -1543,6 +1534,28 @@
 
   .site-header .site-nav.is-open::after{
     transform:rotate(-45deg)!important;
+  }
+}
+
+
+/* ===== DRAWER LOGO SOFT BACK ===== */
+@media (max-width:768px){
+
+  /* ロゴは完全消去ではなく背面へ沈める */
+  .site-header.drawer-open .brand{
+    opacity:.22!important;
+    filter:blur(1px)!important;
+    transform:scale(.98)!important;
+    transition:
+      opacity .28s ease,
+      filter .28s ease,
+      transform .28s ease!important;
+    pointer-events:none!important;
+    z-index:1!important;
+  }
+
+  .site-header.drawer-open .site-nav.is-open{
+    z-index:10020!important;
   }
 }
 
