@@ -1670,3 +1670,22 @@
   }
 }
 
+
+
+
+/* ===== SP HERO BUTTON / NEWS SPACING ===== */
+@media (max-width:768px){
+
+  .hero .reserve,
+  .hero a.reserve,
+  .hero-cta,
+  .fv .reserve{
+    margin-bottom:32px!important;
+  }
+
+  .hero-news,
+  .hero-news-wrap,
+  .fv-news{
+    margin-top:8px!important;
+  }
+}

@@ -1538,24 +1538,44 @@
 }
 
 
-/* ===== DRAWER LOGO SOFT BACK ===== */
+/* ===== DRAWER LOGO FULL HIDE RESTORE ===== */
 @media (max-width:768px){
 
-  /* ロゴは完全消去ではなく背面へ沈める */
   .site-header.drawer-open .brand{
-    opacity:.22!important;
-    filter:blur(1px)!important;
-    transform:scale(.98)!important;
-    transition:
-      opacity .28s ease,
-      filter .28s ease,
-      transform .28s ease!important;
+    opacity:0!important;
+    visibility:hidden!important;
     pointer-events:none!important;
-    z-index:1!important;
+    filter:none!important;
+    transform:none!important;
+    transition:opacity .22s ease!important;
+    z-index:0!important;
   }
 
   .site-header.drawer-open .site-nav.is-open{
     z-index:10020!important;
+  }
+}
+
+
+/* ===== HAMBURGER X POSITION MATCH FINAL ===== */
+@media (max-width:768px){
+
+  /* 通常ハンバーガー位置 */
+  .site-header .site-nav:not(.is-open)::after{
+    width:36px!important;
+    height:36px!important;
+    flex:0 0 36px!important;
+  }
+
+  /* 開いた後の×を完全同位置へ */
+  .site-header .site-nav.is-open::before,
+  .site-header .site-nav.is-open::after{
+    top:17px!important;
+    right:14px!important;
+    width:36px!important;
+    height:36px!important;
+    background:
+      linear-gradient(rgba(255,255,255,.94),rgba(255,255,255,.94)) center/24px 1.5px no-repeat!important;
   }
 }
 
