@@ -2496,47 +2496,6 @@
 </style>
 
 
-<style id="sp-menu-card-intro-kill-final">
-@media (max-width:768px){
-
-  /* 施術カード上の見出し・説明ブロックをSPだけ非表示 */
-  .menu-section > .section-head,
-  .menu-section .section-head,
-  .menu-section .section-title,
-  .menu-section .section-lead,
-  .menu-section .lead,
-  .menu-section .lead-text,
-  .menu-section .menu-head,
-  .menu-section .menu-intro,
-  .menu-section .menu-copy,
-  .menu-section .menu-lead,
-  .menu-section .menu-description,
-  .menu-section .treatment-head,
-  .menu-section .treatment-intro,
-  .menu-section .treatment-copy,
-  .menu-section .treatment-lead,
-  .menu-section .section-kicker{
-    display:none!important;
-    opacity:0!important;
-    visibility:hidden!important;
-    pointer-events:none!important;
-  }
-
-  /* カードをHero直下へ */
-  .menu-section,
-  .treatment-section{
-    padding-top:38px!important;
-  }
-
-  .menu-grid,
-  .menu-cards,
-  .treatment-grid{
-    margin-top:0!important;
-  }
-}
-</style>
-
-
 <style id="sp-menu-hero-fulltop-final">
 @media (max-width:768px){
 
@@ -2595,6 +2554,58 @@
   /* containで余白が出ても暗背景で自然につなぐ */
   .menu-hero{
     background:#050403!important;
+  }
+}
+</style>
+
+
+<style id="sp-menu-cardcopy-balanced-return">
+@media (max-width:768px){
+
+  /* カード上説明を復活 */
+  .menu-section .section-head{
+    display:block!important;
+    opacity:1!important;
+    visibility:visible!important;
+    padding-bottom:18px!important;
+  }
+
+  .menu-section .section-head .section-en{
+    display:none!important;
+  }
+
+  .menu-section .section-head h2{
+    display:none!important;
+  }
+
+  .menu-section .section-head .section-lead{
+    display:block!important;
+    margin:0 auto!important;
+    max-width:82vw!important;
+    font-size:13px!important;
+    line-height:2.05!important;
+    letter-spacing:.08em!important;
+    color:rgba(255,255,255,.74)!important;
+    text-align:left!important;
+  }
+
+  /* 長文を短文化 */
+  .menu-section .section-head .section-lead{
+    color:transparent!important;
+    position:relative!important;
+  }
+
+  .menu-section .section-head .section-lead::after{
+    content:"お身体の状態に合わせて、二つの治療からご案内いたします。";
+    position:absolute!important;
+    inset:0!important;
+    color:rgba(255,255,255,.74)!important;
+  }
+
+  .menu-grid,
+  .menu-cards,
+  .treatment-grid{
+    margin-top:14px!important;
   }
 }
 </style>
