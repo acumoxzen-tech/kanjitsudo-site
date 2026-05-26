@@ -1275,24 +1275,33 @@
 </style>
 
 
-<style id="sp-menu-copy-change">
+
+<style id="sp-index-menu-lead-final">
 @media (max-width:768px){
-  .sp-menu-copy{
-    display:block!important;
-    font-size:13px!important;
-    line-height:2.1!important;
-    letter-spacing:.08em!important;
-    color:rgba(255,255,255,.76)!important;
+
+  /* Indexの施術メニュー導入文：SPだけ差し替え */
+  #menu-page .section-lead,
+  #menu-page .lead-text,
+  #menu-page .menu-lead,
+  #menu-page .menu-copy,
+  #menu-page .section-head p{
+    display:none!important;
   }
 
-  .menu-section .section-lead,
-  .menu-section .lead-text{
-    display:none!important;
+  #menu-page .sp-index-menu-lead{
+    display:block!important;
+    margin:18px auto 0!important;
+    max-width:82vw!important;
+    font-size:13px!important;
+    line-height:2.05!important;
+    letter-spacing:.08em!important;
+    color:rgba(255,255,255,.76)!important;
+    text-align:left!important;
   }
 }
 
 @media (min-width:769px){
-  .sp-menu-copy{
+  #menu-page .sp-index-menu-lead{
     display:none!important;
   }
 }
@@ -1404,12 +1413,13 @@
     <div class="section-inner">
       <div class="section-head center">
 
-<p class="sp-menu-copy">
-環日堂では、お一人おひとりのお身体の状態に合わせたオーダーメイドの治療をご案内しております
+<span class="section-en">MENU</span>
+        <h2>施術メニュー</h2>
+
+<p class="sp-index-menu-lead">
+  環日堂では、お一人おひとりのお身体の状態に合わせたオーダーメイドの治療をご案内しております
 </p>
 
-        <span class="section-en">MENU</span>
-        <h2>施術メニュー</h2>
       </div>
 
       <div class="menu-visual"></div>

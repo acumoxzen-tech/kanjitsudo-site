@@ -2573,6 +2573,32 @@
 }
 </style>
 
+
+<style id="sp-menu-hero-image-fit-final">
+@media (max-width:768px){
+
+  /* Hero画像を上まで出しつつ、拡大しすぎない */
+  .menu-hero::before{
+    background-size: auto 100%!important;
+    background-position: center top!important;
+    background-repeat: no-repeat!important;
+  }
+
+  .menu-hero img,
+  .menu-hero .hero-image{
+    object-fit: contain!important;
+    object-position: center top!important;
+    width:100%!important;
+    height:100%!important;
+  }
+
+  /* containで余白が出ても暗背景で自然につなぐ */
+  .menu-hero{
+    background:#050403!important;
+  }
+}
+</style>
+
 </head>
 <body>
   <header class="site-header" id="siteHeader">
