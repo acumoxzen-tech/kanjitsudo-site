@@ -2495,6 +2495,84 @@
 }
 </style>
 
+
+<style id="sp-menu-card-intro-kill-final">
+@media (max-width:768px){
+
+  /* 施術カード上の見出し・説明ブロックをSPだけ非表示 */
+  .menu-section > .section-head,
+  .menu-section .section-head,
+  .menu-section .section-title,
+  .menu-section .section-lead,
+  .menu-section .lead,
+  .menu-section .lead-text,
+  .menu-section .menu-head,
+  .menu-section .menu-intro,
+  .menu-section .menu-copy,
+  .menu-section .menu-lead,
+  .menu-section .menu-description,
+  .menu-section .treatment-head,
+  .menu-section .treatment-intro,
+  .menu-section .treatment-copy,
+  .menu-section .treatment-lead,
+  .menu-section .section-kicker{
+    display:none!important;
+    opacity:0!important;
+    visibility:hidden!important;
+    pointer-events:none!important;
+  }
+
+  /* カードをHero直下へ */
+  .menu-section,
+  .treatment-section{
+    padding-top:38px!important;
+  }
+
+  .menu-grid,
+  .menu-cards,
+  .treatment-grid{
+    margin-top:0!important;
+  }
+}
+</style>
+
+
+<style id="sp-menu-hero-fulltop-final">
+@media (max-width:768px){
+
+  /* Hero画像を画面最上部まで */
+  .menu-hero{
+    margin-top:-108px!important;
+    padding-top:170px!important;
+    min-height:88svh!important;
+    border-top:none!important;
+  }
+
+  /* Hero画像をさらに上方向へ */
+  .menu-hero::before{
+    background-position:center top!important;
+  }
+
+  .menu-hero img,
+  .menu-hero .hero-image{
+    object-position:center top!important;
+  }
+
+  /* Header上に被ってOK */
+  .site-header{
+    background:transparent!important;
+    backdrop-filter:none!important;
+    -webkit-backdrop-filter:none!important;
+  }
+
+  /* Heroテキスト位置 */
+  .sp-menu-hero-copy{
+    margin-top:auto!important;
+    padding-bottom:18px!important;
+  }
+}
+</style>
+
 </head>
 <body>
   <header class="site-header" id="siteHeader">
@@ -2537,8 +2615,7 @@
 <div class="sp-menu-hero-copy">
   <h1 class="sp-menu-title">健美を整える、<br>二つの治療</h1>
   <p class="sp-menu-description">
-    環日堂では、”健やかさ”と”美しさ”を整える二つの治療を軸に、
-    お身体全体の巡りを診ながらご案内しています。
+    環日堂では、”健やかさ”と”美しさ”を整える二つの治療を軸にご案内しています。
   </p>
 </div>
 
@@ -2558,7 +2635,7 @@
           <span class="section-en">MENU</span>
           <h2>健美を整える、二つの治療</h2>
           <p class="section-lead">
-            還日堂では、“健やかさ”と“美しさ”を整える二つの治療を軸に、お身体全体の巡りを診ながらご案内しております。
+            還日堂では、“健やかさ”と“美しさ”を整える二つの治療を軸にご案内しております。
           </p>
         </div>
 
