@@ -2365,6 +2365,136 @@
 }
 </style>
 
+
+<style id="sp-menu-hero-clean-final">
+@media (max-width:768px){
+
+  /* SP版メニューHero：余計な英字・パンくずを消す */
+  .menu-hero .breadcrumb,
+  .menu-hero .breadcrumbs,
+  .menu-hero .page-breadcrumb,
+  .menu-hero small,
+  .menu-hero .en,
+  .menu-hero .section-en,
+  .menu-hero .sub-en,
+  .menu-hero [class*="breadcrumb"],
+  .menu-hero [class*="Breadcrumb"]{
+    display:none!important;
+  }
+
+  /* PC用Hero文言はSPでは消す */
+  .menu-hero > h1:not(.sp-menu-title),
+  .menu-hero > p:not(.sp-menu-description),
+  .menu-hero .hero-copy:not(.sp-menu-description),
+  .menu-hero .hero-description:not(.sp-menu-description){
+    display:none!important;
+  }
+
+  /* SP用Hero文言の位置と幅 */
+  .sp-menu-hero-copy{
+    position:relative!important;
+    z-index:5!important;
+    display:block!important;
+    width:min(88vw, 520px)!important;
+    margin:0 auto 0 0!important;
+    padding:0 0 0 0!important;
+  }
+
+  .sp-menu-title{
+    margin:0 0 20px!important;
+    font-family:"Noto Serif JP",serif!important;
+    font-size:28px!important;
+    line-height:1.65!important;
+    letter-spacing:.1em!important;
+    font-weight:300!important;
+    color:rgba(255,255,255,.96)!important;
+    text-align:left!important;
+  }
+
+  .sp-menu-description{
+    margin:0!important;
+    width:min(84vw, 500px)!important;
+    font-size:13px!important;
+    line-height:2.05!important;
+    letter-spacing:.08em!important;
+    color:rgba(255,255,255,.76)!important;
+    text-align:left!important;
+  }
+
+  /* Hero全体を読みやすい位置へ */
+  .menu-hero{
+    min-height:82svh!important;
+    padding:150px 24px 86px!important;
+    display:flex!important;
+    align-items:flex-end!important;
+    justify-content:flex-start!important;
+  }
+
+  /* Hero直下はカードへ近づける */
+  .menu-intro,
+  .menu-copy,
+  .menu-lead,
+  .treatment-copy,
+  .menu-description-section{
+    display:none!important;
+  }
+
+  .menu-grid,
+  .menu-cards,
+  .treatment-grid{
+    margin-top:34px!important;
+  }
+}
+</style>
+
+
+<style id="sp-menu-old-copy-kill-final">
+@media (max-width:768px){
+
+  /* Hero内旧テキストを完全除去 */
+  .menu-hero .hero-copy,
+  .menu-hero .hero-text,
+  .menu-hero .hero-description,
+  .menu-hero .hero-lead,
+  .menu-hero .page-copy,
+  .menu-hero .page-description,
+  .menu-hero .treatment-copy,
+  .menu-hero .hero-subtitle,
+  .menu-hero .hero-en,
+  .menu-hero .hero-label,
+  .menu-hero .hero-category,
+  .menu-hero .page-en,
+  .menu-hero .section-en,
+  .menu-hero .menu-en,
+  .menu-hero .menu-label,
+  .menu-hero .menu-breadcrumb,
+  .menu-hero .breadcrumb,
+  .menu-hero .breadcrumbs,
+  .menu-hero [class*="breadcrumb"],
+  .menu-hero [class*="Breadcrumb"]{
+    display:none!important;
+    opacity:0!important;
+    visibility:hidden!important;
+    pointer-events:none!important;
+  }
+
+  /* Hero上部に残る直書き英字も消す */
+  .menu-hero{
+    overflow:hidden!important;
+  }
+
+  .menu-hero *{
+    position:relative;
+  }
+
+  /* SP専用コピーを最前面 */
+  .sp-menu-hero-copy{
+    position:relative!important;
+    z-index:30!important;
+  }
+}
+</style>
+
 </head>
 <body>
   <header class="site-header" id="siteHeader">
