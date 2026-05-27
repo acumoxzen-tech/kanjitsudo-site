@@ -1307,6 +1307,28 @@
 }
 </style>
 
+
+<style id="sp-mobile-menu-teaser-btn-fix">
+@media (max-width:768px){
+
+  /* 「施術メニューはこちら」ボタンだけ幅調整 */
+  .mobile-menu-teaser-btn{
+    display:inline-flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    width:auto!important;
+    min-width:0!important;
+    padding:15px 24px!important;
+    gap:10px!important;
+    letter-spacing:.12em!important;
+  }
+
+  .mobile-menu-teaser-btn span{
+    margin-left:2px!important;
+  }
+}
+</style>
+
 </head>
 <body>
   <main class="hero" id="top">
@@ -5292,6 +5314,59 @@
 </script>
   <script src="js/common.js"></script>
   <script src="js/header.js"></script>
+
+<style id="pulse-image-softfade-final">
+
+/* ===== 脈診画像：カードと同じ“ふわっ”演出 ===== */
+
+.pulse-image,
+.pulse-photo,
+.about-image,
+img[src*="pulse"],
+img[src*="myakushin"]{
+  opacity:0;
+  transform:translateY(26px);
+  filter:blur(5px);
+  transition:
+    opacity 1.15s ease,
+    transform 1.15s ease,
+    filter 1.15s ease;
+  will-change:transform,opacity,filter;
+}
+
+.pulse-image.is-visible,
+.pulse-photo.is-visible,
+.about-image.is-visible,
+img[src*="pulse"].is-visible,
+img[src*="myakushin"].is-visible{
+  opacity:1;
+  transform:translateY(0);
+  filter:blur(0);
+}
+</style>
+
+<script id="pulse-image-softfade-script">
+document.addEventListener("DOMContentLoaded",()=>{
+
+  const targets=document.querySelectorAll(
+    '.pulse-image,.pulse-photo,.about-image,img[src*="pulse"],img[src*="myakushin"]'
+  );
+
+  const io=new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add("is-visible");
+      }
+    });
+  },{
+    threshold:.18,
+    rootMargin:"0px 0px -6% 0px"
+  });
+
+  targets.forEach(el=>io.observe(el));
+});
+</script>
+
 </body>
 </html>
 
