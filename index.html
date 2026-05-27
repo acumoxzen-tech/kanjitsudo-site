@@ -1441,7 +1441,7 @@
           </p>
         </div>
 
-        <div class="about-image pulse-fade-target"></div>
+        <div class="about-image pulse-card-fade"></div>
       </div>
     </div>
   </section>
@@ -5333,46 +5333,45 @@
   <script src="js/header.js"></script>
 
 
-<style id="pulse-fade-proper-final">
-/* ===== 脈診画像：親fadeから切り離してカード風に表示 ===== */
 
-/* 親グリッドは表示状態を維持して、画像だけを後から出す */
+<style id="pulse-match-menu-card-final">
+/* ===== 脈診画像：メニューカードと同じfade-section系アニメへ統一 ===== */
+
+/* 親グリッドは通常表示にして、画像単体だけ動かす */
 .about-grid.fade-section{
   opacity:1!important;
   transform:none!important;
   filter:none!important;
 }
 
-/* テキスト側は自然に表示 */
 .about-grid.fade-section .about-text{
   opacity:1!important;
   transform:none!important;
   filter:none!important;
 }
 
-/* 実際の脈診画像 */
-.pulse-fade-target{
+/* メニューカード/fade-sectionと同じ出方 */
+.about-image.pulse-card-fade{
   opacity:0!important;
   transform:translateY(34px)!important;
-  filter:blur(5px) saturate(.82) brightness(.9) contrast(1.02)!important;
+  filter:blur(6px) saturate(.82) brightness(.9) contrast(1.02)!important;
   transition:
-    opacity 1.1s cubic-bezier(.22,.61,.36,1),
-    transform 1.1s cubic-bezier(.22,.61,.36,1),
-    filter 1.1s cubic-bezier(.22,.61,.36,1)!important;
-  will-change:opacity,transform,filter!important;
+    opacity 1.4s ease,
+    transform 1.4s ease,
+    filter 1.4s ease!important;
 }
 
-.pulse-fade-target.is-visible{
+.about-image.pulse-card-fade.is-visible{
   opacity:1!important;
   transform:translateY(0)!important;
   filter:blur(0) saturate(.82) brightness(.9) contrast(1.02)!important;
 }
 </style>
 
-<script id="pulse-fade-proper-script">
+<script id="pulse-match-menu-card-script">
 document.addEventListener("DOMContentLoaded",()=>{
 
-  const target=document.querySelector(".pulse-fade-target");
+  const target=document.querySelector(".about-image.pulse-card-fade");
   if(!target) return;
 
   const show=()=>target.classList.add("is-visible");
@@ -5390,8 +5389,8 @@ document.addEventListener("DOMContentLoaded",()=>{
       }
     });
   },{
-    threshold:.32,
-    rootMargin:"0px 0px -10% 0px"
+    threshold:0.18,
+    rootMargin:"0px 0px -8% 0px"
   });
 
   observer.observe(target);
