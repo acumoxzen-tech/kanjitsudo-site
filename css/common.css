@@ -1706,3 +1706,21 @@
   }
 }
 
+
+
+/* ===== ABOUT IMAGE ONLY : restore fade animation ===== */
+.about-image.fade-section{
+  opacity:0 !important;
+  transform:translateY(46px) !important;
+  filter:blur(10px) saturate(.82) brightness(.9) contrast(1.02) !important;
+  transition:
+    opacity 1.4s ease,
+    transform 1.4s ease,
+    filter 1.4s ease !important;
+}
+
+.about-image.fade-section.is-visible{
+  opacity:1 !important;
+  transform:translateY(0) !important;
+  filter:blur(0) saturate(.82) brightness(.9) contrast(1.02) !important;
+}
