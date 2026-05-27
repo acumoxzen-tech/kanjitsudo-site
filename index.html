@@ -5333,62 +5333,46 @@
   <script src="js/header.js"></script>
 
 
-<style id="about-pulse-image-cardfade-final">
-/* ===== 脈診画像：施術カード風ふわっと表示 ===== */
 
-/* 親のfade-sectionで全部が同時にじわっと出るのを止める */
-.about-grid.fade-section{
-  opacity:1!important;
-  transform:none!important;
-  filter:none!important;
-}
+<style id="about-image-single-fade-fix">
 
-/* テキストはそのまま自然に表示 */
-.about-grid.fade-section .about-text{
-  opacity:1!important;
-  transform:none!important;
-  filter:none!important;
-}
-
-/* 脈診画像だけカードと同じようにふわっと */
-.about-grid.fade-section .about-image{
-  opacity:0!important;
-  transform:translateY(34px)!important;
-  filter:blur(6px)!important;
+/* 脈診画像だけ別アニメ */
+.about-image{
+  opacity:0 !important;
+  transform:translateY(40px) !important;
   transition:
-    opacity 1.05s ease,
-    transform 1.05s ease,
-    filter 1.05s ease!important;
-  will-change:opacity,transform,filter!important;
+    opacity 1.2s ease,
+    transform 1.2s ease !important;
+  will-change:opacity,transform !important;
 }
 
-.about-grid.fade-section .about-image.is-visible{
-  opacity:1!important;
-  transform:translateY(0)!important;
-  filter:blur(0)!important;
+.about-image.fade-in-visible{
+  opacity:1 !important;
+  transform:translateY(0) !important;
 }
+
 </style>
 
-<script id="about-pulse-image-cardfade-script">
-document.addEventListener("DOMContentLoaded",()=>{
+<script id="about-image-single-fade-script">
 
-  const target=document.querySelector(".about-grid .about-image");
-  if(!target) return;
+window.addEventListener("load",()=>{
+
+  const img=document.querySelector(".about-image");
+  if(!img) return;
 
   const observer=new IntersectionObserver((entries)=>{
     entries.forEach(entry=>{
       if(entry.isIntersecting){
-        target.classList.add("is-visible");
-        observer.disconnect();
+        img.classList.add("fade-in-visible");
       }
     });
   },{
-    threshold:.22,
-    rootMargin:"0px 0px -8% 0px"
+    threshold:0.28
   });
 
-  observer.observe(target);
+  observer.observe(img);
 });
+
 </script>
 
 </body>
