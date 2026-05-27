@@ -2688,6 +2688,23 @@
 }
 </style>
 
+
+<script id="pc-menu-redirect">
+(function(){
+  if(window.innerWidth >= 769){
+    window.location.replace("/kanjitsudo-site/index.html#menu-page");
+  }
+})();
+</script>
+
+<style id="pc-menu-hide">
+@media (min-width:769px){
+  body{
+    display:none!important;
+  }
+}
+</style>
+
 </head>
 <body>
   <header class="site-header" id="siteHeader">
@@ -2962,5 +2979,25 @@ if (detailPhoto) {
 </script>
   <script src="js/common.js"></script>
   <script src="js/header.js"></script>
+
+<script id="pc-header-anchor-fix">
+document.addEventListener("DOMContentLoaded",()=>{
+
+  if(window.innerWidth < 769) return;
+
+  document.querySelectorAll('a[href*="menu.html"]').forEach(link=>{
+    link.setAttribute("href","/kanjitsudo-site/index.html#menu-page");
+  });
+
+  document.querySelectorAll('a[href*="faq.html"]').forEach(link=>{
+    link.setAttribute("href","/kanjitsudo-site/index.html#faq-page");
+  });
+
+  document.querySelectorAll('a[href*="news.html"]').forEach(link=>{
+    link.setAttribute("href","/kanjitsudo-site/index.html#news-page");
+  });
+});
+</script>
+
 </body>
 </html>
