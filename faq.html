@@ -1155,54 +1155,51 @@ border-top:1px solid rgba(255,255,255,.06);
 
   <link rel="stylesheet" href="css/header.css">
 
-<style id="faq-sp-hero-image-tune">
+<style id="final-repair-faq-hero-image">
 @media (max-width:768px){
-
+  .hero,
   .page-hero,
-  .faq-hero{
-    background-position:center center!important;
-    background-size:cover!important;
-  }
-}
-</style>
-
-
-<style id="sp-breadcrumb-style">
-@media (max-width:768px){
-
-  .sp-breadcrumb{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:8px;
-    margin-bottom:18px;
-    font-size:11px;
-    letter-spacing:.16em;
-    color:rgba(255,255,255,.58);
-    font-family:"Noto Serif JP",serif;
-  }
-
-  .sp-breadcrumb a{
-    color:rgba(255,255,255,.58);
-    text-decoration:none;
-  }
-
-  .sp-breadcrumb span{
-    color:rgba(255,255,255,.42);
-  }
-}
-</style>
-
-
-<style id="faq-final-hero-force">
-@media (max-width:768px){
-  .page-hero,
-  .faq-hero{
+  .faq-hero,
+  .faq-page-hero{
     background-image:
       linear-gradient(to bottom, rgba(8,8,8,.52), rgba(8,8,8,.58)),
       url('https://res.cloudinary.com/dvr7rww8q/image/upload/v1779880361/pngtree-stacked-stones-with-delicate-flower-on-top-symbolizing-peace-balance-and-image_20161109_ijglpt.webp')!important;
     background-position:center center!important;
     background-size:cover!important;
+  }
+
+  .hero-image{
+    content:url('https://res.cloudinary.com/dvr7rww8q/image/upload/v1779880361/pngtree-stacked-stones-with-delicate-flower-on-top-symbolizing-peace-balance-and-image_20161109_ijglpt.webp')!important;
+    object-position:center center!important;
+    object-fit:cover!important;
+  }
+}
+</style>
+
+
+<style id="final-repair-sp-breadcrumb-style">
+@media (max-width:768px){
+  .sp-breadcrumb{
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    gap:8px!important;
+    margin-bottom:18px!important;
+    font-size:11px!important;
+    letter-spacing:.16em!important;
+    color:rgba(255,255,255,.58)!important;
+    font-family:"Noto Serif JP",serif!important;
+    position:relative!important;
+    z-index:20!important;
+  }
+
+  .sp-breadcrumb a{
+    color:rgba(255,255,255,.58)!important;
+    text-decoration:none!important;
+  }
+
+  .sp-breadcrumb span{
+    color:rgba(255,255,255,.42)!important;
   }
 }
 </style>
@@ -1245,6 +1242,13 @@ border-top:1px solid rgba(255,255,255,.06);
 </header>
 
 <section class="hero">
+
+<div class="sp-breadcrumb">
+  <a href="/kanjitsudo-site/index.html">HOME</a>
+  <span>＞</span>
+  <span>FAQ</span>
+</div>
+
 <img class="hero-image" src="https://res.cloudinary.com/dvr7rww8q/image/upload/f_auto,q_auto/v1779348838/ChatGPT_Image_2026%E5%B9%B45%E6%9C%8821%E6%97%A5_16_31_37_ipynxw.png" alt="FAQ Hero">
 <small>FAQ</small>
 <h1>

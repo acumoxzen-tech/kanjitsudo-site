@@ -2517,13 +2517,6 @@
     object-position:center top!important;
   }
 
-  /* Header上に被ってOK */
-  .site-header{
-    background:transparent!important;
-    backdrop-filter:none!important;
-    -webkit-backdrop-filter:none!important;
-  }
-
   /* Heroテキスト位置 */
   .sp-menu-hero-copy{
     margin-top:auto!important;
@@ -2733,28 +2726,40 @@
 </style>
 
 
-<style id="sp-breadcrumb-style">
+<style id="final-repair-sp-breadcrumb-style">
 @media (max-width:768px){
-
   .sp-breadcrumb{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:8px;
-    margin-bottom:18px;
-    font-size:11px;
-    letter-spacing:.16em;
-    color:rgba(255,255,255,.58);
-    font-family:"Noto Serif JP",serif;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    gap:8px!important;
+    margin-bottom:18px!important;
+    font-size:11px!important;
+    letter-spacing:.16em!important;
+    color:rgba(255,255,255,.58)!important;
+    font-family:"Noto Serif JP",serif!important;
+    position:relative!important;
+    z-index:20!important;
   }
 
   .sp-breadcrumb a{
-    color:rgba(255,255,255,.58);
-    text-decoration:none;
+    color:rgba(255,255,255,.58)!important;
+    text-decoration:none!important;
   }
 
   .sp-breadcrumb span{
-    color:rgba(255,255,255,.42);
+    color:rgba(255,255,255,.42)!important;
+  }
+}
+</style>
+
+
+<style id="final-repair-menu-header-glass-fix">
+@media (max-width:768px){
+  .site-header{
+    background:linear-gradient(to bottom, rgba(5,4,3,.72), rgba(5,4,3,.18), transparent)!important;
+    backdrop-filter:blur(6px)!important;
+    -webkit-backdrop-filter:blur(6px)!important;
   }
 }
 </style>
@@ -2799,6 +2804,13 @@
     <section class="menu-hero" id="menu-top">
 
 <div class="sp-menu-hero-copy">
+
+<div class="sp-breadcrumb">
+  <a href="/kanjitsudo-site/index.html">HOME</a>
+  <span>＞</span>
+  <span>MENU</span>
+</div>
+
 <div class="sp-menu-breadcrumb">MENU</div>
 
   <h1 class="sp-menu-title">施術メニュー</h1>
