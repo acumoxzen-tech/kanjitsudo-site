@@ -1348,45 +1348,16 @@
 
 
 
-<style id="about-image-animation-kill-final">
-/* ===== 脈診画像アニメーション完全OFF ===== */
 
-.about-grid,
-.about-image{
+<style id="index-about-image-restore-final">
+#index-page .about-image,
+.about-section .about-image{
+  display:block!important;
   opacity:1!important;
+  visibility:visible!important;
   transform:none!important;
-  filter:saturate(.82) brightness(.9) contrast(1.02)!important;
   animation:none!important;
   transition:none!important;
-}
-
-.about-grid.is-visible,
-.about-image.is-visible{
-  opacity:1!important;
-  transform:none!important;
-  filter:saturate(.82) brightness(.9) contrast(1.02)!important;
-  animation:none!important;
-  transition:none!important;
-}
-
-@media (max-width:768px){
-  .about-grid,
-  .about-image,
-  .about-grid.is-visible,
-  .about-image.is-visible{
-    opacity:1!important;
-    transform:none!important;
-    filter:saturate(.82) brightness(.9) contrast(1.02)!important;
-    animation:none!important;
-    transition:none!important;
-  }
-}
-</style>
-
-
-<style id="about-image-hide-test">
-.about-image{
-  display:none!important;
 }
 </style>
 

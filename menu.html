@@ -2705,6 +2705,33 @@
 }
 </style>
 
+
+<style id="sp-menu-detail-photo-card-animation-final">
+@media (max-width:768px){
+
+  /* ご利用の流れ上の脈診画像だけ、メニューカードと同系統のfade-section風アニメに統一 */
+  .detail-photo{
+    opacity:0!important;
+    transform:translateY(46px)!important;
+    filter:blur(10px)!important;
+    transition:
+      opacity 1.4s ease,
+      transform 1.4s ease,
+      filter 1.4s ease!important;
+  }
+
+  .detail-photo.is-visible{
+    opacity:1!important;
+    transform:translateY(0)!important;
+    filter:blur(0)!important;
+  }
+
+  .detail-photo::before{
+    transform:none!important;
+  }
+}
+</style>
+
 </head>
 <body>
   <header class="site-header" id="siteHeader">
