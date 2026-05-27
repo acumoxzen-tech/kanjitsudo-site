@@ -1349,6 +1349,19 @@
 
 
 
+
+<style id="sp-index-menu-copy-final">
+@media (max-width:768px){
+  #menu-page .sp-index-menu-lead,
+  .mobile-menu-teaser p{
+    font-size:13px!important;
+    line-height:2.05!important;
+    letter-spacing:.08em!important;
+    color:rgba(255,255,255,.76)!important;
+  }
+}
+</style>
+
 </head>
 <body>
   <main class="hero" id="top">
@@ -1458,9 +1471,7 @@
 <span class="section-en">MENU</span>
         <h2>施術メニュー</h2>
 
-<p class="sp-index-menu-lead">
-  環日堂では、お一人おひとりのお身体の状態に合わせたオーダーメイドの治療をご案内しております
-</p>
+<p class="sp-index-menu-lead">環日堂では、お一人おひとりのお身体の状態に合わせたオーダーメイドの治療をご案内しております</p>
 
       </div>
 
@@ -1510,8 +1521,7 @@
         <span class="section-en">MENU</span>
         <h2>施術メニュー</h2>
         <p>
-          治療内容・料金・詳しいご案内は、専用ページにまとめております。<br>
-          お身体の状態に合わせて、ゆっくりご確認ください。
+          環日堂では、お一人おひとりのお身体の状態に合わせたオーダーメイドの治療をご案内しております
         </p>
         <a href="/kanjitsudo-site/menu.html" class="mobile-menu-teaser-btn">
           施術メニューはこちら<span>›</span>
@@ -1524,7 +1534,7 @@
     <div class="section-inner">
       <div class="section-head center">
         <span class="section-en">DIRECTOR</span>
-        <h2>スタッフ紹介</h2>
+        <h2>院長紹介</h2>
       </div>
 
       <div class="staff-layout fade-section">
@@ -5356,6 +5366,57 @@ document.addEventListener("DOMContentLoaded",()=>{
 </script>
 
 
+
+
+<script id="pc-inline-anchor-scroll-final">
+document.addEventListener("DOMContentLoaded",()=>{
+
+  if(window.innerWidth < 769) return;
+
+  const scrollToTarget = (hash) => {
+    const target = document.querySelector(hash);
+    if(!target) return false;
+
+    const headerOffset = 82;
+    const y = target.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+
+    window.history.replaceState(null, "", hash);
+    window.scrollTo({
+      top: y,
+      behavior: "smooth"
+    });
+
+    return true;
+  };
+
+  document.querySelectorAll('a[href*="#"]').forEach(link=>{
+    link.addEventListener("click",(e)=>{
+
+      const raw = link.getAttribute("href");
+      if(!raw) return;
+
+      let url;
+      try{
+        url = new URL(raw, window.location.origin);
+      }catch(_){
+        return;
+      }
+
+      const isIndex =
+        url.pathname.endsWith("/index.html") ||
+        url.pathname.endsWith("/kanjitsudo-site/") ||
+        url.pathname.endsWith("/kanjitsudo-site");
+
+      if(!isIndex || !url.hash) return;
+
+      const handled = scrollToTarget(url.hash);
+      if(handled){
+        e.preventDefault();
+      }
+    });
+  });
+});
+</script>
 
 </body>
 </html>
