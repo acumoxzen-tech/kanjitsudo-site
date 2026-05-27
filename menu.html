@@ -2663,6 +2663,43 @@
   }
 }
 </style>
+
+<style id="menu-hero-final-hard-hide">
+@media (max-width:768px){
+
+  .menu-hero > .sp-menu-hero-copy,
+  .menu-hero > .page-inner,
+  .menu-hero > .hero-breadcrumb-fixed,
+  .menu-hero > .hero-breadcrumb-unified,
+  .menu-hero > .sp-hero-copy-unified,
+  .menu-hero > .breadcrumb,
+  .menu-hero > small,
+  .menu-hero > h1,
+  .menu-hero > p{
+    display:none!important;
+    opacity:0!important;
+    visibility:hidden!important;
+    pointer-events:none!important;
+  }
+
+  .menu-hero > .sp-hero-clean-final{
+    display:block!important;
+    opacity:1!important;
+    visibility:visible!important;
+    pointer-events:auto!important;
+  }
+
+  .menu-hero{
+    display:flex!important;
+    align-items:flex-end!important;
+    justify-content:flex-start!important;
+    min-height:80svh!important;
+    padding:150px 24px 76px!important;
+    text-align:left!important;
+  }
+}
+</style>
+
 </head>
 <body>
 <header class="site-header" id="siteHeader">
