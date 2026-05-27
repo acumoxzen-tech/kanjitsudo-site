@@ -1179,16 +1179,21 @@ border-top:1px solid rgba(255,255,255,.06);
 
 
 
-<style id="hero-breadcrumb-fixed-style">
+
+<style id="faq-breadcrumb-final-hard-fix">
 @media (max-width:768px){
 
-  .hero-breadcrumb-fixed{
+  .faq-hero-breadcrumb-final{
     display:flex!important;
     align-items:center!important;
     justify-content:flex-start!important;
     gap:8px!important;
 
     position:relative!important;
+    left:auto!important;
+    right:auto!important;
+    top:auto!important;
+    bottom:auto!important;
     inset:auto!important;
     transform:none!important;
 
@@ -1197,35 +1202,36 @@ border-top:1px solid rgba(255,255,255,.06);
     margin:0 0 18px 0!important;
     padding:0!important;
 
-    text-align:left!important;
     font-family:"Noto Serif JP",serif!important;
     font-size:11px!important;
     line-height:1!important;
     letter-spacing:.16em!important;
     color:rgba(255,255,255,.58)!important;
-    z-index:80!important;
+    text-align:left!important;
+    z-index:999!important;
   }
 
-  .hero-breadcrumb-fixed a{
+  .faq-hero-breadcrumb-final a{
     color:rgba(255,255,255,.58)!important;
     text-decoration:none!important;
   }
 
-  .hero-breadcrumb-fixed span{
+  .faq-hero-breadcrumb-final span{
     color:rgba(255,255,255,.46)!important;
   }
 
-  /* 旧パンくずが残っても出さない */
+  /* FAQ内の旧パンくずは出さない */
   .sp-breadcrumb,
-  .menu-hero-breadcrumb,
-  .faq-hero-breadcrumb{
+  .faq-hero-breadcrumb,
+  .hero-breadcrumb-fixed{
     display:none!important;
   }
 
-  /* Hero内コピーは中央寄せしない */
-  .sp-menu-hero-copy,
-  .page-hero .page-inner,
+  /* FAQ Hero内の中央寄せを解除 */
+  .faq-hero,
+  .page-hero,
   .faq-hero .page-inner,
+  .page-hero .page-inner,
   .hero-content,
   .hero-inner{
     text-align:left!important;
@@ -1272,15 +1278,14 @@ border-top:1px solid rgba(255,255,255,.06);
 
 <section class="hero">
 
-<div class="hero-breadcrumb-fixed">
+<img class="hero-image" src="https://res.cloudinary.com/dvr7rww8q/image/upload/f_auto,q_auto/v1779348838/ChatGPT_Image_2026%E5%B9%B45%E6%9C%8821%E6%97%A5_16_31_37_ipynxw.png" alt="FAQ Hero">
+<small>FAQ</small>
+
+<div class="faq-hero-breadcrumb-final">
   <a href="/kanjitsudo-site/index.html">HOME</a>
   <span>＞</span>
   <span>FAQ</span>
 </div>
-
-
-<img class="hero-image" src="https://res.cloudinary.com/dvr7rww8q/image/upload/f_auto,q_auto/v1779348838/ChatGPT_Image_2026%E5%B9%B45%E6%9C%8821%E6%97%A5_16_31_37_ipynxw.png" alt="FAQ Hero">
-<small>FAQ</small>
 <h1>
 よくあるご質問
 </h1>
