@@ -1329,6 +1329,23 @@
 }
 </style>
 
+
+<style id="sp-mobile-menu-teaser-btn-balance2">
+@media (max-width:768px){
+
+  .mobile-menu-teaser-btn{
+    display:inline-flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    width:auto!important;
+    min-width:0!important;
+    padding:15px 32px!important;
+    gap:11px!important;
+    letter-spacing:.12em!important;
+  }
+}
+</style>
+
 </head>
 <body>
   <main class="hero" id="top">
@@ -5315,55 +5332,62 @@
   <script src="js/common.js"></script>
   <script src="js/header.js"></script>
 
-<style id="pulse-image-softfade-final">
 
-/* ===== 脈診画像：カードと同じ“ふわっ”演出 ===== */
+<style id="about-pulse-image-cardfade-final">
+/* ===== 脈診画像：施術カード風ふわっと表示 ===== */
 
-.pulse-image,
-.pulse-photo,
-.about-image,
-img[src*="pulse"],
-img[src*="myakushin"]{
-  opacity:0;
-  transform:translateY(26px);
-  filter:blur(5px);
-  transition:
-    opacity 1.15s ease,
-    transform 1.15s ease,
-    filter 1.15s ease;
-  will-change:transform,opacity,filter;
+/* 親のfade-sectionで全部が同時にじわっと出るのを止める */
+.about-grid.fade-section{
+  opacity:1!important;
+  transform:none!important;
+  filter:none!important;
 }
 
-.pulse-image.is-visible,
-.pulse-photo.is-visible,
-.about-image.is-visible,
-img[src*="pulse"].is-visible,
-img[src*="myakushin"].is-visible{
-  opacity:1;
-  transform:translateY(0);
-  filter:blur(0);
+/* テキストはそのまま自然に表示 */
+.about-grid.fade-section .about-text{
+  opacity:1!important;
+  transform:none!important;
+  filter:none!important;
+}
+
+/* 脈診画像だけカードと同じようにふわっと */
+.about-grid.fade-section .about-image{
+  opacity:0!important;
+  transform:translateY(34px)!important;
+  filter:blur(6px)!important;
+  transition:
+    opacity 1.05s ease,
+    transform 1.05s ease,
+    filter 1.05s ease!important;
+  will-change:opacity,transform,filter!important;
+}
+
+.about-grid.fade-section .about-image.is-visible{
+  opacity:1!important;
+  transform:translateY(0)!important;
+  filter:blur(0)!important;
 }
 </style>
 
-<script id="pulse-image-softfade-script">
+<script id="about-pulse-image-cardfade-script">
 document.addEventListener("DOMContentLoaded",()=>{
 
-  const targets=document.querySelectorAll(
-    '.pulse-image,.pulse-photo,.about-image,img[src*="pulse"],img[src*="myakushin"]'
-  );
+  const target=document.querySelector(".about-grid .about-image");
+  if(!target) return;
 
-  const io=new IntersectionObserver((entries)=>{
+  const observer=new IntersectionObserver((entries)=>{
     entries.forEach(entry=>{
       if(entry.isIntersecting){
-        entry.target.classList.add("is-visible");
+        target.classList.add("is-visible");
+        observer.disconnect();
       }
     });
   },{
-    threshold:.18,
-    rootMargin:"0px 0px -6% 0px"
+    threshold:.22,
+    rootMargin:"0px 0px -8% 0px"
   });
 
-  targets.forEach(el=>io.observe(el));
+  observer.observe(target);
 });
 </script>
 
