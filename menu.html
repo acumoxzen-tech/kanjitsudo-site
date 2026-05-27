@@ -2377,7 +2377,7 @@
   .menu-hero .en,
   .menu-hero .section-en,
   .menu-hero .sub-en,
-  .menu-hero [class*="breadcrumb"],
+  
   .menu-hero [class*="Breadcrumb"]{
     display:none!important;
   }
@@ -2470,7 +2470,7 @@
   .menu-hero .menu-breadcrumb,
   .menu-hero .breadcrumb,
   .menu-hero .breadcrumbs,
-  .menu-hero [class*="breadcrumb"],
+  
   .menu-hero [class*="Breadcrumb"]{
     display:none!important;
     opacity:0!important;
@@ -2632,6 +2632,58 @@
     line-height:1!important;
     color:rgba(255,255,255,.55)!important;
     font-family:"Cormorant Garamond",serif!important;
+  }
+}
+</style>
+
+
+<style id="sp-menu-breadcrumb-real-fix">
+@media (max-width:768px){
+
+  .sp-menu-breadcrumb{
+    display:block!important;
+    opacity:1!important;
+    visibility:visible!important;
+    position:relative!important;
+    z-index:999!important;
+    margin:0 0 18px!important;
+    font-size:12px!important;
+    line-height:1!important;
+    letter-spacing:.38em!important;
+    color:rgba(255,255,255,.56)!important;
+    font-family:"Cormorant Garamond",serif!important;
+  }
+}
+</style>
+
+
+<style id="sp-menu-hero-image-balance-final">
+@media (max-width:768px){
+
+  /* Heroを少し下げてヘッダー被り軽減 */
+  .menu-hero{
+    margin-top:-46px!important;
+    padding-top:132px!important;
+    min-height:80svh!important;
+  }
+
+  /* 画像を縮小して左右を見せる */
+  .menu-hero::before{
+    background-size:auto 82%!important;
+    background-position:center 24px!important;
+    background-repeat:no-repeat!important;
+  }
+
+  .menu-hero img,
+  .menu-hero .hero-image{
+    object-fit:contain!important;
+    object-position:center 24px!important;
+    transform:scale(.92)!important;
+  }
+
+  /* Heroテキスト位置微調整 */
+  .sp-menu-hero-copy{
+    padding-bottom:6px!important;
   }
 }
 </style>
