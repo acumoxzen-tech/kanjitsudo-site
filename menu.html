@@ -2588,66 +2588,6 @@
 </style>
 
 
-<style id="sp-menu-breadcrumb-title-final">
-@media (max-width:768px){
-
-  .sp-menu-breadcrumb{
-    display:block!important;
-    margin:0 0 18px!important;
-    font-size:12px!important;
-    letter-spacing:.38em!important;
-    line-height:1!important;
-    color:rgba(255,255,255,.5)!important;
-    font-family:"Cormorant Garamond",serif!important;
-  }
-
-  .sp-menu-title{
-    font-size:34px!important;
-    line-height:1.5!important;
-    letter-spacing:.12em!important;
-  }
-}
-</style>
-
-
-<style id="sp-menu-breadcrumb-force-visible">
-@media (max-width:768px){
-
-  .sp-menu-breadcrumb{
-    display:block!important;
-    opacity:1!important;
-    visibility:visible!important;
-    position:relative!important;
-    z-index:50!important;
-    margin-bottom:18px!important;
-    font-size:12px!important;
-    letter-spacing:.38em!important;
-    line-height:1!important;
-    color:rgba(255,255,255,.55)!important;
-    font-family:"Cormorant Garamond",serif!important;
-  }
-}
-</style>
-
-
-<style id="sp-menu-breadcrumb-real-fix">
-@media (max-width:768px){
-
-  .sp-menu-breadcrumb{
-    display:block!important;
-    opacity:1!important;
-    visibility:visible!important;
-    position:relative!important;
-    z-index:999!important;
-    margin:0 0 18px!important;
-    font-size:12px!important;
-    line-height:1!important;
-    letter-spacing:.38em!important;
-    color:rgba(255,255,255,.56)!important;
-    font-family:"Cormorant Garamond",serif!important;
-  }
-}
-</style>
 
 
 <style id="sp-menu-hero-image-balance-final">
@@ -2726,40 +2666,68 @@
 </style>
 
 
-<style id="final-repair-sp-breadcrumb-style">
-@media (max-width:768px){
-  .sp-breadcrumb{
-    display:flex!important;
-    align-items:center!important;
-    justify-content:center!important;
-    gap:8px!important;
-    margin-bottom:18px!important;
-    font-size:11px!important;
-    letter-spacing:.16em!important;
-    color:rgba(255,255,255,.58)!important;
-    font-family:"Noto Serif JP",serif!important;
-    position:relative!important;
-    z-index:20!important;
-  }
-
-  .sp-breadcrumb a{
-    color:rgba(255,255,255,.58)!important;
-    text-decoration:none!important;
-  }
-
-  .sp-breadcrumb span{
-    color:rgba(255,255,255,.42)!important;
-  }
-}
-</style>
-
-
 <style id="final-repair-menu-header-glass-fix">
 @media (max-width:768px){
   .site-header{
     background:linear-gradient(to bottom, rgba(5,4,3,.72), rgba(5,4,3,.18), transparent)!important;
     backdrop-filter:blur(6px)!important;
     -webkit-backdrop-filter:blur(6px)!important;
+  }
+}
+</style>
+
+
+
+<style id="hero-breadcrumb-fixed-style">
+@media (max-width:768px){
+
+  .hero-breadcrumb-fixed{
+    display:flex!important;
+    align-items:center!important;
+    justify-content:flex-start!important;
+    gap:8px!important;
+
+    position:relative!important;
+    inset:auto!important;
+    transform:none!important;
+
+    width:100%!important;
+    max-width:none!important;
+    margin:0 0 18px 0!important;
+    padding:0!important;
+
+    text-align:left!important;
+    font-family:"Noto Serif JP",serif!important;
+    font-size:11px!important;
+    line-height:1!important;
+    letter-spacing:.16em!important;
+    color:rgba(255,255,255,.58)!important;
+    z-index:80!important;
+  }
+
+  .hero-breadcrumb-fixed a{
+    color:rgba(255,255,255,.58)!important;
+    text-decoration:none!important;
+  }
+
+  .hero-breadcrumb-fixed span{
+    color:rgba(255,255,255,.46)!important;
+  }
+
+  /* 旧パンくずが残っても出さない */
+  .sp-breadcrumb,
+  .menu-hero-breadcrumb,
+  .faq-hero-breadcrumb{
+    display:none!important;
+  }
+
+  /* Hero内コピーは中央寄せしない */
+  .sp-menu-hero-copy,
+  .page-hero .page-inner,
+  .faq-hero .page-inner,
+  .hero-content,
+  .hero-inner{
+    text-align:left!important;
   }
 }
 </style>
@@ -2805,15 +2773,13 @@
 
 <div class="sp-menu-hero-copy">
 
-<div class="sp-breadcrumb">
+
+<div class="hero-breadcrumb-fixed">
   <a href="/kanjitsudo-site/index.html">HOME</a>
   <span>＞</span>
   <span>MENU</span>
 </div>
-
-<div class="sp-menu-breadcrumb">MENU</div>
-
-  <h1 class="sp-menu-title">施術メニュー</h1>
+<h1 class="sp-menu-title">施術メニュー</h1>
   <p class="sp-menu-description">環日堂では、お一人おひとりのお身体の状態に合わせたオーダーメイドの治療をご提供しています。</p>
 </div>
 

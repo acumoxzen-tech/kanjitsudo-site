@@ -1177,29 +1177,58 @@ border-top:1px solid rgba(255,255,255,.06);
 </style>
 
 
-<style id="final-repair-sp-breadcrumb-style">
+
+
+<style id="hero-breadcrumb-fixed-style">
 @media (max-width:768px){
-  .sp-breadcrumb{
+
+  .hero-breadcrumb-fixed{
     display:flex!important;
     align-items:center!important;
-    justify-content:center!important;
+    justify-content:flex-start!important;
     gap:8px!important;
-    margin-bottom:18px!important;
+
+    position:relative!important;
+    inset:auto!important;
+    transform:none!important;
+
+    width:100%!important;
+    max-width:none!important;
+    margin:0 0 18px 0!important;
+    padding:0!important;
+
+    text-align:left!important;
+    font-family:"Noto Serif JP",serif!important;
     font-size:11px!important;
+    line-height:1!important;
     letter-spacing:.16em!important;
     color:rgba(255,255,255,.58)!important;
-    font-family:"Noto Serif JP",serif!important;
-    position:relative!important;
-    z-index:20!important;
+    z-index:80!important;
   }
 
-  .sp-breadcrumb a{
+  .hero-breadcrumb-fixed a{
     color:rgba(255,255,255,.58)!important;
     text-decoration:none!important;
   }
 
-  .sp-breadcrumb span{
-    color:rgba(255,255,255,.42)!important;
+  .hero-breadcrumb-fixed span{
+    color:rgba(255,255,255,.46)!important;
+  }
+
+  /* 旧パンくずが残っても出さない */
+  .sp-breadcrumb,
+  .menu-hero-breadcrumb,
+  .faq-hero-breadcrumb{
+    display:none!important;
+  }
+
+  /* Hero内コピーは中央寄せしない */
+  .sp-menu-hero-copy,
+  .page-hero .page-inner,
+  .faq-hero .page-inner,
+  .hero-content,
+  .hero-inner{
+    text-align:left!important;
   }
 }
 </style>
@@ -1243,11 +1272,12 @@ border-top:1px solid rgba(255,255,255,.06);
 
 <section class="hero">
 
-<div class="sp-breadcrumb">
+<div class="hero-breadcrumb-fixed">
   <a href="/kanjitsudo-site/index.html">HOME</a>
   <span>＞</span>
   <span>FAQ</span>
 </div>
+
 
 <img class="hero-image" src="https://res.cloudinary.com/dvr7rww8q/image/upload/f_auto,q_auto/v1779348838/ChatGPT_Image_2026%E5%B9%B45%E6%9C%8821%E6%97%A5_16_31_37_ipynxw.png" alt="FAQ Hero">
 <small>FAQ</small>
