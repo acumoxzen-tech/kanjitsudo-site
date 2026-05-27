@@ -2678,80 +2678,98 @@
 
 
 
-<style id="hero-breadcrumb-fixed-style">
+
+
+<style id="sp-hero-order-unified-final">
 @media (max-width:768px){
 
-  .hero-breadcrumb-fixed{
+  .sp-hero-copy-unified{
+    position:relative!important;
+    z-index:60!important;
+    width:min(88vw,520px)!important;
+    margin:0 auto 0 0!important;
+    padding:0!important;
+    text-align:left!important;
+  }
+
+  .sp-hero-copy-unified .hero-breadcrumb-unified{
     display:flex!important;
     align-items:center!important;
     justify-content:flex-start!important;
     gap:8px!important;
-
+    margin:0 0 28px!important;
+    padding:0!important;
     position:relative!important;
     inset:auto!important;
     transform:none!important;
-
-    width:100%!important;
-    max-width:none!important;
-    margin:0 0 18px 0!important;
-    padding:0!important;
-
-    text-align:left!important;
     font-family:"Noto Serif JP",serif!important;
     font-size:11px!important;
     line-height:1!important;
     letter-spacing:.16em!important;
     color:rgba(255,255,255,.58)!important;
-    z-index:80!important;
   }
 
-  .hero-breadcrumb-fixed a{
+  .sp-hero-copy-unified .hero-breadcrumb-unified a{
     color:rgba(255,255,255,.58)!important;
     text-decoration:none!important;
   }
 
-  .hero-breadcrumb-fixed span{
+  .sp-hero-copy-unified .hero-breadcrumb-unified span{
     color:rgba(255,255,255,.46)!important;
   }
 
-  /* 旧パンくずが残っても出さない */
-  .sp-breadcrumb,
-  .menu-hero-breadcrumb,
-  .faq-hero-breadcrumb{
+  .sp-hero-copy-unified .hero-label-unified{
+    display:block!important;
+    margin:0 0 22px!important;
+    font-family:"Cormorant Garamond",serif!important;
+    font-size:13px!important;
+    line-height:1!important;
+    letter-spacing:.42em!important;
+    color:rgba(255,255,255,.56)!important;
+  }
+
+  .sp-hero-copy-unified .hero-title-unified{
+    margin:0!important;
+    font-family:"Noto Serif JP",serif!important;
+    font-size:34px!important;
+    line-height:1.55!important;
+    letter-spacing:.12em!important;
+    font-weight:300!important;
+    color:rgba(255,255,255,.96)!important;
+  }
+
+  .sp-hero-copy-unified .hero-desc-unified{
+    margin:26px 0 0!important;
+    font-family:"Noto Serif JP",serif!important;
+    font-size:14px!important;
+    line-height:2.15!important;
+    letter-spacing:.08em!important;
+    color:rgba(255,255,255,.78)!important;
+  }
+
+  /* 古いHero内パンくず・小見出し・タイトル・説明はSPでは非表示 */
+  .hero > .hero-breadcrumb-fixed,
+  .hero > .faq-hero-breadcrumb-final,
+  .hero > .sp-breadcrumb,
+  .hero > small,
+  .hero > h1,
+  .hero > p,
+  .menu-hero .hero-breadcrumb-fixed,
+  .menu-hero .sp-breadcrumb,
+  .menu-hero .sp-menu-breadcrumb,
+  .menu-hero .sp-menu-title,
+  .menu-hero .sp-menu-description{
     display:none!important;
   }
 
-  /* Hero内コピーは中央寄せしない */
-  .sp-menu-hero-copy,
-  .page-hero .page-inner,
-  .faq-hero .page-inner,
-  .hero-content,
-  .hero-inner{
-    text-align:left!important;
-  }
-}
-</style>
-
-
-<style id="menu-breadcrumb-align-fix">
-@media (max-width:768px){
-
-  .menu-hero .sp-menu-hero-copy{
+  .menu-hero,
+  .hero{
     display:flex!important;
-    flex-direction:column!important;
+    align-items:flex-end!important;
     justify-content:flex-start!important;
-    align-items:flex-start!important;
-    margin-top:0!important;
-    padding-top:132px!important;
-    padding-bottom:26px!important;
-  }
-
-  .menu-hero .hero-breadcrumb-fixed{
-    margin-bottom:16px!important;
-  }
-
-  .menu-hero .sp-menu-title{
-    margin-top:0!important;
+    min-height:80svh!important;
+    padding:150px 24px 76px!important;
+    text-align:left!important;
   }
 }
 </style>
@@ -2794,6 +2812,18 @@
 
   <main>
     <section class="menu-hero" id="menu-top">
+
+<div class="sp-hero-copy-unified">
+  <div class="hero-breadcrumb-unified">
+    <a href="/kanjitsudo-site/index.html">HOME</a>
+    <span>＞</span>
+    <span>MENU</span>
+  </div>
+  <span class="hero-label-unified">MENU</span>
+  <h1 class="hero-title-unified">施術メニュー</h1>
+  <p class="hero-desc-unified">環日堂では、お一人おひとりのお身体の状態に合わせたオーダーメイドの治療をご提供しています。</p>
+</div>
+
 
 <div class="sp-menu-hero-copy">
 

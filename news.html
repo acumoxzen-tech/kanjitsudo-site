@@ -422,6 +422,101 @@
 
 
   <link rel="stylesheet" href="css/header.css">
+
+<style id="sp-hero-order-unified-final">
+@media (max-width:768px){
+
+  .sp-hero-copy-unified{
+    position:relative!important;
+    z-index:60!important;
+    width:min(88vw,520px)!important;
+    margin:0 auto 0 0!important;
+    padding:0!important;
+    text-align:left!important;
+  }
+
+  .sp-hero-copy-unified .hero-breadcrumb-unified{
+    display:flex!important;
+    align-items:center!important;
+    justify-content:flex-start!important;
+    gap:8px!important;
+    margin:0 0 28px!important;
+    padding:0!important;
+    position:relative!important;
+    inset:auto!important;
+    transform:none!important;
+    font-family:"Noto Serif JP",serif!important;
+    font-size:11px!important;
+    line-height:1!important;
+    letter-spacing:.16em!important;
+    color:rgba(255,255,255,.58)!important;
+  }
+
+  .sp-hero-copy-unified .hero-breadcrumb-unified a{
+    color:rgba(255,255,255,.58)!important;
+    text-decoration:none!important;
+  }
+
+  .sp-hero-copy-unified .hero-breadcrumb-unified span{
+    color:rgba(255,255,255,.46)!important;
+  }
+
+  .sp-hero-copy-unified .hero-label-unified{
+    display:block!important;
+    margin:0 0 22px!important;
+    font-family:"Cormorant Garamond",serif!important;
+    font-size:13px!important;
+    line-height:1!important;
+    letter-spacing:.42em!important;
+    color:rgba(255,255,255,.56)!important;
+  }
+
+  .sp-hero-copy-unified .hero-title-unified{
+    margin:0!important;
+    font-family:"Noto Serif JP",serif!important;
+    font-size:34px!important;
+    line-height:1.55!important;
+    letter-spacing:.12em!important;
+    font-weight:300!important;
+    color:rgba(255,255,255,.96)!important;
+  }
+
+  .sp-hero-copy-unified .hero-desc-unified{
+    margin:26px 0 0!important;
+    font-family:"Noto Serif JP",serif!important;
+    font-size:14px!important;
+    line-height:2.15!important;
+    letter-spacing:.08em!important;
+    color:rgba(255,255,255,.78)!important;
+  }
+
+  /* 古いHero内パンくず・小見出し・タイトル・説明はSPでは非表示 */
+  .hero > .hero-breadcrumb-fixed,
+  .hero > .faq-hero-breadcrumb-final,
+  .hero > .sp-breadcrumb,
+  .hero > small,
+  .hero > h1,
+  .hero > p,
+  .menu-hero .hero-breadcrumb-fixed,
+  .menu-hero .sp-breadcrumb,
+  .menu-hero .sp-menu-breadcrumb,
+  .menu-hero .sp-menu-title,
+  .menu-hero .sp-menu-description{
+    display:none!important;
+  }
+
+  .menu-hero,
+  .hero{
+    display:flex!important;
+    align-items:flex-end!important;
+    justify-content:flex-start!important;
+    min-height:80svh!important;
+    padding:150px 24px 76px!important;
+    text-align:left!important;
+  }
+}
+</style>
+
 </head>
 <body>
   <header class="site-header" id="siteHeader">
@@ -460,6 +555,18 @@
 
   <main>
     <section class="news-hero">
+
+<div class="sp-hero-copy-unified">
+  <div class="hero-breadcrumb-unified">
+    <a href="/kanjitsudo-site/index.html">HOME</a>
+    <span>＞</span>
+    <span>NEWS</span>
+  </div>
+  <span class="hero-label-unified">NEWS</span>
+  <h1 class="hero-title-unified">お知らせ</h1>
+  <p class="hero-desc-unified">営業情報やご案内、還日堂からのお知らせをこちらにまとめています。</p>
+</div>
+
       <div class="news-inner">
         <div class="breadcrumb"><a href="/kanjitsudo-site/">HOME</a><span>›</span><span>NEWS</span></div>
         <span class="section-en">NEWS</span>
