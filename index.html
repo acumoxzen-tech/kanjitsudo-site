@@ -1442,7 +1442,7 @@
           </p>
         </div>
 
-        <div class="about-image pulse-fade-clean"></div>
+        <div class="about-image"></div>
       </div>
     </div>
   </section>
@@ -5354,61 +5354,6 @@ document.addEventListener("DOMContentLoaded",()=>{
 </script>
 
 
-
-<style id="pulse-clean-final-style">
-@media (max-width:768px){
-
-  .about-image.pulse-fade-clean{
-    opacity:0 !important;
-    transform:translateY(54px) !important;
-    filter:none !important;
-    transition:
-      opacity .95s cubic-bezier(.22,.61,.36,1),
-      transform .95s cubic-bezier(.22,.61,.36,1) !important;
-    will-change:opacity,transform !important;
-  }
-
-  .about-image.pulse-fade-clean.pulse-visible{
-    opacity:1 !important;
-    transform:translateY(0) !important;
-  }
-}
-</style>
-
-<script id="pulse-clean-final-script">
-window.addEventListener("load",()=>{
-
-  if(window.innerWidth >= 769) return;
-
-  const target=document.querySelector(".about-image.pulse-fade-clean");
-  if(!target) return;
-
-  // 最初は確実に非表示
-  target.classList.remove("pulse-visible");
-
-  const observer=new IntersectionObserver((entries)=>{
-    entries.forEach(entry=>{
-      if(entry.isIntersecting){
-
-        // 少し遅らせて確実に見せる
-        setTimeout(()=>{
-          target.classList.add("pulse-visible");
-        },120);
-
-      }else{
-
-        // 再スクロール時も再発火
-        target.classList.remove("pulse-visible");
-      }
-    });
-  },{
-    threshold:0.45,
-    rootMargin:"0px 0px -14% 0px"
-  });
-
-  observer.observe(target);
-});
-</script>
 
 </body>
 </html>
