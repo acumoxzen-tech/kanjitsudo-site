@@ -1411,58 +1411,6 @@
 </style>
 
 
-<style id="sp-menu-bg-position-adjust">
-@media (max-width:768px){
-
-  .menu-intro-section,
-  .menu-intro-bg,
-  .menu-intro-image{
-    background-position:center 22%!important;
-  }
-
-  .menu-intro-section img,
-  .menu-intro-bg img,
-  .menu-intro-image img{
-    object-position:center 22%!important;
-  }
-}
-</style>
-
-
-<style id="sp-menu-bg-position-adjust-strong">
-@media (max-width:768px){
-
-  .menu-intro-section,
-  .menu-intro-bg,
-  .menu-intro-image{
-    background-position:center 8%!important;
-  }
-
-  .menu-intro-section img,
-  .menu-intro-bg img,
-  .menu-intro-image img{
-    object-position:center 8%!important;
-  }
-}
-</style>
-
-
-<style id="sp-mobile-menu-teaser-bg-actual-fix">
-@media (max-width:768px){
-
-  .mobile-menu-teaser{
-    background-position:center top!important;
-    background-size:cover!important;
-  }
-
-  .mobile-menu-teaser::before,
-  .mobile-menu-teaser::after{
-    background-position:center top!important;
-    background-size:cover!important;
-  }
-}
-</style>
-
 </head>
 <body>
   <main class="hero" id="top">
@@ -5530,6 +5478,29 @@ document.addEventListener("DOMContentLoaded",()=>{
 
 });
 </script>
+
+
+<style id="sp-mobile-menu-teaser-bg-real-final">
+@media (max-width:768px){
+
+  /* 実体はIndexスマホ版の施術メニュー導入 .mobile-menu-teaser / ::before */
+  body .mobile-menu-teaser,
+  body #menu-page .mobile-menu-teaser{
+    background-position:center 0%!important;
+    background-size:cover!important;
+    background-repeat:no-repeat!important;
+  }
+
+  body .mobile-menu-teaser::before,
+  body #menu-page .mobile-menu-teaser::before,
+  body .mobile-menu-teaser::after,
+  body #menu-page .mobile-menu-teaser::after{
+    background-position:center 0%!important;
+    background-size:cover!important;
+    background-repeat:no-repeat!important;
+  }
+}
+</style>
 
 </body>
 </html>
