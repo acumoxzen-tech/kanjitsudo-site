@@ -1496,6 +1496,78 @@ border-top:1px solid rgba(255,255,255,.06);
 }
 </style>
 
+
+<style id="pc-faq-hero-text-balance-fix">
+@media (min-width:769px){
+
+  .hero .sp-hero-clean-final,
+  .faq-hero .sp-hero-clean-final,
+  .page-hero .sp-hero-clean-final{
+    width:min(1100px,84%)!important;
+    margin:0 auto!important;
+    padding-left:90px!important;
+    position:relative!important;
+    z-index:5!important;
+  }
+
+  .hero .sp-hero-breadcrumb,
+  .faq-hero .sp-hero-breadcrumb{
+    margin-bottom:30px!important;
+  }
+
+  .hero .sp-hero-title,
+  .faq-hero .sp-hero-title{
+    max-width:12em!important;
+  }
+
+  .hero .sp-hero-desc,
+  .faq-hero .sp-hero-desc{
+    max-width:36em!important;
+  }
+}
+</style>
+
+
+<style id="pc-faq-hero-visual-refine">
+@media (min-width:769px){
+
+  .hero > img.hero-image,
+  .faq-hero > img.hero-image,
+  .page-hero > img.hero-image{
+    object-position:72% center!important;
+    filter:brightness(.82)!important;
+  }
+
+  .hero::after,
+  .faq-hero::after,
+  .page-hero::after{
+    content:"";
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    height:220px;
+    background:
+      linear-gradient(
+        to bottom,
+        rgba(5,4,3,0) 0%,
+        rgba(5,4,3,.18) 28%,
+        rgba(5,4,3,.55) 62%,
+        #050403 100%
+      );
+    pointer-events:none;
+    z-index:3;
+  }
+
+  .hero .sp-hero-clean-final,
+  .faq-hero .sp-hero-clean-final,
+  .page-hero .sp-hero-clean-final{
+    position:relative!important;
+    z-index:5!important;
+  }
+}
+</style>
+
 </head>
 <body>
 <header class="site-header" id="siteHeader">
