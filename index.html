@@ -5562,28 +5562,56 @@ document.addEventListener("DOMContentLoaded",()=>{
 
 
 
-<style id="sp-menu-pseudo-bg-animation-final">
+
+<style id="sp-menu-text-fade-animation">
 @media (max-width:768px){
 
-  #menu-page.menu-section::before{
-    animation:menuSmokeBackgroundDrift 12s ease-in-out infinite alternate!important;
-    will-change:background-position, opacity!important;
+  #menu-page .mobile-menu-teaser{
+    opacity:0;
+    transform:translateY(22px);
+    animation:menuTeaserFadeUp 1.6s ease forwards;
+    animation-delay:.18s;
   }
 
-  @keyframes menuSmokeBackgroundDrift{
-    0%{
-      background-position:right -70px!important;
-      opacity:.91!important;
-    }
+  #menu-page .mobile-menu-teaser .section-en{
+    opacity:0;
+    transform:translateY(14px);
+    animation:menuTeaserFadeUp 1.5s ease forwards;
+    animation-delay:.28s;
+  }
 
-    50%{
-      background-position:right -92px!important;
-      opacity:.96!important;
+  #menu-page .mobile-menu-teaser h2{
+    opacity:0;
+    transform:translateY(18px);
+    animation:menuTeaserFadeUp 1.7s ease forwards;
+    animation-delay:.42s;
+  }
+
+  #menu-page .mobile-menu-teaser p{
+    opacity:0;
+    transform:translateY(20px);
+    animation:menuTeaserFadeUp 1.9s ease forwards;
+    animation-delay:.58s;
+  }
+
+  #menu-page .mobile-menu-teaser-btn{
+    opacity:0;
+    transform:translateY(24px);
+    animation:menuTeaserFadeUp 2s ease forwards;
+    animation-delay:.76s;
+  }
+
+  @keyframes menuTeaserFadeUp{
+    0%{
+      opacity:0;
+      transform:translateY(22px);
+      filter:blur(4px);
     }
 
     100%{
-      background-position:right -52px!important;
-      opacity:.93!important;
+      opacity:1;
+      transform:translateY(0);
+      filter:blur(0);
     }
   }
 }
