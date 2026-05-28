@@ -1322,6 +1322,138 @@ border-top:1px solid rgba(255,255,255,.06);
 }
 </style>
 
+
+<style id="pc-faq-independent-page-style">
+@media (min-width:769px){
+
+  html,
+  body{
+    width:100%;
+    min-width:1200px;
+    overflow-x:auto;
+    background:#050403;
+  }
+
+  .hero,
+  .faq-hero,
+  .page-hero{
+    min-height:560px;
+    padding:170px 0 110px;
+    position:relative;
+    overflow:hidden;
+    background-image:
+      linear-gradient(90deg, rgba(5,4,3,.74), rgba(5,4,3,.22), rgba(5,4,3,.62)),
+      url('https://res.cloudinary.com/dvr7rww8q/image/upload/v1779880361/pngtree-stacked-stones-with-delicate-flower-on-top-symbolizing-peace-balance-and-image_20161109_ijglpt.webp')!important;
+    background-position:center center!important;
+    background-size:cover!important;
+    background-repeat:no-repeat!important;
+  }
+
+  .hero::before,
+  .faq-hero::before,
+  .page-hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+      radial-gradient(circle at 68% 22%, rgba(214,177,112,.12), transparent 40%);
+    pointer-events:none;
+  }
+
+  .page-inner,
+  .hero-content,
+  .hero-inner{
+    position:relative;
+    z-index:2;
+    width:min(1100px,84%);
+    margin:0 auto;
+    text-align:left;
+  }
+
+  .hero-breadcrumb-unified,
+  .sp-hero-breadcrumb,
+  .breadcrumb{
+    margin-bottom:34px;
+    font-family:"Noto Serif JP",serif;
+    font-size:12px;
+    letter-spacing:.18em;
+    color:rgba(255,255,255,.52);
+  }
+
+  .hero-breadcrumb-unified a,
+  .sp-hero-breadcrumb a,
+  .breadcrumb a{
+    color:rgba(255,255,255,.62);
+    text-decoration:none;
+  }
+
+  .hero small,
+  .section-en,
+  .sp-hero-label{
+    display:block;
+    margin-bottom:24px;
+    font-family:"Cormorant Garamond",serif;
+    font-size:14px;
+    letter-spacing:.44em;
+    color:rgba(255,255,255,.56);
+  }
+
+  .hero h1,
+  .sp-hero-title{
+    margin:0;
+    font-family:"Noto Serif JP",serif;
+    font-size:clamp(42px,4vw,62px);
+    line-height:1.45;
+    letter-spacing:.16em;
+    font-weight:300;
+    color:rgba(255,255,255,.96);
+  }
+
+  .hero p,
+  .sp-hero-desc{
+    max-width:42em;
+    margin-top:32px;
+    font-family:"Noto Serif JP",serif;
+    font-size:16px;
+    line-height:2.35;
+    letter-spacing:.12em;
+    color:rgba(255,255,255,.74);
+  }
+
+  .faq-section,
+  .faq-list-section,
+  main{
+    background:#050403;
+    padding:110px 0 130px;
+  }
+
+  .faq-list,
+  .faq-container{
+    width:min(920px,78%);
+    margin:0 auto;
+  }
+
+  .faq-item{
+    padding:34px 0;
+    border-bottom:1px solid rgba(255,255,255,.12);
+  }
+
+  .faq-question{
+    font-size:24px;
+    line-height:1.8;
+    letter-spacing:.12em;
+  }
+
+  .faq-answer{
+    margin-top:22px;
+    font-size:15px;
+    line-height:2.25;
+    letter-spacing:.08em;
+    color:rgba(255,255,255,.72);
+  }
+}
+</style>
+
 </head>
 <body>
 <header class="site-header" id="siteHeader">
@@ -1886,6 +2018,19 @@ document.addEventListener("DOMContentLoaded",()=>{
 
   document.querySelectorAll('a[data-nav="news"], a[href*="#news-page"]').forEach(link=>{
     link.setAttribute("href","/kanjitsudo-site/news.html");
+  });
+
+});
+</script>
+
+
+<script id="pc-faq-independent-link-fix">
+document.addEventListener("DOMContentLoaded",()=>{
+
+  if(window.innerWidth < 769) return;
+
+  document.querySelectorAll('a[data-nav="faq"], a[href*="#faq-page"]').forEach(link=>{
+    link.setAttribute("href","/kanjitsudo-site/faq.html");
   });
 
 });

@@ -3065,5 +3065,18 @@ document.addEventListener("DOMContentLoaded",()=>{
 });
 </script>
 
+
+<script id="pc-faq-independent-link-fix">
+document.addEventListener("DOMContentLoaded",()=>{
+
+  if(window.innerWidth < 769) return;
+
+  document.querySelectorAll('a[data-nav="faq"], a[href*="#faq-page"]').forEach(link=>{
+    link.setAttribute("href","/kanjitsudo-site/faq.html");
+  });
+
+});
+</script>
+
 </body>
 </html>
