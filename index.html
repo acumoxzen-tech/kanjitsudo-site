@@ -5502,6 +5502,48 @@ document.addEventListener("DOMContentLoaded",()=>{
 }
 </style>
 
+
+<style id="sp-index-menu-bg-final-direct">
+@media (max-width:768px){
+
+  /* スマホIndexの施術メニュー導入背景を直接制御 */
+  #menu-page,
+  #menu-page::before,
+  #menu-page::after,
+  #menu-page .section-bg,
+  #menu-page .menu-bg,
+  #menu-page .menu-image,
+  #menu-page .mobile-menu-teaser,
+  #menu-page .mobile-menu-teaser::before,
+  #menu-page .mobile-menu-teaser::after{
+    background-position:center 0%!important;
+    background-size:cover!important;
+    background-repeat:no-repeat!important;
+  }
+
+  #menu-page img,
+  #menu-page picture img{
+    object-position:center 0%!important;
+  }
+}
+</style>
+
+
+<style id="sp-menu-pseudo-bg-direct-fix">
+@media (max-width:768px){
+
+  #menu-page.menu-section::before{
+    top:-170px!important;
+    right:-28%!important;
+    width:132%!important;
+    height:1220px!important;
+    background-position:right -120px!important;
+    background-size:auto 1220px!important;
+    background-repeat:no-repeat!important;
+  }
+}
+</style>
+
 </body>
 </html>
 
