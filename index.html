@@ -5560,6 +5560,35 @@ document.addEventListener("DOMContentLoaded",()=>{
 }
 </style>
 
+
+<style id="sp-menu-pseudo-bg-animation">
+@media (max-width:768px){
+
+  #menu-page.menu-section::before{
+    animation:menuSmokeFloat 14s ease-in-out infinite alternate!important;
+    will-change:transform, filter, opacity!important;
+    transform-origin:center center!important;
+  }
+
+  @keyframes menuSmokeFloat{
+    0%{
+      transform:scale(1.015) translate3d(0,0,0);
+      filter:brightness(.98);
+    }
+
+    50%{
+      transform:scale(1.035) translate3d(-6px,-10px,0);
+      filter:brightness(1.02);
+    }
+
+    100%{
+      transform:scale(1.02) translate3d(4px,-18px,0);
+      filter:brightness(.99);
+    }
+  }
+}
+</style>
+
 </body>
 </html>
 
