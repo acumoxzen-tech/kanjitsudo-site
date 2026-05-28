@@ -1669,6 +1669,130 @@ border-top:1px solid rgba(255,255,255,.06);
 }
 </style>
 
+
+<style id="pc-faq-real-visible-final">
+@media (min-width:769px){
+
+  .hero{
+    position:relative!important;
+    overflow:hidden!important;
+    min-height:560px!important;
+    padding:170px 0 110px!important;
+  }
+
+  .hero > img.hero-image{
+    width:100%!important;
+    height:100%!important;
+    object-fit:cover!important;
+    object-position:88% center!important;
+    transform:scale(1.04)!important;
+    filter:brightness(.78)!important;
+  }
+
+  /* 古いPC表示側を消す */
+  .hero > small,
+  .hero > h1,
+  .hero > p,
+  .hero > .breadcrumb,
+  .hero > .faq-hero-breadcrumb-final{
+    display:none!important;
+    opacity:0!important;
+    visibility:hidden!important;
+  }
+
+  /* 新しい統一HeroブロックをPCでも表示 */
+  .hero > .sp-hero-clean-final{
+    display:block!important;
+    opacity:1!important;
+    visibility:visible!important;
+    position:relative!important;
+    z-index:6!important;
+    width:min(1100px,84%)!important;
+    margin:0 auto!important;
+    padding-left:96px!important;
+    padding-top:36px!important;
+    text-align:left!important;
+  }
+
+  .hero > .sp-hero-clean-final *{
+    opacity:1!important;
+    visibility:visible!important;
+  }
+
+  .hero .sp-hero-breadcrumb{
+    display:flex!important;
+    align-items:center!important;
+    gap:12px!important;
+    margin:0 0 32px!important;
+    font-family:"Noto Serif JP",serif!important;
+    font-size:12px!important;
+    line-height:1!important;
+    letter-spacing:.18em!important;
+    color:rgba(255,255,255,.58)!important;
+  }
+
+  .hero .sp-hero-breadcrumb a{
+    color:rgba(255,255,255,.62)!important;
+    text-decoration:none!important;
+  }
+
+  .hero .sp-hero-breadcrumb span{
+    color:rgba(255,255,255,.46)!important;
+  }
+
+  .hero .sp-hero-label{
+    display:block!important;
+    margin:0 0 24px!important;
+    font-family:"Cormorant Garamond",serif!important;
+    font-size:14px!important;
+    line-height:1!important;
+    letter-spacing:.44em!important;
+    color:rgba(255,255,255,.56)!important;
+  }
+
+  .hero .sp-hero-title{
+    display:block!important;
+    margin:0!important;
+    max-width:12em!important;
+    font-family:"Noto Serif JP",serif!important;
+    font-size:62px!important;
+    line-height:1.45!important;
+    letter-spacing:.16em!important;
+    font-weight:300!important;
+    color:rgba(255,255,255,.96)!important;
+  }
+
+  .hero .sp-hero-desc{
+    display:block!important;
+    max-width:37em!important;
+    margin:34px 0 0!important;
+    font-family:"Noto Serif JP",serif!important;
+    font-size:16px!important;
+    line-height:2.35!important;
+    letter-spacing:.12em!important;
+    color:rgba(255,255,255,.74)!important;
+  }
+
+  .hero::after{
+    content:"";
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    height:240px;
+    background:linear-gradient(
+      to bottom,
+      rgba(5,4,3,0) 0%,
+      rgba(5,4,3,.16) 22%,
+      rgba(5,4,3,.52) 62%,
+      #050403 100%
+    );
+    pointer-events:none;
+    z-index:3;
+  }
+}
+</style>
+
 </head>
 <body>
 <header class="site-header" id="siteHeader">
