@@ -1459,6 +1459,66 @@
 }
 </style>
 
+
+<style id="access-preparing-style">
+  .access-map--preparing {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 360px;
+    border: 1px solid rgba(255,255,255,.10);
+    background:
+      linear-gradient(135deg, rgba(255,255,255,.035), rgba(255,255,255,.012)),
+      rgba(255,255,255,.02);
+  }
+
+  .access-map-placeholder {
+    text-align: center;
+    font-family: "Noto Serif JP", serif;
+    color: rgba(255,255,255,.72);
+    letter-spacing: .14em;
+    padding: 42px 24px;
+  }
+
+  .access-map-placeholder span {
+    display: block;
+    margin-bottom: 18px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 13px;
+    letter-spacing: .26em;
+    color: rgba(214,177,112,.78);
+  }
+
+  .access-map-placeholder p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 2;
+  }
+
+  @media (max-width:768px) {
+    .access-map--preparing {
+      min-height: 240px;
+    }
+
+    .access-map-placeholder {
+      padding: 34px 18px;
+      letter-spacing: .1em;
+    }
+  }
+</style>
+
+<style id="pc-menu-lead-size-fix">
+@media (min-width:769px){
+#menu-page .section-lead,
+#menu-page .lead-text,
+#menu-page .menu-lead,
+#menu-page .menu-copy,
+#menu-page .section-head p{
+font-size:18px!important;
+line-height:2.1!important;
+}
+}
+</style>
 </head>
 <body>
   <main class="hero" id="top">
@@ -1470,7 +1530,7 @@
     <div class="overlay"></div>
 
     <header class="site-header" id="siteHeader">
-  <a href="index.html#top" class="brand" aria-label="還日堂トップへ">
+  <a href="/kanjitsudo-site/#top" class="brand" aria-label="還日堂トップへ">
     <img class="crest" src="https://res.cloudinary.com/dvr7rww8q/image/upload/v1779030104/ChatGPT_Image_2026%E5%B9%B45%E6%9C%8818%E6%97%A5_00_00_07_xy3xk1.png" alt="還日堂ロゴ">
     <div class="brand-text">
       <div class="brand-ja">還日堂</div>
@@ -1479,25 +1539,25 @@
   </a>
 
   <nav class="site-nav" id="siteNav" aria-label="主要ナビゲーション">
-    <a href="index.html#top" data-nav="home" class="active">ホーム</a>
-    <a href="index.html#about-page" data-nav="about">当店について</a>
-    <a href="menu.html" data-nav="menu">施術メニュー</a>
-    <a href="index.html#staff-page" data-nav="staff">スタッフ紹介</a>
+    <a href="/kanjitsudo-site/#top" data-nav="home" class="active">ホーム</a>
+    <a href="/kanjitsudo-site/#about-page" data-nav="about">当店について</a>
+    <a href="/kanjitsudo-site/menu.html" data-nav="menu">施術メニュー</a>
+    <a href="/kanjitsudo-site/#staff-page" data-nav="staff">スタッフ紹介</a>
 
     <div class="nav-dropdown">
       <button type="button" class="nav-dropdown-trigger">ご案内 ▾</button>
       <div class="nav-dropdown-menu">
-        <a href="index.html#gallery-page" data-nav="gallery">店内紹介</a>
-        <a href="menu.html#flow-section" data-nav="flow">ご利用の流れ</a>
-        <a href="faq.html" data-nav="faq">よくあるご質問</a>
-        <a href="news.html" data-nav="news">お知らせ</a>
-        <a href="index.html#contact-page" data-nav="contact">お問い合わせ</a>
-        <a href="index.html#access-page" data-nav="access">アクセス</a>
+        <a href="/kanjitsudo-site/#gallery-page" data-nav="gallery">店内紹介</a>
+        <a href="/kanjitsudo-site/menu.html#flow-section" data-nav="flow">ご利用の流れ</a>
+        <a href="/kanjitsudo-site/faq.html" data-nav="faq">よくあるご質問</a>
+        <a href="/kanjitsudo-site/news.html" data-nav="news">お知らせ</a>
+        <a href="/kanjitsudo-site/#contact-page" data-nav="contact">お問い合わせ</a>
+        <a href="/kanjitsudo-site/#access-page" data-nav="access">アクセス</a>
       </div>
     </div>
 
     <a href="https://acumoxzen-tech.github.io/kanjitsudo-reserve/reserve.html" class="desktop-reserve-link nav-reserve-menu">ご予約</a>
-    <a class="nav-instagram" href="https://www.instagram.com/k__.z.__m/" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+    <a class="nav-instagram" href="https://www.instagram.com/kanjitsudo/" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
       <span class="instagram" aria-hidden="true"></span>
     </a>
   </nav>
@@ -1515,12 +1575,12 @@
     <a href="https://acumoxzen-tech.github.io/kanjitsudo-reserve/reserve.html" class="reserve"><span>ご予約はこちら</span><span>›</span></a>
 
     <div class="hero-news hero-news-block">
-      <a href="news.html#news-20260517-site-open" class="hero-news-main">
+      <a href="/kanjitsudo-site/news.html#news-20260517-site-open" class="hero-news-main">
         <span class="hero-news-date">2026.05.17</span>
         <span class="hero-news-text">還日堂 公式サイトを公開いたしました</span>
         <span class="hero-news-arrow">›</span>
       </a>
-      <a href="news.html" class="hero-news-list-link">お知らせ一覧へ</a>
+      <a href="/kanjitsudo-site/news.html" class="hero-news-list-link">お知らせ一覧へ</a>
     </div>
 
     <div class="scroll">
@@ -1628,7 +1688,7 @@
         <p>
           還日堂では、お一人おひとりの<br>お身体の状態に合わせた<br>オーダーメイドの治療をご案内しております
         </p>
-        <a href="menu.html" class="mobile-menu-teaser-btn">
+        <a href="/kanjitsudo-site/menu.html" class="mobile-menu-teaser-btn">
           施術メニューはこちら<span>›</span>
         </a>
       </div>
@@ -1858,31 +1918,25 @@
       </div>
 
       <div class="access-layout fade-section">
-        <div class="access-map">
-          <iframe
-            src="https://www.google.com/maps?output=embed&q=〒270-0101+千葉県流山市東深井991"
-            width="100%"
-            height="100%"
-            style="border:0;"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade">
-          </iframe>
+        <div class="access-map access-map--preparing">
+          <div class="access-map-placeholder">
+            <span>ACCESS INFORMATION</span>
+            <p>アクセス情報は現在準備中です</p>
+          </div>
         </div>
 
         <div class="access-info">
           <span class="access-en">KANJITSUDŌ</span>
           <h3>還日堂</h3>
           <p>
-            〒270-0101<br>
-            千葉県流山市東深井９９１
+            所在地の詳細は、<br>
+            ご予約確定後にご案内しております。
           </p>
           <p>
             完全予約制<br>
             営業時間 10:00 - 20:00<br>
             定休日 日曜・月曜
           </p>
-          <a href="https://maps.google.com/?q=〒270-0101+千葉県流山市東深井991">Google Mapで開く</a>
         </div>
       </div>
     </div>
@@ -1900,7 +1954,7 @@
       </div>
 
       <div class="instagram-link-card fade-section">
-        <a href="https://www.instagram.com/k__.z.__m/">
+        <a href="https://www.instagram.com/kanjitsudo/">
           <span class="instagram-card-label">OFFICIAL INSTAGRAM</span>
           <strong>@k__.z.__m</strong>
           <p>Instagramで最新の投稿を見る</p>
@@ -1916,11 +1970,11 @@
         <p>還日堂</p>
       </div>
       <div class="footer-info">
-        <p>〒270-0101<br>千葉県流山市東深井９９１</p>
+        <p>所在地の詳細はご予約確定後にご案内いたします</p>
         <p>10:00 - 20:00<br>Closed Sun / Mon</p>
       </div>
       <div class="footer-links">
-        <a href="https://www.instagram.com/k__.z.__m/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://www.instagram.com/kanjitsudo/" target="_blank" rel="noopener noreferrer">Instagram</a>
         <a href="https://acumoxzen-tech.github.io/kanjitsudo-reserve/reserve.html">Reserve</a>
       </div>
     </div>
