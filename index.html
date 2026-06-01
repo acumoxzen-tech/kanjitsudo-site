@@ -1541,7 +1541,7 @@ line-height:2.1!important;
   <nav class="site-nav" id="siteNav" aria-label="主要ナビゲーション">
     <a href="/kanjitsudo-site/#top" data-nav="home" class="active">ホーム</a>
     <a href="/kanjitsudo-site/#about-page" data-nav="about">当店について</a>
-    <a href="index.html#menu-page" data-nav="menu">施術メニュー</a>
+    <a href="menu.html" data-nav="menu">施術メニュー</a>
     <a href="/kanjitsudo-site/#staff-page" data-nav="staff">スタッフ紹介</a>
 
     <div class="nav-dropdown">
@@ -5098,7 +5098,7 @@ line-height:2.1!important;
 
         if (!result.ok || slots.length === 0) {
           slotGrid.innerHTML = '<p class="slot-empty">この日の空き枠はありません。<br>別の日付をお選びください。</p>';
-          slotHelp.textContent = '日曜・月曜と13:00〜14:00は受付時間外です。';
+          slotHelp.textContent = '不定休および13:00〜14:00は受付時間外です。';
           return;
         }
 
