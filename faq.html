@@ -2478,5 +2478,19 @@ document.addEventListener("DOMContentLoaded",()=>{
 
 });
 </script>
+
+<script id="faq-hash-category-open">
+document.addEventListener('DOMContentLoaded',function(){
+ const hash=(location.hash||'').replace('#','');
+ if(hash!=='treatment') return;
+ const btn=[...document.querySelectorAll('.category-btn')].find(b=>b.dataset.target==='treatment');
+ if(btn) btn.click();
+ setTimeout(()=>{
+   const cat=document.getElementById('treatment');
+   if(cat) cat.scrollIntoView({behavior:'smooth',block:'start'});
+ },150);
+});
+</script>
+
 </body>
 </html>
