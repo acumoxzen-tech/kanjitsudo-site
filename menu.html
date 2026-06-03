@@ -2738,27 +2738,48 @@
 }
 </style>
 
-
-
-
-
 <style id="sp-treatment-faq-link">
 @media (max-width:768px){
-.sp-treatment-faq-link{
-display:flex!important;
-justify-content:flex-end!important;
-width:calc(100% - 40px)!important;
-max-width:520px!important;
-margin:4px auto 42px!important;
-padding-right:4px!important;
-font-size:13px!important;
-letter-spacing:.12em!important;
-text-decoration:none!important;
-color:rgba(155,145,130,.78)!important;
+  .sp-treatment-faq-link-wrap{
+    display:block!important;
+    width:calc(100% - 48px)!important;
+    max-width:520px!important;
+    margin:6px auto 42px!important;
+    padding:0!important;
+    text-align:right!important;
+  }
+
+  .sp-treatment-faq-link-wrap .sp-treatment-faq-link{
+    display:inline!important;
+    width:auto!important;
+    height:auto!important;
+    min-width:0!important;
+    margin:0!important;
+    padding:0 2px 5px 0!important;
+    border:none!important;
+    border-radius:0!important;
+    background:none!important;
+    box-shadow:none!important;
+    backdrop-filter:none!important;
+    -webkit-backdrop-filter:none!important;
+    font-family:"Noto Serif JP",serif!important;
+    font-size:13px!important;
+    line-height:1.8!important;
+    letter-spacing:.12em!important;
+    color:rgba(155,145,130,.78)!important;
+    text-decoration:none!important;
+    border-bottom:1px solid rgba(155,145,130,.32)!important;
+  }
+
+  .sp-treatment-faq-link-wrap .sp-treatment-faq-link span{
+    margin-left:8px!important;
+  }
 }
-.sp-treatment-faq-link span{margin-left:8px;}
+@media (min-width:769px){
+  .sp-treatment-faq-link-wrap{
+    display:none!important;
+  }
 }
-@media (min-width:769px){.sp-treatment-faq-link{display:none!important;}}
 </style>
 
 </head>
@@ -2867,14 +2888,11 @@ color:rgba(155,145,130,.78)!important;
 </div>
 
 
-
+<div class="sp-treatment-faq-link-wrap">
+  <a href="faq.html#treatment" class="sp-treatment-faq-link">施術について詳しく見る<span>›</span></a>
+</div>
 
 <div class="menu-main-cta fade-section">
-
-<a href="faq.html#treatment" class="sp-treatment-faq-link">
-施術について詳しく見る<span>›</span>
-</a>
-
 <a href="https://acumoxzen-tech.github.io/kanjitsudo-reserve/reserve.html">施術を予約する</a>
 </div>
 </div>

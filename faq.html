@@ -2480,15 +2480,19 @@ document.addEventListener("DOMContentLoaded",()=>{
 </script>
 
 <script id="faq-hash-category-open">
-document.addEventListener('DOMContentLoaded',function(){
- const hash=(location.hash||'').replace('#','');
- if(hash!=='treatment') return;
- const btn=[...document.querySelectorAll('.category-btn')].find(b=>b.dataset.target==='treatment');
- if(btn) btn.click();
- setTimeout(()=>{
-   const cat=document.getElementById('treatment');
-   if(cat) cat.scrollIntoView({behavior:'smooth',block:'start'});
- },150);
+document.addEventListener('DOMContentLoaded', function(){
+  const hash = (window.location.hash || '').replace('#','');
+  if(hash !== 'treatment') return;
+
+  const btn = Array.from(document.querySelectorAll('.category-btn')).find(function(b){
+    return b.dataset.target === 'treatment';
+  });
+  if(btn) btn.click();
+
+  // FAQページの上部（Hero）から見せるため、カテゴリ位置へはスクロールしない
+  setTimeout(function(){
+    window.scrollTo({ top: 0, behavior: 'auto' });
+  }, 80);
 });
 </script>
 
