@@ -2478,47 +2478,5 @@ document.addEventListener("DOMContentLoaded",()=>{
 
 });
 </script>
-
-
-<script id="faq-hash-category-open">
-document.addEventListener('DOMContentLoaded', function(){
-  function openFaqCategoryFromHash(){
-    const hash = window.location.hash ? window.location.hash.replace('#','') : '';
-    if(!hash) return;
-
-    const target = document.getElementById(hash);
-    if(!target || !target.classList.contains('faq-category')) return;
-
-    document.querySelectorAll('.category-btn').forEach(function(btn){
-      btn.classList.toggle('active', btn.dataset.target === hash);
-    });
-
-    document.querySelectorAll('.faq-category').forEach(function(category){
-      category.classList.toggle('active', category.id === hash);
-    });
-
-    document.querySelectorAll('.faq-card').forEach(function(card){
-      card.classList.remove('active');
-      const answer = card.querySelector('.faq-answer');
-      if(answer) answer.style.maxHeight = null;
-    });
-
-    const firstCard = target.querySelector('.faq-card');
-    if(firstCard){
-      firstCard.classList.add('active');
-      const answer = firstCard.querySelector('.faq-answer');
-      if(answer) answer.style.maxHeight = answer.scrollHeight + 'px';
-    }
-
-    setTimeout(function(){
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }, 160);
-  }
-
-  openFaqCategoryFromHash();
-  window.addEventListener('hashchange', openFaqCategoryFromHash);
-});
-</script>
-
 </body>
 </html>

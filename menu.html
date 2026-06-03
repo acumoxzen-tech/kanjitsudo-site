@@ -2743,21 +2743,23 @@
 @media (max-width:768px){
   .sp-treatment-faq-link{
     display:flex!important;
-    justify-content:center!important;
+    justify-content:flex-end!important;
     align-items:center!important;
-    margin:26px auto 18px!important;
-    width:fit-content!important;
+    width:calc(100% - 48px)!important;
+    max-width:520px!important;
+    margin:22px auto 18px!important;
+    padding:0 2px 8px 0!important;
     font-family:"Noto Serif JP",serif!important;
     font-size:13px!important;
     line-height:1!important;
     letter-spacing:.12em!important;
+    text-align:right!important;
     text-decoration:none!important;
     color:rgba(214,177,112,.9)!important;
-    border-bottom:1px solid rgba(214,177,112,.4)!important;
-    padding-bottom:8px!important;
   }
   .sp-treatment-faq-link span{
     margin-left:8px!important;
+    transform:translateY(-1px)!important;
   }
 }
 @media (min-width:769px){
@@ -2873,7 +2875,7 @@
 </div>
 
 
-<a href="faq.html#treatment" class="sp-treatment-faq-link">
+<a href="faq.html" class="sp-treatment-faq-link">
   施術について詳しく見る<span>›</span>
 </a>
 
