@@ -1572,7 +1572,7 @@ line-height:2.1!important;
   <nav class="site-nav" id="siteNav" aria-label="主要ナビゲーション">
     <a href="index.html#top" data-nav="home" class="active">ホーム</a>
     <a href="index.html#about-page" data-nav="about">当店について</a>
-    <a href="menu.html" data-nav="menu">施術メニュー</a>
+    <a href="#menu-page" data-nav="menu">施術メニュー</a>
     <a href="index.html#staff-page" data-nav="staff">スタッフ紹介</a>
 
     <div class="nav-dropdown">
@@ -2405,13 +2405,9 @@ line-height:2.1!important;
 
     .special-menu {
       min-height: 300px;
-      border-color: rgba(255,255,255,.2);
-      background: rgba(255,255,255,.035);
     }
 
     .special-menu:hover {
-      background: rgba(255,255,255,.085);
-      border-color: rgba(255,255,255,.38);
     }
 
     
@@ -5743,6 +5739,21 @@ document.addEventListener("DOMContentLoaded",()=>{
     window.addEventListener("scroll", onScroll, {passive:true});
     onScroll();
   }
+});
+</script>
+
+
+<script id="sp-menu-link-to-independent-page">
+document.addEventListener('DOMContentLoaded', function(){
+  const menuLinks = document.querySelectorAll('a[data-nav="menu"]');
+  menuLinks.forEach(function(link){
+    link.addEventListener('click', function(event){
+      if (window.matchMedia('(max-width: 768px)').matches) {
+        event.preventDefault();
+        window.location.href = 'menu.html';
+      }
+    });
+  });
 });
 </script>
 
